@@ -90,7 +90,7 @@ static const char *helptestsstr[] = {
 "write_2d_numeric         - Write a real 2D numeric array to a matlab file.",
 "                           The class of the numeric array is set by the -c",
 "                           option or double if not set.",
-"write_complex_2d_numeric - Write a complex 2D numeric array to a matlab file.",
+"write_complex_2d_numeric - Write a complex 2D numeric array tIto a matlab file.",
 "                           The class of the numeric array is set by the -c",
 "                           option or double if not set.",
 "write_2d_logical         - Write a 2D logical array to a matlab file.",
@@ -753,7 +753,6 @@ test_write_2d_numeric(enum matio_classes matvar_class, char *output_name)
 #ifdef HAVE_MAT_UINT64_T
     mat_uint64_t ui64[50];
 #endif
-    mat_complex_split_t z = {NULL,NULL},s = {NULL,NULL};
     mat_t *mat;
     matvar_t *matvar;
 
@@ -773,11 +772,6 @@ test_write_2d_numeric(enum matio_classes matvar_class, char *output_name)
         ui64[i] = i+1;
 #endif
     }
-
-    z.Re = d;
-    z.Im = d+25;
-    s.Re = f;
-    s.Im = f+25;
 
     mat = Mat_CreateVer(output_name,NULL,mat_file_ver);
     if ( !mat ) {
