@@ -847,48 +847,50 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
 {
     size_t dims[2] = {5,10};
     int    err = 0, i;
-    double    d_real[50], d_imag[50];
-    float     f_real[50], f_imag[50];
-    mat_int32_t   i32_real[50], i32_imag[50];
-    mat_uint32_t ui32_real[50], ui32_imag[50];
-    mat_int16_t   i16_real[50], i16_imag[50];
-    mat_uint16_t ui16_real[50], ui16_imag[50];
-    mat_int8_t    i8_real[50], i8_imag[50];
-    mat_uint8_t  ui8_real[50], ui8_imag[50];
+    double    d[100];
+    float     f[100];
+    mat_int32_t   i32[100];
+    mat_uint32_t ui32[100];
+    mat_int16_t   i16[100];
+    mat_uint16_t ui16[100];
+    mat_int8_t    i8[100];
+    mat_uint8_t  ui8[100];
 #ifdef HAVE_MAT_INT64_T
-    mat_int64_t i64_real[50], i64_imag[50];
+    mat_int64_t i64[100];
 #endif
 #ifdef HAVE_MAT_UINT64_T
-    mat_uint64_t ui64_real[50], ui64_imag[50];
+    mat_uint64_t ui64[100];
 #endif
-    mat_complex_split_t z = {NULL,NULL};
     mat_t *mat;
     matvar_t *matvar;
+    void *z;
 
     for ( i = 0; i < 50; i++ ) {
-          d_real[i] = i+1;
-          d_imag[i] = i+51;
-          f_real[i] = i+1;
-          f_imag[i] = i+51;
-        i32_real[i] = i+1;
-        i32_imag[i] = i+51;
-       ui32_real[i] = i+1;
-       ui32_imag[i] = i+51;
-        i16_real[i] = i+1;
-        i16_imag[i] = i+51;
-       ui16_real[i] = i+1;
-       ui16_imag[i] = i+51;
-         i8_real[i] = i+1;
-         i8_imag[i] = i+51;
-        ui8_real[i] = i+1;
-        ui8_imag[i] = i+51;
+    	int r_idx = i << 1;
+    	int i_idx = r_idx + 1;
+          d[r_idx] = i+1;
+          d[i_idx] = i+51;
+          f[r_idx] = i+1;
+          f[i_idx] = i+51;
+        i32[r_idx] = i+1;
+        i32[i_idx] = i+51;
+       ui32[r_idx] = i+1;
+       ui32[i_idx] = i+51;
+        i16[r_idx] = i+1;
+        i16[i_idx] = i+51;
+       ui16[r_idx] = i+1;
+       ui16[i_idx] = i+51;
+         i8[r_idx] = i+1;
+         i8[i_idx] = i+51;
+        ui8[r_idx] = i+1;
+        ui8[i_idx] = i+51;
 #ifdef HAVE_MAT_INT64_T
-        i64_real[i] = i+1;
-        i64_imag[i] = i+51;
+        i64[r_idx] = i+1;
+        i64[i_idx] = i+51;
 #endif
 #ifdef HAVE_MAT_UINT64_T
-        ui64_real[i] = i+1;
-        ui64_imag[i] = i+51;
+        ui64[r_idx] = i+1;
+        ui64[i_idx] = i+51;
 #endif
     }
 
@@ -899,16 +901,14 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
 
     switch (matvar_class) {
         case MAT_C_DOUBLE:
-            z.Re = d_real;
-            z.Im = d_imag;
+            z = d;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_DOUBLE,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_SINGLE:
-            z.Re = f_real;
-            z.Im = f_imag;
+            z = f;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_SINGLE,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
@@ -916,8 +916,7 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
-            z.Re = i64_real;
-            z.Im = i64_imag;
+            z = i64;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT64,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
@@ -926,8 +925,7 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
-            z.Re = ui64_real;
-            z.Im = ui64_imag;
+            z = ui64;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT64,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
@@ -935,48 +933,42 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
             break;
 #endif
         case MAT_C_INT32:
-            z.Re = i32_real;
-            z.Im = i32_imag;
+            z = i32;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT32,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_UINT32:
-            z.Re = ui32_real;
-            z.Im = ui32_imag;
+            z = ui32;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT32,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_INT16:
-            z.Re = i16_real;
-            z.Im = i16_imag;
+            z = i16;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT16,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_UINT16:
-            z.Re = ui16_real;
-            z.Im = ui16_imag;
+            z = ui16;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT16,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_INT8:
-            z.Re = i8_real;
-            z.Im = i8_imag;
+            z = i8;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT8,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_UINT8:
-            z.Re = ui8_real;
-            z.Im = ui8_imag;
+            z = ui8;
             matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT8,2,dims,&z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
@@ -1280,23 +1272,23 @@ test_write_struct_2d_numeric(enum matio_classes matvar_class,
     switch (matvar_class) {
         case MAT_C_DOUBLE:
             data[0] = d;
-            data[1] = d+12;
-            data[2] = d+24;
+            data[1] = d+24;
+            data[2] = d+48;
             data[3] = d+36;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
             data[0] = f;
-            data[1] = f+12;
-            data[2] = f+24;
+            data[1] = f+24;
+            data[2] = f+48;
             data[3] = f+36;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
             data[0] = i64;
-            data[1] = i64+12;
-            data[2] = i64+24;
+            data[1] = i64+24;
+            data[2] = i64+48;
             data[3] = i64+36;
             data_type = MAT_T_INT64;
             break;
@@ -1304,51 +1296,51 @@ test_write_struct_2d_numeric(enum matio_classes matvar_class,
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
             data[0] = ui64;
-            data[1] = ui64+12;
-            data[2] = ui64+24;
+            data[1] = ui64+24;
+            data[2] = ui64+48;
             data[3] = ui64+36;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
             data[0] = i32;
-            data[1] = i32+12;
-            data[2] = i32+24;
+            data[1] = i32+24;
+            data[2] = i32+48;
             data[3] = i32+36;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
             data[0] = ui32;
-            data[1] = ui32+12;
-            data[2] = ui32+24;
+            data[1] = ui32+24;
+            data[2] = ui32+48;
             data[3] = ui32+36;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
             data[0] = i16;
-            data[1] = i16+12;
-            data[2] = i16+24;
+            data[1] = i16+24;
+            data[2] = i16+48;
             data[3] = i16+36;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
             data[0] = ui16;
-            data[1] = ui16+12;
-            data[2] = ui16+24;
+            data[1] = ui16+24;
+            data[2] = ui16+48;
             data[3] = ui16+36;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
             data[0] = i8;
-            data[1] = i8+12;
-            data[2] = i8+24;
+            data[1] = i8+24;
+            data[2] = i8+48;
             data[3] = i8+36;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
             data[0] = ui8;
-            data[1] = ui8+12;
-            data[2] = ui8+24;
+            data[1] = ui8+24;
+            data[2] = ui8+48;
             data[3] = ui8+36;
             data_type = MAT_T_UINT8;
             break;
@@ -1390,165 +1382,127 @@ test_write_struct_complex_2d_numeric(enum matio_classes matvar_class,
 {
     size_t dims[2] = {5,10};
     int    err = 0, i;
-    double    d_real[50], d_imag[50];
-    float     f_real[50], f_imag[50];
-    mat_int32_t   i32_real[50], i32_imag[50];
-    mat_uint32_t ui32_real[50], ui32_imag[50];
-    mat_int16_t   i16_real[50], i16_imag[50];
-    mat_uint16_t ui16_real[50], ui16_imag[50];
-    mat_int8_t    i8_real[50], i8_imag[50];
-    mat_uint8_t  ui8_real[50], ui8_imag[50];
+    double    d[100];
+    float     f[100];
+    mat_int32_t   i32[100];
+    mat_uint32_t ui32[100];
+    mat_int16_t   i16[100];
+    mat_uint16_t ui16[100];
+    mat_int8_t    i8[100];
+    mat_uint8_t  ui8[100];
 #ifdef HAVE_MAT_INT64_T
-    mat_int64_t i64_real[50], i64_imag[50];
+    mat_int64_t i64[100];
 #endif
 #ifdef HAVE_MAT_UINT64_T
-    mat_uint64_t ui64_real[50], ui64_imag[50];
+    mat_uint64_t ui64[100];
 #endif
-    mat_complex_split_t data[4] = {NULL,NULL};
+    void* data[4] = {NULL};
     mat_t *mat;
     matvar_t *matvar[5], *struct_matvar;
     enum matio_types data_type;
 
     for ( i = 0; i < 50; i++ ) {
-          d_real[i] = i+1;
-          d_imag[i] = i+51;
-          f_real[i] = i+1;
-          f_imag[i] = i+51;
-        i32_real[i] = i+1;
-        i32_imag[i] = i+51;
-       ui32_real[i] = i+1;
-       ui32_imag[i] = i+51;
-        i16_real[i] = i+1;
-        i16_imag[i] = i+51;
-       ui16_real[i] = i+1;
-       ui16_imag[i] = i+51;
-         i8_real[i] = i+1;
-         i8_imag[i] = i+51;
-        ui8_real[i] = i+1;
-        ui8_imag[i] = i+51;
+    	int r_idx = i << 1;
+    	int i_idx = r_idx + 1;
+          d[r_idx] = i+1;
+          d[i_idx] = i+51;
+          f[r_idx] = i+1;
+          f[i_idx] = i+51;
+        i32[r_idx] = i+1;
+        i32[i_idx] = i+51;
+       ui32[r_idx] = i+1;
+       ui32[i_idx] = i+51;
+        i16[r_idx] = i+1;
+        i16[i_idx] = i+51;
+       ui16[r_idx] = i+1;
+       ui16[i_idx] = i+51;
+         i8[r_idx] = i+1;
+         i8[i_idx] = i+51;
+        ui8[r_idx] = i+1;
+        ui8[i_idx] = i+51;
 #ifdef HAVE_MAT_INT64_T
-        i64_real[i] = i+1;
-        i64_imag[i] = i+51;
+        i64[r_idx] = i+1;
+        i64[i_idx] = i+51;
 #endif
 #ifdef HAVE_MAT_UINT64_T
-        ui64_real[i] = i+1;
-        ui64_imag[i] = i+51;
+        ui64[r_idx] = i+1;
+        ui64[i_idx] = i+51;
 #endif
     }
 
     switch (matvar_class) {
         case MAT_C_DOUBLE:
-            data[0].Re = d_real;
-            data[0].Im = d_imag;
-            data[1].Re = d_real+12;
-            data[1].Im = d_imag+12;
-            data[2].Re = d_real+24;
-            data[2].Im = d_imag+24;
-            data[3].Re = d_real+36;
-            data[3].Im = d_imag+36;
+            data[0] = d;
+            data[1] = d+24;
+            data[2] = d+48;
+            data[3] = d+72;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
-            data[0].Re = f_real;
-            data[0].Im = f_imag;
-            data[1].Re = f_real+12;
-            data[1].Im = f_imag+12;
-            data[2].Re = f_real+24;
-            data[2].Im = f_imag+24;
-            data[3].Re = f_real+36;
-            data[3].Im = f_imag+36;
+            data[0] = f;
+            data[1] = f+24;
+            data[2] = f+48;
+            data[3] = f+72;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
-            data[0].Re = i64_real;
-            data[0].Im = i64_imag;
-            data[1].Re = i64_real+12;
-            data[1].Im = i64_imag+12;
-            data[2].Re = i64_real+24;
-            data[2].Im = i64_imag+24;
-            data[3].Re = i64_real+36;
-            data[3].Im = i64_imag+36;
+            data[0] = i64;
+            data[1] = i64+24;
+            data[2] = i64+48;
+            data[3] = i64+72;
             data_type = MAT_T_INT64;
             break;
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
-            data[0].Re = ui64_real;
-            data[0].Im = ui64_imag;
-            data[1].Re = ui64_real+12;
-            data[1].Im = ui64_imag+12;
-            data[2].Re = ui64_real+24;
-            data[2].Im = ui64_imag+24;
-            data[3].Re = ui64_real+36;
-            data[3].Im = ui64_imag+36;
+            data[0] = ui64;
+            data[1] = ui64+24;
+            data[2] = ui64+48;
+            data[3] = ui64+72;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
-            data[0].Re = i32_real;
-            data[0].Im = i32_imag;
-            data[1].Re = i32_real+12;
-            data[1].Im = i32_imag+12;
-            data[2].Re = i32_real+24;
-            data[2].Im = i32_imag+24;
-            data[3].Re = i32_real+36;
-            data[3].Im = i32_imag+36;
+            data[0] = i32;
+            data[1] = i32+24;
+            data[2] = i32+48;
+            data[3] = i32+72;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
-            data[0].Re = ui32_real;
-            data[0].Im = ui32_imag;
-            data[1].Re = ui32_real+12;
-            data[1].Im = ui32_imag+12;
-            data[2].Re = ui32_real+24;
-            data[2].Im = ui32_imag+24;
-            data[3].Re = ui32_real+36;
-            data[3].Im = ui32_imag+36;
+            data[0] = ui32;
+            data[1] = ui32+24;
+            data[2] = ui32+48;
+            data[3] = ui32+72;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
-            data[0].Re = i16_real;
-            data[0].Im = i16_imag;
-            data[1].Re = i16_real+12;
-            data[1].Im = i16_imag+12;
-            data[2].Re = i16_real+24;
-            data[2].Im = i16_imag+24;
-            data[3].Re = i16_real+36;
-            data[3].Im = i16_imag+36;
+            data[0] = i16;
+            data[1] = i16+24;
+            data[2] = i16+48;
+            data[3] = i16+72;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
-            data[0].Re = ui16_real;
-            data[0].Im = ui16_imag;
-            data[1].Re = ui16_real+12;
-            data[1].Im = ui16_imag+12;
-            data[2].Re = ui16_real+24;
-            data[2].Im = ui16_imag+24;
-            data[3].Re = ui16_real+36;
-            data[3].Im = ui16_imag+36;
+            data[0] = ui16;
+            data[1] = ui16+24;
+            data[2] = ui16+48;
+            data[3] = ui16+72;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
-            data[0].Re = i8_real;
-            data[0].Im = i8_imag;
-            data[1].Re = i8_real+12;
-            data[1].Im = i8_imag+12;
-            data[2].Re = i8_real+24;
-            data[2].Im = i8_imag+24;
-            data[3].Re = i8_real+36;
-            data[3].Im = i8_imag+36;
+            data[0] = i8;
+            data[1] = i8+24;
+            data[2] = i8+48;
+            data[3] = i8+72;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
-            data[0].Re = ui8_real;
-            data[0].Im = ui8_imag;
-            data[1].Re = ui8_real+12;
-            data[1].Im = ui8_imag+12;
-            data[2].Re = ui8_real+24;
-            data[2].Im = ui8_imag+24;
-            data[3].Re = ui8_real+36;
-            data[3].Im = ui8_imag+36;
+            data[0] = ui8;
+            data[1] = ui8+24;
+            data[2] = ui8+48;
+            data[3] = ui8+72;
             data_type = MAT_T_UINT8;
             break;
         default:
@@ -1708,76 +1662,76 @@ test_write_cell_2d_numeric(enum matio_classes matvar_class,
     switch (matvar_class) {
         case MAT_C_DOUBLE:
             data[0] = d;
-            data[1] = d+12;
-            data[2] = d+24;
-            data[3] = d+36;
+            data[1] = d+24;
+            data[2] = d+48;
+            data[3] = d+72;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
             data[0] = f;
-            data[1] = f+12;
-            data[2] = f+24;
-            data[3] = f+36;
+            data[1] = f+24;
+            data[2] = f+48;
+            data[3] = f+72;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
             data[0] = i64;
-            data[1] = i64+12;
-            data[2] = i64+24;
-            data[3] = i64+36;
+            data[1] = i64+24;
+            data[2] = i64+48;
+            data[3] = i64+72;
             data_type = MAT_T_INT64;
             break;
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
             data[0] = ui64;
-            data[1] = ui64+12;
-            data[2] = ui64+24;
-            data[3] = ui64+36;
+            data[1] = ui64+24;
+            data[2] = ui64+48;
+            data[3] = ui64+72;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
             data[0] = i32;
-            data[1] = i32+12;
-            data[2] = i32+24;
-            data[3] = i32+36;
+            data[1] = i32+24;
+            data[2] = i32+48;
+            data[3] = i32+72;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
             data[0] = ui32;
-            data[1] = ui32+12;
-            data[2] = ui32+24;
-            data[3] = ui32+36;
+            data[1] = ui32+24;
+            data[2] = ui32+48;
+            data[3] = ui32+72;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
             data[0] = i16;
-            data[1] = i16+12;
-            data[2] = i16+24;
-            data[3] = i16+36;
+            data[1] = i16+24;
+            data[2] = i16+48;
+            data[3] = i16+72;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
             data[0] = ui16;
-            data[1] = ui16+12;
-            data[2] = ui16+24;
-            data[3] = ui16+36;
+            data[1] = ui16+24;
+            data[2] = ui16+48;
+            data[3] = ui16+72;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
             data[0] = i8;
-            data[1] = i8+12;
-            data[2] = i8+24;
-            data[3] = i8+36;
+            data[1] = i8+24;
+            data[2] = i8+48;
+            data[3] = i8+72;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
             data[0] = ui8;
-            data[1] = ui8+12;
-            data[2] = ui8+24;
-            data[3] = ui8+36;
+            data[1] = ui8+24;
+            data[2] = ui8+48;
+            data[3] = ui8+72;
             data_type = MAT_T_UINT8;
             break;
         default:
@@ -1818,165 +1772,127 @@ test_write_cell_complex_2d_numeric(enum matio_classes matvar_class,
 {
     size_t dims[2] = {5,10};
     int    err = 0, i;
-    double    d_real[50], d_imag[50];
-    float     f_real[50], f_imag[50];
-    mat_int32_t   i32_real[50], i32_imag[50];
-    mat_uint32_t ui32_real[50], ui32_imag[50];
-    mat_int16_t   i16_real[50], i16_imag[50];
-    mat_uint16_t ui16_real[50], ui16_imag[50];
-    mat_int8_t    i8_real[50], i8_imag[50];
-    mat_uint8_t  ui8_real[50], ui8_imag[50];
+    double    d[100];
+    float     f[100];
+    mat_int32_t   i32[100];
+    mat_uint32_t ui32[100];
+    mat_int16_t   i16[100];
+    mat_uint16_t ui16[100];
+    mat_int8_t    i8[100];
+    mat_uint8_t  ui8[100];
 #ifdef HAVE_MAT_INT64_T
-    mat_int64_t i64_real[50], i64_imag[50];
+    mat_int64_t i64[100];
 #endif
 #ifdef HAVE_MAT_UINT64_T
-    mat_uint64_t ui64_real[50], ui64_imag[50];
+    mat_uint64_t ui64[100];
 #endif
-    mat_complex_split_t data[4] = {NULL,NULL};
+    void *data[4] = {NULL};
     mat_t *mat;
     matvar_t *matvar[5], *cell_matvar;
     enum matio_types data_type;
 
     for ( i = 0; i < 50; i++ ) {
-          d_real[i] = i+1;
-          d_imag[i] = i+51;
-          f_real[i] = i+1;
-          f_imag[i] = i+51;
-        i32_real[i] = i+1;
-        i32_imag[i] = i+51;
-       ui32_real[i] = i+1;
-       ui32_imag[i] = i+51;
-        i16_real[i] = i+1;
-        i16_imag[i] = i+51;
-       ui16_real[i] = i+1;
-       ui16_imag[i] = i+51;
-         i8_real[i] = i+1;
-         i8_imag[i] = i+51;
-        ui8_real[i] = i+1;
-        ui8_imag[i] = i+51;
+    	int r_idx = i << 1;;
+    	int i_idx = r_idx + 1;
+          d[r_idx] = i+1;
+          d[i_idx] = i+51;
+          f[r_idx] = i+1;
+          f[i_idx] = i+51;
+        i32[r_idx] = i+1;
+        i32[i_idx] = i+51;
+       ui32[r_idx] = i+1;
+       ui32[i_idx] = i+51;
+        i16[r_idx] = i+1;
+        i16[i_idx] = i+51;
+       ui16[r_idx] = i+1;
+       ui16[i_idx] = i+51;
+         i8[r_idx] = i+1;
+         i8[i_idx] = i+51;
+        ui8[r_idx] = i+1;
+        ui8[i_idx] = i+51;
 #ifdef HAVE_MAT_INT64_T
-        i64_real[i] = i+1;
-        i64_imag[i] = i+51;
+        i64[r_idx] = i+1;
+        i64[i_idx] = i+51;
 #endif
 #ifdef HAVE_MAT_UINT64_T
-        ui64_real[i] = i+1;
-        ui64_imag[i] = i+51;
+        ui64[r_idx] = i+1;
+        ui64[i_idx] = i+51;
 #endif
     }
 
     switch (matvar_class) {
         case MAT_C_DOUBLE:
-            data[0].Re = d_real;
-            data[0].Im = d_imag;
-            data[1].Re = d_real+12;
-            data[1].Im = d_imag+12;
-            data[2].Re = d_real+24;
-            data[2].Im = d_imag+24;
-            data[3].Re = d_real+36;
-            data[3].Im = d_imag+36;
+            data[0] = d;
+            data[1] = d+24;
+            data[2] = d+48;
+            data[3] = d+72;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
-            data[0].Re = f_real;
-            data[0].Im = f_imag;
-            data[1].Re = f_real+12;
-            data[1].Im = f_imag+12;
-            data[2].Re = f_real+24;
-            data[2].Im = f_imag+24;
-            data[3].Re = f_real+36;
-            data[3].Im = f_imag+36;
+            data[0] = f;
+            data[1] = f+24;
+            data[2] = f+48;
+            data[3] = f+72;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
-            data[0].Re = i64_real;
-            data[0].Im = i64_imag;
-            data[1].Re = i64_real+12;
-            data[1].Im = i64_imag+12;
-            data[2].Re = i64_real+24;
-            data[2].Im = i64_imag+24;
-            data[3].Re = i64_real+36;
-            data[3].Im = i64_imag+36;
+            data[0] = i64;
+            data[1] = i64+24;
+            data[2] = i64+48;
+            data[3] = i64+72;
             data_type = MAT_T_INT64;
             break;
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
-            data[0].Re = ui64_real;
-            data[0].Im = ui64_imag;
-            data[1].Re = ui64_real+12;
-            data[1].Im = ui64_imag+12;
-            data[2].Re = ui64_real+24;
-            data[2].Im = ui64_imag+24;
-            data[3].Re = ui64_real+36;
-            data[3].Im = ui64_imag+36;
+            data[0] = ui64;
+            data[1] = ui64+24;
+            data[2] = ui64+48;
+            data[3] = ui64+72;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
-            data[0].Re = i32_real;
-            data[0].Im = i32_imag;
-            data[1].Re = i32_real+12;
-            data[1].Im = i32_imag+12;
-            data[2].Re = i32_real+24;
-            data[2].Im = i32_imag+24;
-            data[3].Re = i32_real+36;
-            data[3].Im = i32_imag+36;
+            data[0] = i32;
+            data[1] = i32+24;
+            data[2] = i32+48;
+            data[3] = i32+72;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
-            data[0].Re = ui32_real;
-            data[0].Im = ui32_imag;
-            data[1].Re = ui32_real+12;
-            data[1].Im = ui32_imag+12;
-            data[2].Re = ui32_real+24;
-            data[2].Im = ui32_imag+24;
-            data[3].Re = ui32_real+36;
-            data[3].Im = ui32_imag+36;
+            data[0] = ui32;
+            data[1] = ui32+24;
+            data[2] = ui32+48;
+            data[3] = ui32+72;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
-            data[0].Re = i16_real;
-            data[0].Im = i16_imag;
-            data[1].Re = i16_real+12;
-            data[1].Im = i16_imag+12;
-            data[2].Re = i16_real+24;
-            data[2].Im = i16_imag+24;
-            data[3].Re = i16_real+36;
-            data[3].Im = i16_imag+36;
+            data[0] = i16;
+            data[1] = i16+24;
+            data[2] = i16+48;
+            data[3] = i16+72;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
-            data[0].Re = ui16_real;
-            data[0].Im = ui16_imag;
-            data[1].Re = ui16_real+12;
-            data[1].Im = ui16_imag+12;
-            data[2].Re = ui16_real+24;
-            data[2].Im = ui16_imag+24;
-            data[3].Re = ui16_real+36;
-            data[3].Im = ui16_imag+36;
+            data[0] = ui16;
+            data[1] = ui16+24;
+            data[2] = ui16+48;
+            data[3] = ui16+72;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
-            data[0].Re = i8_real;
-            data[0].Im = i8_imag;
-            data[1].Re = i8_real+12;
-            data[1].Im = i8_imag+12;
-            data[2].Re = i8_real+24;
-            data[2].Im = i8_imag+24;
-            data[3].Re = i8_real+36;
-            data[3].Im = i8_imag+36;
+            data[0] = i8;
+            data[1] = i8+24;
+            data[2] = i8+48;
+            data[3] = i8+72;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
-            data[0].Re = ui8_real;
-            data[0].Im = ui8_imag;
-            data[1].Re = ui8_real+12;
-            data[1].Im = ui8_imag+12;
-            data[2].Re = ui8_real+24;
-            data[2].Im = ui8_imag+24;
-            data[3].Re = ui8_real+36;
-            data[3].Im = ui8_imag+36;
+            data[0] = ui8;
+            data[1] = ui8+24;
+            data[2] = ui8+48;
+            data[3] = ui8+72;
             data_type = MAT_T_UINT8;
             break;
         default:
@@ -2237,7 +2153,8 @@ test_struct_api_getlinear(void)
     int    err = 0, i;
     double    r[12] = {0,1,2,3,4,5,6,7,8,9,10,11},
               c[12] = {12,13,14,15,16,17,18,19,20,21,22,23};
-    mat_complex_split_t z[12];
+//    mat_complex_split_t z[12];
+    double* z[12]; // TODO Fix this test
     matvar_t *field, *matvar, *matvar2;
     const size_t num_fields = 3;
     const char *fieldnames[3] = {"r","c","z"};
@@ -2255,8 +2172,8 @@ test_struct_api_getlinear(void)
         field = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
                               dims,c+i,MAT_F_DONT_COPY_DATA);
         Mat_VarSetStructFieldByName(matvar, "c", i, field);
-        z[i].Re = r+i;
-        z[i].Im = c+i;
+//        z[i] = r+i;
+//        z[i].Im = c+i;
         field = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
                               dims,z+i,MAT_F_DONT_COPY_DATA|MAT_F_COMPLEX);
         Mat_VarSetStructFieldByName(matvar, "z", i, field);
@@ -2395,7 +2312,8 @@ test_cell_api_getlinear(void)
 {
     size_t dims[2], i;
     double    r[4] = {0,1,2,3},c[4] = {4,5,6,7};
-    mat_complex_split_t z[4];
+//    mat_complex_split_t z[4];
+    double* z[4];
     matvar_t *cell, *matvar, **cells;
 
     dims[0] = 3; dims[1] = 4;
@@ -2408,8 +2326,8 @@ test_cell_api_getlinear(void)
         cell = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
                              dims,c+i,MAT_F_DONT_COPY_DATA);
         Mat_VarSetCell(matvar, 3*i+1, cell);
-        z[i].Re = r+i;
-        z[i].Im = c+i;
+//        z[i] = r+i;
+//        z[i].Im = c+i;
         cell = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
                              dims,z+i,MAT_F_COMPLEX|MAT_F_DONT_COPY_DATA);
         Mat_VarSetCell(matvar, 3*i+2, cell);
@@ -2808,59 +2726,66 @@ test_write_sparse(enum matio_classes matvar_class,char *output_name)
 static int
 test_write_complex_sparse(enum matio_classes matvar_class,char *output_name)
 {
-    int    err = 0;
+    int    err = 0, i;
     size_t dims[2] = {5,10};
     mat_int32_t  ir[25] = {0,4,1,2,3,0,4,1,2,3,0,4,1,2,3,0,4,1,2,3,0,4,1,2,3};
     mat_int32_t  jc[11] = {0,2,5,7,10,12,15,17,20,22,25};
     mat_t *mat;
     matvar_t *matvar;
     mat_sparse_t  sparse = {0,};
-    mat_complex_split_t z = {NULL,NULL};
+    void *z = NULL;
     enum matio_types data_type;
-    double    d_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,37,
-                            38,39,41,45,47,48,49},
-              d_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,81,85,
-                            87,88,89,91,95,97,98,99};
-    float     f_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,37,
-                            38,39,41,45,47,48,49},
-              f_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,81,85,
-                            87,88,89,91,95,97,98,99};
-    mat_int32_t i32_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                                37,38,39,41,45,47,48,49},
-                i32_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,81,
-                                85,87,88,89,91,95,97,98,99};
-    mat_uint32_t ui32_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                                  37,38,39,41,45,47,48,49},
-                 ui32_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,
-                                  81,85,87,88,89,91,95,97,98,99};
-    mat_int16_t i16_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                                37,38,39,41,45,47,48,49},
-                i16_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,81,
-                                85,87,88,89,91,95,97,98,99};
-    mat_uint16_t ui16_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                                  37,38,39,41,45,47,48,49},
-                 ui16_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,
-                                  81,85,87,88,89,91,95,97,98,99};
-    mat_int8_t i8_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                              37,38,39,41,45,47,48,49},
-               i8_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,81,
-                              85,87,88,89,91,95,97,98,99};
+
+    double    d[50];
+    float     f[50];
+    mat_int32_t   i32[50];
+    mat_uint32_t ui32[50];
+    mat_int16_t   i16[50];
+    mat_uint16_t ui16[50];
+    mat_int8_t    i8[50];
+    mat_uint8_t  ui8[50];
+#ifdef HAVE_MAT_INT64_T
+    mat_int64_t i64[50];
+#endif
+#ifdef HAVE_MAT_UINT64_T
+    mat_uint64_t ui64[50];
+#endif
+
     mat_uint8_t ui8_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
                                 37,38,39,41,45,47,48,49},
                 ui8_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,
                                 81,85,87,88,89,91,95,97,98,99};
+
+
+    for ( i = 0; i < 25; i++ ) {
+    	int r_idx = i << 1;
+    	int i_idx = r_idx + 1;
+          d[r_idx] = ui8_real[i];
+          d[i_idx] = ui8_imag[i];
+          f[r_idx] = ui8_real[i];
+          f[i_idx] = ui8_imag[i];
+        i32[r_idx] = ui8_real[i];
+        i32[i_idx] = ui8_imag[i];
+       ui32[r_idx] = ui8_real[i];
+       ui32[i_idx] = ui8_imag[i];
+        i16[r_idx] = ui8_real[i];
+        i16[i_idx] = ui8_imag[i];
+       ui16[r_idx] = ui8_real[i];
+       ui16[i_idx] = ui8_imag[i];
+         i8[r_idx] = ui8_real[i];
+         i8[i_idx] = ui8_imag[i];
+        ui8[r_idx] = ui8_real[i];
+        ui8[i_idx] = ui8_imag[i];
 #ifdef HAVE_MAT_INT64_T
-    mat_int64_t i64_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                                37,38,39,41,45,47,48,49},
-                i64_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,81,
-                                85,87,88,89,91,95,97,98,99};
+        i64[r_idx] = ui8_real[i];
+        i64[i_idx] = ui8_imag[i];
 #endif
 #ifdef HAVE_MAT_UINT64_T
-    mat_uint64_t ui64_real[25] = {1,5,7,8,9,11,15,17,18,19,21,25,27,28,29,31,35,
-                                  37,38,39,41,45,47,48,49},
-                 ui64_imag[25] = {51,55,57,58,59,61,65,67,68,69,71,75,77,78,79,
-                                  81,85,87,88,89,91,95,97,98,99};
+        ui64[r_idx] = ui8_real[i];
+        ui64[i_idx] = ui8_imag[i];
 #endif
+    }
+
 
     sparse.nzmax = 25;
     sparse.nir   = 25;
@@ -2876,66 +2801,56 @@ test_write_complex_sparse(enum matio_classes matvar_class,char *output_name)
 
     switch (matvar_class) {
         case MAT_C_DOUBLE:
-            z.Re = d_real;
-            z.Im = d_imag;
+            z = d;
             sparse.data  = &z;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
-            z.Re = f_real;
-            z.Im = f_imag;
+            z = f;
             sparse.data  = &z;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
-            z.Re = i64_real;
-            z.Im = i64_imag;
+            z = i64;
             sparse.data  = &z;
             data_type = MAT_T_INT64;
             break;
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
-            z.Re = ui64_real;
-            z.Im = ui64_imag;
+            z = ui64;
             sparse.data  = &z;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
-            z.Re = i32_real;
-            z.Im = i32_imag;
+            z = i32;
             sparse.data  = &z;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
-            z.Re = ui32_real;
-            z.Im = ui32_imag;
+            z = ui32;
             sparse.data  = &z;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
-            z.Re = i16_real;
-            z.Im = i16_imag;
+            z = i16;
             sparse.data  = &z;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
-            z.Re = ui16_real;
-            z.Im = ui16_imag;
+            z = ui16;
             sparse.data  = &z;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
-            z.Re = i8_real;
-            z.Im = i8_imag;
+            z = i8;
             sparse.data  = &z;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
-            z.Re = ui8_real;
-            z.Im = ui8_imag;
+            z = ui8;
             sparse.data  = &z;
             data_type = MAT_T_UINT8;
             break;
