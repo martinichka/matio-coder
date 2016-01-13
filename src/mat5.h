@@ -34,6 +34,16 @@
 #   define EXTERN extern
 #endif
 
+/*
+ * Indicate which part of the complex data need to be used. If data is not complex
+ * it should always be NONE.
+ */
+enum mat_complex_mixed_part {
+	MAT_COMPLEX_MIXED_PART_NONE,
+	MAT_COMPLEX_MIXED_PART_REAL,
+	MAT_COMPLEX_MIXED_PART_IMAG
+};
+
 static size_t GetStructFieldBufSize(matvar_t *matvar);
 static size_t GetCellArrayFieldBufSize(matvar_t *matvar);
 static size_t GetMatrixMaxBufSize(matvar_t *matvar);
@@ -75,7 +85,7 @@ int       Mat_VarReadDataLinear5(mat_t *mat,matvar_t *matvar,void *data,
 int       Mat_VarWrite5(mat_t *mat,matvar_t *matvar,int compress);
 int       WriteCharDataSlab2(mat_t *mat,void *data,enum matio_types data_type,
               size_t *dims,int *start,int *stride,int *edge);
-int       WriteData(mat_t *mat,void *data,int N,enum matio_types data_type);
+int       WriteData(mat_t *mat,void *data,int N,enum matio_types data_type, enum mat_complex_mixed_part complex_part);
 int       WriteDataSlab2(mat_t *mat,void *data,enum matio_types data_type,
               size_t *dims,int *start,int *stride,int *edge);
 void      WriteInfo5(mat_t *mat, matvar_t *matvar);

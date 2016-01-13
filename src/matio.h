@@ -148,6 +148,7 @@ enum matio_compression {
     MAT_COMPRESSION_ZLIB = 1    /**< @brief zlib compression */
 };
 
+
 /** @brief matio lookup type
  *
  * @ingroup MAT

@@ -1520,10 +1520,11 @@ WriteCharDataSlab2(mat_t *mat,void *data,enum matio_types data_type,
  * @param data pointer to the data to write
  * @param N number of elements to write
  * @param data_type data type of the data
+ * @param complex_part indication of which part if the complex data to be used
  * @return number of bytes written
  */
 int
-WriteData(mat_t *mat,void *data,int N,enum matio_types data_type)
+WriteData(mat_t *mat,void *data,int N,enum matio_types data_type, enum mat_complex_mixed_part complex_part)
 {
     int nBytes = 0, data_size;
 
@@ -1535,8 +1536,30 @@ WriteData(mat_t *mat,void *data,int N,enum matio_types data_type)
     fwrite(&data_type,4,1,mat->fp);
     fwrite(&nBytes,4,1,mat->fp);
 
-    if ( data != NULL && N > 0 )
-        fwrite(data,data_size,N,mat->fp);
+    if ( data != NULL && N > 0 ) {
+    	int start;
+    	int jump;
+    	int i;
+    	switch (complex_part) {
+    		case MAT_COMPLEX_MIXED_PART_NONE:
+    			start = 0;
+    			jump = 1;
+    			break;
+    		case MAT_COMPLEX_MIXED_PART_REAL:
+    			start = 0;
+    			jump = 2;
+    			break;
+    		case MAT_COMPLEX_MIXED_PART_IMAG:
+    			start = 1;
+    			jump = 2;
+    			break;
+    	}
+    	for (i = 0; i < N; i++) {
+    		int idx = start + i * jump;
+    		void *p = data + idx * data_size;
+            fwrite(p,data_size,1,mat->fp);
+    	}
+    }
 
     return nBytes;
 }
@@ -2457,21 +2480,16 @@ WriteCellArrayField(mat_t *mat,matvar_t *matvar )
         case MAT_C_UINT8:
         {
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = matvar->data;
-
-                if ( NULL == matvar->data )
-                    complex_data = &null_complex_data;
-
-                nBytes=WriteData(mat,complex_data->Re,nmemb,matvar->data_type);
+                nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
-                nBytes=WriteData(mat,complex_data->Im,nmemb,matvar->data_type);
+                nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
             } else {
-                nBytes = WriteData(mat,matvar->data,nmemb,matvar->data_type);
+                nBytes = WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
@@ -2543,29 +2561,28 @@ WriteCellArrayField(mat_t *mat,matvar_t *matvar )
         {
             mat_sparse_t *sparse = matvar->data;
 
-            nBytes = WriteData(mat,sparse->ir,sparse->nir,MAT_T_INT32);
+            nBytes = WriteData(mat,sparse->ir,sparse->nir,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             if ( nBytes % 8 )
                 for ( i = nBytes % 8; i < 8; i++ )
                     fwrite(&pad1,1,1,mat->fp);
-            nBytes = WriteData(mat,sparse->jc,sparse->njc,MAT_T_INT32);
+            nBytes = WriteData(mat,sparse->jc,sparse->njc,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             if ( nBytes % 8 )
                 for ( i = nBytes % 8; i < 8; i++ )
                     fwrite(&pad1,1,1,mat->fp);
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = sparse->data;
-                nBytes = WriteData(mat,complex_data->Re,sparse->ndata,
-                                   matvar->data_type);
+                nBytes = WriteData(mat,sparse->data,sparse->ndata,
+                                   matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
-                nBytes = WriteData(mat,complex_data->Im,sparse->ndata,
-                                   matvar->data_type);
+                nBytes = WriteData(mat,sparse->data,sparse->ndata,
+                                   matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
             } else {
                 nBytes = WriteData(mat,sparse->data,sparse->ndata,
-                                   matvar->data_type);
+                                   matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
@@ -2899,21 +2916,16 @@ WriteStructField(mat_t *mat,matvar_t *matvar)
         case MAT_C_UINT8:
         {
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = matvar->data;
-
-                if ( NULL == matvar->data )
-                    complex_data = &null_complex_data;
-
-                nBytes=WriteData(mat,complex_data->Re,nmemb,matvar->data_type);
+                nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
-                nBytes=WriteData(mat,complex_data->Im,nmemb,matvar->data_type);
+                nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
             } else {
-                nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type);
+                nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
@@ -2988,29 +3000,28 @@ WriteStructField(mat_t *mat,matvar_t *matvar)
         {
             mat_sparse_t *sparse = matvar->data;
 
-            nBytes = WriteData(mat,sparse->ir,sparse->nir,MAT_T_INT32);
+            nBytes = WriteData(mat,sparse->ir,sparse->nir,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             if ( nBytes % 8 )
                 for ( i = nBytes % 8; i < 8; i++ )
                     fwrite(&pad1,1,1,mat->fp);
-            nBytes = WriteData(mat,sparse->jc,sparse->njc,MAT_T_INT32);
+            nBytes = WriteData(mat,sparse->jc,sparse->njc,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             if ( nBytes % 8 )
                 for ( i = nBytes % 8; i < 8; i++ )
                     fwrite(&pad1,1,1,mat->fp);
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = sparse->data;
-                nBytes = WriteData(mat,complex_data->Re,sparse->ndata,
-                                   matvar->data_type);
+                nBytes = WriteData(mat,sparse->data, sparse->ndata,
+                                   matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
-                nBytes = WriteData(mat,complex_data->Im,sparse->ndata,
-                                   matvar->data_type);
+                nBytes = WriteData(mat,sparse->data, sparse->ndata,
+                                   matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
             } else {
                 nBytes = WriteData(mat,sparse->data,sparse->ndata,
-                                   matvar->data_type);
+                                   matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
@@ -3331,7 +3342,7 @@ Mat_WriteEmptyVariable5(mat_t *mat,const char *name,int rank,size_t *dims)
         }
     }
 
-    nBytes = WriteData(mat,NULL,0,MAT_T_DOUBLE);
+    nBytes = WriteData(mat,NULL,0,MAT_T_DOUBLE, MAT_COMPLEX_MIXED_PART_NONE);
     byteswritten += nBytes;
     if ( nBytes % 8 )
         for ( i = nBytes % 8; i < 8; i++ )
@@ -5306,18 +5317,18 @@ Mat_VarWrite5(mat_t *mat,matvar_t *matvar,int compress)
                     if ( NULL == complex_data )
                         complex_data = &null_complex_data;
 
-                    nBytes = WriteData(mat,complex_data->Re,nmemb,
-                        matvar->data_type);
+                    nBytes = WriteData(mat,matvar->data, nmemb,
+                        matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                     if ( nBytes % 8 )
                         for ( i = nBytes % 8; i < 8; i++ )
                             fwrite(&pad1,1,1,mat->fp);
-                    nBytes = WriteData(mat,complex_data->Im,nmemb,
-                        matvar->data_type);
+                    nBytes = WriteData(mat,matvar->data, nmemb,
+                        matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                     if ( nBytes % 8 )
                         for ( i = nBytes % 8; i < 8; i++ )
                             fwrite(&pad1,1,1,mat->fp);
                 } else {
-                    nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type);
+                    nBytes=WriteData(mat,matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                     if ( nBytes % 8 )
                         for ( i = nBytes % 8; i < 8; i++ )
                             fwrite(&pad1,1,1,mat->fp);
@@ -5404,28 +5415,27 @@ Mat_VarWrite5(mat_t *mat,matvar_t *matvar,int compress)
             {
                 mat_sparse_t *sparse = matvar->data;
 
-                nBytes = WriteData(mat,sparse->ir,sparse->nir,MAT_T_INT32);
+                nBytes = WriteData(mat,sparse->ir,sparse->nir,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
-                nBytes = WriteData(mat,sparse->jc,sparse->njc,MAT_T_INT32);
+                nBytes = WriteData(mat,sparse->jc,sparse->njc,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( nBytes % 8 )
                     for ( i = nBytes % 8; i < 8; i++ )
                         fwrite(&pad1,1,1,mat->fp);
                 if ( matvar->isComplex ) {
-                    mat_complex_split_t *complex_data = sparse->data;
-                    nBytes = WriteData(mat,complex_data->Re,sparse->ndata,
-                        matvar->data_type);
+                    nBytes = WriteData(mat,sparse->data,sparse->ndata,
+                        matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                     if ( nBytes % 8 )
                         for ( i = nBytes % 8; i < 8; i++ )
                             fwrite(&pad1,1,1,mat->fp);
-                    nBytes = WriteData(mat,complex_data->Im,sparse->ndata,
-                        matvar->data_type);
+                    nBytes = WriteData(mat,sparse->data,sparse->ndata,
+                        matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                     if ( nBytes % 8 )
                         for ( i = nBytes % 8; i < 8; i++ )
                             fwrite(&pad1,1,1,mat->fp);
                 } else {
-                    nBytes = WriteData(mat,sparse->data,sparse->ndata,matvar->data_type);
+                    nBytes = WriteData(mat,sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                     if ( nBytes % 8 )
                         for ( i = nBytes % 8; i < 8; i++ )
                             fwrite(&pad1,1,1,mat->fp);

@@ -709,18 +709,12 @@ Mat_VarCreate(const char *name,enum matio_classes class_type,
         matvar->data = sparse_data;
     } else {
         if ( matvar->isComplex ) {
-            matvar->data   = malloc(sizeof(mat_complex_split_t));
-            if ( NULL != matvar->data && matvar->nbytes > 0 ) {
-                mat_complex_split_t *complex_data    = matvar->data;
-                mat_complex_split_t *complex_data_in = data;
-
-                complex_data->Re = malloc(matvar->nbytes);
-                complex_data->Im = malloc(matvar->nbytes);
-                if ( NULL != complex_data->Re )
-                    memcpy(complex_data->Re,complex_data_in->Re,matvar->nbytes);
-                if ( NULL != complex_data->Im )
-                    memcpy(complex_data->Im,complex_data_in->Im,matvar->nbytes);
-            }
+        	if ( matvar->nbytes > 0 ) {
+				matvar->data = malloc(matvar->nbytes * 2);
+				if ( NULL != matvar->data) {
+					memcpy(matvar->data, data, matvar->nbytes * 2);
+				}
+        	}
         } else if ( matvar->nbytes > 0 ) {
             matvar->data   = malloc(matvar->nbytes);
             if ( NULL != matvar->data )
@@ -966,12 +960,7 @@ Mat_VarFree(matvar_t *matvar)
                         free(sparse->ir);
                     if ( sparse->jc != NULL )
                         free(sparse->jc);
-                    if ( matvar->isComplex && NULL != sparse->data ) {
-                        mat_complex_split_t *complex_data = sparse->data;
-                        free(complex_data->Re);
-                        free(complex_data->Im);
-                        free(complex_data);
-                    } else if ( sparse->data != NULL ) {
+                    else if ( sparse->data != NULL ) {
                         free(sparse->data);
                     }
                     free(sparse);
@@ -989,14 +978,7 @@ Mat_VarFree(matvar_t *matvar)
             case MAT_C_UINT8:
             case MAT_C_CHAR:
                 if ( !matvar->mem_conserve && NULL != matvar->data ) {
-                    if ( matvar->isComplex ) {
-                        mat_complex_split_t *complex_data = matvar->data;
-                        free(complex_data->Re);
-                        free(complex_data->Im);
-                        free(complex_data);
-                    } else {
-                        free(matvar->data);
-                    }
+					free(matvar->data);
                 }
                 break;
             case MAT_C_EMPTY:
@@ -1770,7 +1752,7 @@ Mat_VarWriteData(mat_t *mat,matvar_t *matvar,void *data,
         for ( k = 0; k < matvar->rank; k++ )
             N *= matvar->dims[k];
         if ( matvar->compression == MAT_COMPRESSION_NONE )
-            WriteData(mat,data,N,matvar->data_type);
+            WriteData(mat,data,N,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
 #if 0
         else if ( matvar->compression == MAT_COMPRESSION_ZLIB ) {
             WriteCompressedData(mat,matvar->internal->z,data,N,matvar->data_type);

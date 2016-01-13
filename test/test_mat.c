@@ -902,14 +902,14 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
     switch (matvar_class) {
         case MAT_C_DOUBLE:
             z = d;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_DOUBLE,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_DOUBLE,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_SINGLE:
             z = f;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_SINGLE,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_SINGLE,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
@@ -917,7 +917,7 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
             z = i64;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT64,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT64,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
@@ -926,7 +926,7 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
             z = ui64;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT64,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT64,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
@@ -934,42 +934,42 @@ test_write_complex_2d_numeric(enum matio_classes matvar_class,char *output_name)
 #endif
         case MAT_C_INT32:
             z = i32;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT32,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT32,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_UINT32:
             z = ui32;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT32,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT32,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_INT16:
             z = i16;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT16,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT16,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_UINT16:
             z = ui16;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT16,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT16,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_INT8:
             z = i8;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT8,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_INT8,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
             break;
         case MAT_C_UINT8:
             z = ui8;
-            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT8,2,dims,&z,
+            matvar = Mat_VarCreate("a",matvar_class,MAT_T_UINT8,2,dims,z,
                                    MAT_F_COMPLEX);
             Mat_VarWrite(mat,matvar,compression);
             Mat_VarFree(matvar);
@@ -2802,56 +2802,56 @@ test_write_complex_sparse(enum matio_classes matvar_class,char *output_name)
     switch (matvar_class) {
         case MAT_C_DOUBLE:
             z = d;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
             z = f;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
             z = i64;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_INT64;
             break;
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
             z = ui64;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
             z = i32;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
             z = ui32;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
             z = i16;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
             z = ui16;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
             z = i8;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
             z = ui8;
-            sparse.data  = &z;
+            sparse.data  = z;
             data_type = MAT_T_UINT8;
             break;
        default:
