@@ -1272,23 +1272,23 @@ test_write_struct_2d_numeric(enum matio_classes matvar_class,
     switch (matvar_class) {
         case MAT_C_DOUBLE:
             data[0] = d;
-            data[1] = d+24;
-            data[2] = d+48;
+            data[1] = d+12;
+            data[2] = d+24;
             data[3] = d+36;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
             data[0] = f;
-            data[1] = f+24;
-            data[2] = f+48;
+            data[1] = f+12;
+            data[2] = f+24;
             data[3] = f+36;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
             data[0] = i64;
-            data[1] = i64+24;
-            data[2] = i64+48;
+            data[1] = i64+12;
+            data[2] = i64+24;
             data[3] = i64+36;
             data_type = MAT_T_INT64;
             break;
@@ -1296,51 +1296,51 @@ test_write_struct_2d_numeric(enum matio_classes matvar_class,
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
             data[0] = ui64;
-            data[1] = ui64+24;
-            data[2] = ui64+48;
+            data[1] = ui64+12;
+            data[2] = ui64+24;
             data[3] = ui64+36;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
             data[0] = i32;
-            data[1] = i32+24;
-            data[2] = i32+48;
+            data[1] = i32+12;
+            data[2] = i32+24;
             data[3] = i32+36;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
             data[0] = ui32;
-            data[1] = ui32+24;
-            data[2] = ui32+48;
+            data[1] = ui32+12;
+            data[2] = ui32+24;
             data[3] = ui32+36;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
             data[0] = i16;
-            data[1] = i16+24;
-            data[2] = i16+48;
+            data[1] = i16+12;
+            data[2] = i16+24;
             data[3] = i16+36;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
             data[0] = ui16;
-            data[1] = ui16+24;
-            data[2] = ui16+48;
+            data[1] = ui16+12;
+            data[2] = ui16+24;
             data[3] = ui16+36;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
             data[0] = i8;
-            data[1] = i8+24;
-            data[2] = i8+48;
+            data[1] = i8+12;
+            data[2] = i8+24;
             data[3] = i8+36;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
             data[0] = ui8;
-            data[1] = ui8+24;
-            data[2] = ui8+48;
+            data[1] = ui8+12;
+            data[2] = ui8+24;
             data[3] = ui8+36;
             data_type = MAT_T_UINT8;
             break;
@@ -1662,76 +1662,76 @@ test_write_cell_2d_numeric(enum matio_classes matvar_class,
     switch (matvar_class) {
         case MAT_C_DOUBLE:
             data[0] = d;
-            data[1] = d+24;
-            data[2] = d+48;
-            data[3] = d+72;
+            data[1] = d+12;
+            data[2] = d+24;
+            data[3] = d+36;
             data_type = MAT_T_DOUBLE;
             break;
         case MAT_C_SINGLE:
             data[0] = f;
-            data[1] = f+24;
-            data[2] = f+48;
-            data[3] = f+72;
+            data[1] = f+12;
+            data[2] = f+24;
+            data[3] = f+36;
             data_type = MAT_T_SINGLE;
             break;
 #ifdef HAVE_MAT_INT64_T
         case MAT_C_INT64:
             data[0] = i64;
-            data[1] = i64+24;
-            data[2] = i64+48;
-            data[3] = i64+72;
+            data[1] = i64+12;
+            data[2] = i64+24;
+            data[3] = i64+36;
             data_type = MAT_T_INT64;
             break;
 #endif
 #ifdef HAVE_MAT_UINT64_T
         case MAT_C_UINT64:
             data[0] = ui64;
-            data[1] = ui64+24;
-            data[2] = ui64+48;
-            data[3] = ui64+72;
+            data[1] = ui64+12;
+            data[2] = ui64+24;
+            data[3] = ui64+36;
             data_type = MAT_T_UINT64;
             break;
 #endif
         case MAT_C_INT32:
             data[0] = i32;
-            data[1] = i32+24;
-            data[2] = i32+48;
-            data[3] = i32+72;
+            data[1] = i32+12;
+            data[2] = i32+24;
+            data[3] = i32+36;
             data_type = MAT_T_INT32;
             break;
         case MAT_C_UINT32:
             data[0] = ui32;
-            data[1] = ui32+24;
-            data[2] = ui32+48;
-            data[3] = ui32+72;
+            data[1] = ui32+12;
+            data[2] = ui32+24;
+            data[3] = ui32+36;
             data_type = MAT_T_UINT32;
             break;
         case MAT_C_INT16:
             data[0] = i16;
-            data[1] = i16+24;
-            data[2] = i16+48;
-            data[3] = i16+72;
+            data[1] = i16+12;
+            data[2] = i16+24;
+            data[3] = i16+36;
             data_type = MAT_T_INT16;
             break;
         case MAT_C_UINT16:
             data[0] = ui16;
-            data[1] = ui16+24;
-            data[2] = ui16+48;
-            data[3] = ui16+72;
+            data[1] = ui16+12;
+            data[2] = ui16+24;
+            data[3] = ui16+36;
             data_type = MAT_T_UINT16;
             break;
         case MAT_C_INT8:
             data[0] = i8;
-            data[1] = i8+24;
-            data[2] = i8+48;
-            data[3] = i8+72;
+            data[1] = i8+12;
+            data[2] = i8+24;
+            data[3] = i8+36;
             data_type = MAT_T_INT8;
             break;
         case MAT_C_UINT8:
             data[0] = ui8;
-            data[1] = ui8+24;
-            data[2] = ui8+48;
-            data[3] = ui8+72;
+            data[1] = ui8+12;
+            data[2] = ui8+24;
+            data[3] = ui8+36;
             data_type = MAT_T_UINT8;
             break;
         default:
