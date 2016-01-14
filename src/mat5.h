@@ -64,7 +64,7 @@ static size_t WriteCompressedCharData(mat_t *mat,z_stream *z,void *data,int N,
 static int    WriteCompressedEmptyData(mat_t *mat,z_stream *z,int N,
                   enum matio_types data_type);
 static size_t WriteCompressedData(mat_t *mat,z_stream *z,void *data,int N,
-                  enum matio_types data_type);
+                  enum matio_types data_type, enum mat_complex_mixed_part complex_part);
 static size_t WriteCompressedCellArrayField(mat_t *mat,matvar_t *matvar,
                   z_stream *z);
 static size_t WriteCompressedStructField(mat_t *mat,matvar_t *matvar,

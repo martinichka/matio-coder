@@ -1568,7 +1568,7 @@ WriteData(mat_t *mat,void *data,int N,enum matio_types data_type, enum mat_compl
 /* Compresses the data buffer and writes it to the file */
 static size_t
 WriteCompressedData(mat_t *mat,z_stream *z,void *data,int N,
-    enum matio_types data_type)
+    enum matio_types data_type, enum mat_complex_mixed_part complex_part)
 {
     int nBytes = 0, data_size, data_tag[2], err, byteswritten = 0;
     int buf_size = 1024;
@@ -1592,14 +1592,37 @@ WriteCompressedData(mat_t *mat,z_stream *z,void *data,int N,
     if ( NULL == data || N < 1 )
         return byteswritten;
 
-    z->next_in   = data;
-    z->avail_in  = N*data_size;
-    do {
-        z->next_out  = buf;
-        z->avail_out = buf_size;
-        err = deflate(z,Z_NO_FLUSH);
-        byteswritten += fwrite(buf,1,buf_size-z->avail_out,mat->fp);
-    } while ( z->avail_out == 0 );
+	int start;
+	int jump;
+	int i;
+	switch (complex_part) {
+		case MAT_COMPLEX_MIXED_PART_NONE:
+			start = 0;
+			jump = 1;
+			break;
+		case MAT_COMPLEX_MIXED_PART_REAL:
+			start = 0;
+			jump = 2;
+			break;
+		case MAT_COMPLEX_MIXED_PART_IMAG:
+			start = 1;
+			jump = 2;
+			break;
+	}
+
+	for (i = 0; i < N; i++) { // for each value call deflate
+		int idx = start + i * jump;
+		void *p = data + idx * data_size;
+	    z->next_in   = p;
+	    z->avail_in  = data_size;
+		do {
+			z->next_out  = buf;
+			z->avail_out = buf_size;
+			err = deflate(z,Z_NO_FLUSH);
+			byteswritten += fwrite(buf,1,buf_size-z->avail_out,mat->fp);
+		} while ( z->avail_out == 0 );
+	}
+
     /* Add/Compress padding to pad to 8-byte boundary */
     if ( N*data_size % 8 ) {
         z->next_in   = pad;
@@ -2704,18 +2727,13 @@ WriteCompressedCellArrayField(mat_t *mat,matvar_t *matvar,z_stream *z)
             /* WriteCompressedData makes sure uncomressed data is aligned
              * on an 8-byte boundary */
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = matvar->data;
-
-                if ( NULL == matvar->data )
-                    complex_data = &null_complex_data;
-
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Re,nmemb,matvar->data_type);
+                		matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Im,nmemb,matvar->data_type);
+                		matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 byteswritten += WriteCompressedData(mat,z,
-                    matvar->data,nmemb,matvar->data_type);
+                    matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         }
@@ -2813,18 +2831,17 @@ WriteCompressedCellArrayField(mat_t *mat,matvar_t *matvar,z_stream *z)
             mat_sparse_t *sparse = matvar->data;
 
             byteswritten += WriteCompressedData(mat,z,sparse->ir,
-                sparse->nir,MAT_T_INT32);
+                sparse->nir,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             byteswritten += WriteCompressedData(mat,z,sparse->jc,
-                sparse->njc,MAT_T_INT32);
+                sparse->njc,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = sparse->data;
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Re,sparse->ndata,matvar->data_type);
+                		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Im,sparse->ndata,matvar->data_type);
+                		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 byteswritten += WriteCompressedData(mat,z,
-                    sparse->data,sparse->ndata,matvar->data_type);
+                		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         }
@@ -3149,18 +3166,13 @@ WriteCompressedStructField(mat_t *mat,matvar_t *matvar,z_stream *z)
             /* WriteCompressedData makes sure uncomressed data is aligned
              * on an 8-byte boundary */
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = matvar->data;
-
-                if ( NULL == matvar->data )
-                    complex_data = &null_complex_data;
-
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Re,nmemb,matvar->data_type);
+                		matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Im,nmemb,matvar->data_type);
+                		matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 byteswritten += WriteCompressedData(mat,z,
-                    matvar->data,nmemb,matvar->data_type);
+                    matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         }
@@ -3255,18 +3267,17 @@ WriteCompressedStructField(mat_t *mat,matvar_t *matvar,z_stream *z)
             mat_sparse_t *sparse = matvar->data;
 
             byteswritten += WriteCompressedData(mat,z,sparse->ir,
-                sparse->nir,MAT_T_INT32);
+                sparse->nir,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             byteswritten += WriteCompressedData(mat,z,sparse->jc,
-                sparse->njc,MAT_T_INT32);
+                sparse->njc,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = sparse->data;
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Re,sparse->ndata,matvar->data_type);
+                		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                 byteswritten += WriteCompressedData(mat,z,
-                    complex_data->Im,sparse->ndata,matvar->data_type);
+                		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 byteswritten += WriteCompressedData(mat,z,
-                    sparse->data,sparse->ndata,matvar->data_type);
+                    sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         }
@@ -3462,7 +3473,7 @@ Mat_WriteCompressedEmptyVariable5(mat_t *mat,const char *name,int rank,
         }
     }
 
-    byteswritten += WriteCompressedData(mat,z,NULL,0,MAT_T_DOUBLE);
+    byteswritten += WriteCompressedData(mat,z,NULL,0,MAT_T_DOUBLE, MAT_COMPLEX_MIXED_PART_NONE);
     return byteswritten;
 }
 #endif
@@ -5561,18 +5572,13 @@ Mat_VarWrite5(mat_t *mat,matvar_t *matvar,int compress)
                 /* WriteCompressedData makes sure uncomressed data is aligned
                  * on an 8-byte boundary */
                 if ( matvar->isComplex ) {
-                    mat_complex_split_t *complex_data = matvar->data;
-
-                    if ( NULL == matvar->data )
-                        complex_data = &null_complex_data;
-
                     byteswritten += WriteCompressedData(mat,matvar->internal->z,
-                        complex_data->Re,nmemb,matvar->data_type);
+                    		matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                     byteswritten += WriteCompressedData(mat,matvar->internal->z,
-                        complex_data->Im,nmemb,matvar->data_type);
+                    		matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                 } else {
                     byteswritten += WriteCompressedData(mat,matvar->internal->z,
-                        matvar->data,nmemb,matvar->data_type);
+                        matvar->data,nmemb,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                 }
                 break;
             }
@@ -5668,18 +5674,17 @@ Mat_VarWrite5(mat_t *mat,matvar_t *matvar,int compress)
                 mat_sparse_t *sparse = matvar->data;
 
                 byteswritten += WriteCompressedData(mat,matvar->internal->z,sparse->ir,
-                    sparse->nir,MAT_T_INT32);
+                    sparse->nir,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
                 byteswritten += WriteCompressedData(mat,matvar->internal->z,sparse->jc,
-                    sparse->njc,MAT_T_INT32);
+                    sparse->njc,MAT_T_INT32, MAT_COMPLEX_MIXED_PART_NONE);
                 if ( matvar->isComplex ) {
-                    mat_complex_split_t *complex_data = sparse->data;
                     byteswritten += WriteCompressedData(mat,matvar->internal->z,
-                        complex_data->Re,sparse->ndata,matvar->data_type);
+                    		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                     byteswritten += WriteCompressedData(mat,matvar->internal->z,
-                        complex_data->Im,sparse->ndata,matvar->data_type);
+                    		sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_IMAG);
                 } else {
                     byteswritten += WriteCompressedData(mat,matvar->internal->z,
-                        sparse->data,sparse->ndata,matvar->data_type);
+                        sparse->data,sparse->ndata,matvar->data_type, MAT_COMPLEX_MIXED_PART_NONE);
                 }
                 break;
             }
