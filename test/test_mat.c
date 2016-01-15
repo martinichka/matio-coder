@@ -1517,13 +1517,13 @@ test_write_struct_complex_2d_numeric(enum matio_classes matvar_class,
     dims[0] = 3;
     dims[1] = 4;
     matvar[0] = Mat_VarCreate("field1",matvar_class,data_type,2,
-                   dims,data,MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
+                   dims,data[0],MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
     matvar[1] = Mat_VarCreate("field2",matvar_class,data_type,2,
-                   dims,data+1,MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
+                   dims,data[1],MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
     matvar[2] = Mat_VarCreate("field1",matvar_class,data_type,2,
-                   dims,data+2,MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
+                   dims,data[2],MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
     matvar[3] = Mat_VarCreate("field2",matvar_class,data_type,2,
-                   dims,data+3,MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
+                   dims,data[3],MAT_F_DONT_COPY_DATA | MAT_F_COMPLEX);
     matvar[4] = NULL;
     dims[0] = 2;
     dims[1] = 1;

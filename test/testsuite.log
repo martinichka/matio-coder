@@ -71,7 +71,7 @@ Copyright(C) 2006-2012 Christopher C. Hulbert
 ## ------------------ ##
 ## Running the tests. ##
 ## ------------------ ##
-testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
+testsuite: starting at: Thu Jan 14 15:24:09 CET 2016
 1. Read 2d double-precision array (mat4_read.at:29): ok     (0m0.000s 0m0.000s)
 2. Read 2d double-precision complex array (mat4_read.at:47): ok     (0m0.000s 0m0.000s)
 3. Read 2D character array (mat4_read.at:65): ok     (0m0.000s 0m0.000s)
@@ -148,10 +148,10 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 74. Read cell array with 8-bit unsigned integer arrays (mat5_uncompressed_read_le.at:2375): ok     (0m0.000s 0m0.000s)
 75. Read cell array with logical arrays (mat5_uncompressed_read_le.at:2439): ok     (0m0.000s 0m0.000s)
 76. Read cell array with double-precision sparse arrays (mat5_uncompressed_read_le.at:2494): ok     (0m0.000s 0m0.000s)
-77. Read cell array with complex double-precision sparse arrays (mat5_uncompressed_read_le.at:2547): ok     (0m0.004s 0m0.000s)
-78. Read cell array with character arrays (mat5_uncompressed_read_le.at:2600): ok     (0m0.000s 0m0.004s)
+77. Read cell array with complex double-precision sparse arrays (mat5_uncompressed_read_le.at:2547): ok     (0m0.000s 0m0.000s)
+78. Read cell array with character arrays (mat5_uncompressed_read_le.at:2600): ok     (0m0.000s 0m0.000s)
 79. Read cell array with empty structure arrays (mat5_uncompressed_read_le.at:2641): ok     (0m0.000s 0m0.000s)
-80. Read cell array with structure arrays (numeric fields) (mat5_uncompressed_read_le.at:2701): ok     (0m0.000s 0m0.004s)
+80. Read cell array with structure arrays (numeric fields) (mat5_uncompressed_read_le.at:2701): ok     (0m0.000s 0m0.000s)
 81. Read cell array with structure arrays (sparse fields) (mat5_uncompressed_read_le.at:3554): ok     (0m0.000s 0m0.000s)
 82. Read cell array structure arrays (character fields) (mat5_uncompressed_read_le.at:3663): ok     (0m0.000s 0m0.000s)
 83. Read slab of double-precision array (mat5_uncompressed_readslab_le.at:1): ok     (0m0.000s 0m0.000s)
@@ -198,7 +198,7 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 124. Read 2D single-precision array (mat5_compressed_read_le.at:45): ok     (0m0.000s 0m0.000s)
 125. Read 2D 64-bit integer array (mat5_compressed_read_le.at:63): ok     (0m0.000s 0m0.000s)
 126. Read 2D 64-bit unsigned integer array (mat5_compressed_read_le.at:81): ok     (0m0.000s 0m0.000s)
-127. Read 2D 32-bit integer array (mat5_compressed_read_le.at:99): ok     (0m0.000s 0m0.000s)
+127. Read 2D 32-bit integer array (mat5_compressed_read_le.at:99): ok     (0m0.016s 0m0.000s)
 128. Read 2D 32-bit unsigned integer array (mat5_compressed_read_le.at:117): ok     (0m0.000s 0m0.000s)
 129. Read 2D 16-bit integer array (mat5_compressed_read_le.at:135): ok     (0m0.000s 0m0.000s)
 130. Read 2D 16-bit unsigned integer array (mat5_compressed_read_le.at:153): ok     (0m0.000s 0m0.000s)
@@ -244,67 +244,67 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 170. Read structure array with complex 8-bit unsigned integer fields (mat5_compressed_read_le.at:1497): ok     (0m0.000s 0m0.000s)
 171. Read structure array with logical fields (mat5_compressed_read_le.at:1547): ok     (0m0.004s 0m0.000s)
 172. Read structure array with double-precision sparse fields (mat5_compressed_read_le.at:1607): ok     (0m0.000s 0m0.000s)
-173. Read structure array with complex double-precision sparse fields (mat5_compressed_read_le.at:1663): ok     (0m0.000s 0m0.004s)
-174. Read structure array with character fields (mat5_compressed_read_le.at:1719): ok     (0m0.000s 0m0.000s)
+173. Read structure array with complex double-precision sparse fields (mat5_compressed_read_le.at:1663): ok     (0m0.000s 0m0.000s)
+174. Read structure array with character fields (mat5_compressed_read_le.at:1719): ok     (0m0.004s 0m0.000s)
 175. Read empty cell array (mat5_compressed_read_le.at:1765): ok     (0m0.000s 0m0.000s)
-176. Read cell array with empty arrays (mat5_compressed_read_le.at:1779): ok     (0m0.000s 0m0.000s)
+176. Read cell array with empty arrays (mat5_compressed_read_le.at:1779): ok     (0m0.004s 0m0.000s)
 177. Read cell array with double-precision arrays (mat5_compressed_read_le.at:1853): ok     (0m0.000s 0m0.000s)
-178. Read cell array with single-precision arrays (mat5_compressed_read_le.at:1918): ok     (0m0.004s 0m0.000s)
-179. Read cell array with 64-bit integer arrays (mat5_compressed_read_le.at:1983): ok     (0m0.000s 0m0.000s)
+178. Read cell array with single-precision arrays (mat5_compressed_read_le.at:1918): ok     (0m0.000s 0m0.004s)
+179. Read cell array with 64-bit integer arrays (mat5_compressed_read_le.at:1983): ok     (0m0.000s 0m0.004s)
 180. Read cell array with 64-bit unsigned integer arrays (mat5_compressed_read_le.at:2048): ok     (0m0.000s 0m0.004s)
-181. Read cell array with 32-bit integer arrays (mat5_compressed_read_le.at:2113): ok     (0m0.000s 0m0.000s)
+181. Read cell array with 32-bit integer arrays (mat5_compressed_read_le.at:2113): ok     (0m0.004s 0m0.000s)
 182. Read cell array with 32-bit unsigned integer arrays (mat5_compressed_read_le.at:2178): ok     (0m0.000s 0m0.004s)
 183. Read cell array with 16-bit integer arrays (mat5_compressed_read_le.at:2243): ok     (0m0.004s 0m0.000s)
 184. Read cell array with 16-bit unsigned integer arrays (mat5_compressed_read_le.at:2308): ok     (0m0.000s 0m0.004s)
-185. Read cell array with 8-bit integer arrays (mat5_compressed_read_le.at:2373): ok     (0m0.004s 0m0.000s)
-186. Read cell array with 8-bit unsigned integer arrays (mat5_compressed_read_le.at:2438): ok     (0m0.004s 0m0.000s)
+185. Read cell array with 8-bit integer arrays (mat5_compressed_read_le.at:2373): ok     (0m0.000s 0m0.004s)
+186. Read cell array with 8-bit unsigned integer arrays (mat5_compressed_read_le.at:2438): ok     (0m0.000s 0m0.004s)
 187. Read cell array with logical arrays (mat5_compressed_read_le.at:2503): ok     (0m0.004s 0m0.000s)
 188. Read cell array with double-precision sparse arrays (mat5_compressed_read_le.at:2559): ok     (0m0.004s 0m0.000s)
-189. Read cell array with complex double-precision sparse arrays (mat5_compressed_read_le.at:2613): ok     (0m0.000s 0m0.004s)
-190. Read cell array with character arrays (mat5_compressed_read_le.at:2667): ok     (0m0.000s 0m0.000s)
-191. Read cell array with empty structure arrays (mat5_compressed_read_le.at:2709): ok     (0m0.000s 0m0.000s)
+189. Read cell array with complex double-precision sparse arrays (mat5_compressed_read_le.at:2613): ok     (0m0.004s 0m0.000s)
+190. Read cell array with character arrays (mat5_compressed_read_le.at:2667): ok     (0m0.000s 0m0.004s)
+191. Read cell array with empty structure arrays (mat5_compressed_read_le.at:2709): ok     (0m0.000s 0m0.004s)
 192. Read cell array with structure arrays (numeric fields) (mat5_compressed_read_le.at:2770): ok     (0m0.004s 0m0.000s)
 193. Read cell array with structure arrays (sparse fields) (mat5_compressed_read_le.at:3624): ok     (0m0.004s 0m0.000s)
 194. Read cell array structure arrays (character fields) (mat5_compressed_read_le.at:3734): ok     (0m0.004s 0m0.000s)
 195. Read slab of double-precision array (mat5_compressed_readslab_le.at:1): ok     (0m0.004s 0m0.000s)
-196. Read slab of single-precision array (mat5_compressed_readslab_le.at:34): ok     (0m0.000s 0m0.004s)
-197. Read slab of 64-bit integer array (mat5_compressed_readslab_le.at:67): ok     (0m0.000s 0m0.004s)
+196. Read slab of single-precision array (mat5_compressed_readslab_le.at:34): ok     (0m0.004s 0m0.000s)
+197. Read slab of 64-bit integer array (mat5_compressed_readslab_le.at:67): ok     (0m0.004s 0m0.000s)
 198. Read slab of 64-bit unsigned integer array (mat5_compressed_readslab_le.at:100): ok     (0m0.004s 0m0.000s)
 199. Read slab of 32-bit integer array (mat5_compressed_readslab_le.at:133): ok     (0m0.004s 0m0.000s)
 200. Read slab of 32-bit unsigned integer array (mat5_compressed_readslab_le.at:166): ok     (0m0.004s 0m0.000s)
 201. Read slab of 16-bit integer array (mat5_compressed_readslab_le.at:199): ok     (0m0.004s 0m0.000s)
-202. Read slab of 16-bit unsigned integer array (mat5_compressed_readslab_le.at:232): ok     (0m0.004s 0m0.000s)
+202. Read slab of 16-bit unsigned integer array (mat5_compressed_readslab_le.at:232): ok     (0m0.000s 0m0.004s)
 203. Read slab of 8-bit integer array (mat5_compressed_readslab_le.at:265): ok     (0m0.000s 0m0.004s)
-204. Read slab of 8-bit unsigned integer array (mat5_compressed_readslab_le.at:298): ok     (0m0.000s 0m0.004s)
-205. Read slab of double-precision complex array (mat5_compressed_readslab_le.at:331): ok     (0m0.004s 0m0.004s)
-206. Read slab of single-precision complex array (mat5_compressed_readslab_le.at:364): ok     (0m0.008s 0m0.000s)
-207. Read slab of 64-bit integer complex array (mat5_compressed_readslab_le.at:397): ok     (0m0.008s 0m0.000s)
-208. Read slab of 64-bit unsigned integer complex array (mat5_compressed_readslab_le.at:430): ok     (0m0.004s 0m0.004s)
-209. Read slab of 32-bit integer complex array (mat5_compressed_readslab_le.at:463): ok     (0m0.004s 0m0.004s)
+204. Read slab of 8-bit unsigned integer array (mat5_compressed_readslab_le.at:298): ok     (0m0.004s 0m0.000s)
+205. Read slab of double-precision complex array (mat5_compressed_readslab_le.at:331): ok     (0m0.004s 0m0.000s)
+206. Read slab of single-precision complex array (mat5_compressed_readslab_le.at:364): ok     (0m0.000s 0m0.008s)
+207. Read slab of 64-bit integer complex array (mat5_compressed_readslab_le.at:397): ok     (0m0.004s 0m0.004s)
+208. Read slab of 64-bit unsigned integer complex array (mat5_compressed_readslab_le.at:430): ok     (0m0.008s 0m0.000s)
+209. Read slab of 32-bit integer complex array (mat5_compressed_readslab_le.at:463): ok     (0m0.000s 0m0.008s)
 210. Read slab of 32-bit unsigned integer complex array (mat5_compressed_readslab_le.at:496): ok     (0m0.008s 0m0.000s)
 211. Read slab of 16-bit integer complex array (mat5_compressed_readslab_le.at:529): ok     (0m0.004s 0m0.000s)
-212. Read slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_le.at:562): ok     (0m0.004s 0m0.000s)
-213. Read slab of 8-bit integer complex array (mat5_compressed_readslab_le.at:595): ok     (0m0.000s 0m0.004s)
+212. Read slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_le.at:562): ok     (0m0.000s 0m0.004s)
+213. Read slab of 8-bit integer complex array (mat5_compressed_readslab_le.at:595): ok     (0m0.004s 0m0.000s)
 214. Read slab of 8-bit unsigned integer complex array (mat5_compressed_readslab_le.at:628): ok     (0m0.004s 0m0.000s)
 215. Read linear slab of double-precision array (mat5_compressed_readslab_le.at:661): ok     (0m0.004s 0m0.000s)
 216. Read linear slab of single-precision array (mat5_compressed_readslab_le.at:694): ok     (0m0.004s 0m0.000s)
 217. Read linear slab of 64-bit integer array (mat5_compressed_readslab_le.at:727): ok     (0m0.004s 0m0.000s)
 218. Read linear slab of 64-bit unsigned integer array (mat5_compressed_readslab_le.at:760): ok     (0m0.004s 0m0.000s)
-219. Read linear slab of 32-bit integer array (mat5_compressed_readslab_le.at:793): ok     (0m0.000s 0m0.004s)
+219. Read linear slab of 32-bit integer array (mat5_compressed_readslab_le.at:793): ok     (0m0.004s 0m0.000s)
 220. Read linear slab of 32-bit unsigned integer array (mat5_compressed_readslab_le.at:826): ok     (0m0.004s 0m0.000s)
 221. Read linear slab of 16-bit integer array (mat5_compressed_readslab_le.at:859): ok     (0m0.004s 0m0.000s)
 222. Read linear slab of 16-bit unsigned integer array (mat5_compressed_readslab_le.at:892): ok     (0m0.004s 0m0.000s)
-223. Read linear slab of 8-bit integer array (mat5_compressed_readslab_le.at:925): ok     (0m0.000s 0m0.004s)
+223. Read linear slab of 8-bit integer array (mat5_compressed_readslab_le.at:925): ok     (0m0.004s 0m0.000s)
 224. Read linear slab of 8-bit unsigned integer array (mat5_compressed_readslab_le.at:958): ok     (0m0.004s 0m0.000s)
 225. Read linear slab of double-precision complex array (mat5_compressed_readslab_le.at:991): ok     (0m0.004s 0m0.000s)
 226. Read linear slab of single-precision complex array (mat5_compressed_readslab_le.at:1024): ok     (0m0.008s 0m0.000s)
 227. Read linear slab of 64-bit integer complex array (mat5_compressed_readslab_le.at:1057): ok     (0m0.008s 0m0.000s)
-228. Read linear slab of 64-bit unsigned integer complex array (mat5_compressed_readslab_le.at:1090): ok     (0m0.008s 0m0.000s)
+228. Read linear slab of 64-bit unsigned integer complex array (mat5_compressed_readslab_le.at:1090): ok     (0m0.000s 0m0.008s)
 229. Read linear slab of 32-bit integer complex array (mat5_compressed_readslab_le.at:1123): ok     (0m0.008s 0m0.000s)
-230. Read linear slab of 32-bit unsigned integer complex array (mat5_compressed_readslab_le.at:1156): ok     (0m0.008s 0m0.000s)
+230. Read linear slab of 32-bit unsigned integer complex array (mat5_compressed_readslab_le.at:1156): ok     (0m0.000s 0m0.008s)
 231. Read linear slab of 16-bit integer complex array (mat5_compressed_readslab_le.at:1189): ok     (0m0.004s 0m0.000s)
 232. Read linear slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_le.at:1222): ok     (0m0.004s 0m0.000s)
-233. Read linear slab of 8-bit integer complex array (mat5_compressed_readslab_le.at:1255): ok     (0m0.004s 0m0.000s)
+233. Read linear slab of 8-bit integer complex array (mat5_compressed_readslab_le.at:1255): ok     (0m0.000s 0m0.004s)
 234. Read linear slab of 8-bit unsigned integer complex array (mat5_compressed_readslab_le.at:1288): ok     (0m0.004s 0m0.000s)
 235. Read 2D double-precision array (mat5_uncompressed_read_be.at:27): ok     (0m0.000s 0m0.000s)
 236. Read 2D single-precision array (mat5_uncompressed_read_be.at:44): ok     (0m0.000s 0m0.000s)
@@ -438,7 +438,7 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 364. Read 2D 16-bit unsigned integer complex array (mat5_compressed_read_be.at:333): ok     (0m0.000s 0m0.000s)
 365. Read 2D 8-bit integer complex array (mat5_compressed_read_be.at:351): ok     (0m0.000s 0m0.000s)
 366. Read 2D 8-bit unsigned integer complex array (mat5_compressed_read_be.at:369): ok     (0m0.000s 0m0.000s)
-367. Read 2D logical array (mat5_compressed_read_be.at:387): ok     (0m0.004s 0m0.000s)
+367. Read 2D logical array (mat5_compressed_read_be.at:387): ok     (0m0.000s 0m0.004s)
 368. Read double-precision sparse array (mat5_compressed_read_be.at:406): ok     (0m0.000s 0m0.000s)
 369. Read double-precision sparse complex array (mat5_compressed_read_be.at:425): ok     (0m0.000s 0m0.000s)
 370. Read empty array (mat5_compressed_read_be.at:444): ok     (0m0.000s 0m0.000s)
@@ -465,71 +465,71 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 391. Read structure array with complex 16-bit integer fields (mat5_compressed_read_be.at:1328): ok     (0m0.000s 0m0.000s)
 392. Read structure array with complex 16-bit unsigned integer fields (mat5_compressed_read_be.at:1377): ok     (0m0.000s 0m0.000s)
 393. Read structure array with complex 8-bit integer fields (mat5_compressed_read_be.at:1426): ok     (0m0.000s 0m0.000s)
-394. Read structure array with complex 8-bit unsigned integer fields (mat5_compressed_read_be.at:1475): ok     (0m0.000s 0m0.000s)
-395. Read structure array with logical fields (mat5_compressed_read_be.at:1525): ok     (0m0.000s 0m0.004s)
+394. Read structure array with complex 8-bit unsigned integer fields (mat5_compressed_read_be.at:1475): ok     (0m0.004s 0m0.000s)
+395. Read structure array with logical fields (mat5_compressed_read_be.at:1525): ok     (0m0.004s 0m0.000s)
 396. Read structure array with double-precision sparse fields (mat5_compressed_read_be.at:1585): ok     (0m0.000s 0m0.000s)
 397. Read structure array with complex double-precision sparse fields (mat5_compressed_read_be.at:1641): ok     (0m0.000s 0m0.000s)
-398. Read structure array with character fields (mat5_compressed_read_be.at:1697): ok     (0m0.000s 0m0.000s)
+398. Read structure array with character fields (mat5_compressed_read_be.at:1697): ok     (0m0.004s 0m0.000s)
 399. Read empty cell array (mat5_compressed_read_be.at:1743): ok     (0m0.000s 0m0.000s)
-400. Read cell array with empty arrays (mat5_compressed_read_be.at:1757): ok     (0m0.000s 0m0.004s)
+400. Read cell array with empty arrays (mat5_compressed_read_be.at:1757): ok     (0m0.004s 0m0.000s)
 401. Read cell array with double-precision arrays (mat5_compressed_read_be.at:1831): ok     (0m0.000s 0m0.000s)
-402. Read cell array with single-precision arrays (mat5_compressed_read_be.at:1896): ok     (0m0.000s 0m0.000s)
+402. Read cell array with single-precision arrays (mat5_compressed_read_be.at:1896): ok     (0m0.004s 0m0.000s)
 403. Read cell array with 64-bit integer arrays (mat5_compressed_read_be.at:1961): ok     (0m0.000s 0m0.004s)
-404. Read cell array with 64-bit unsigned integer arrays (mat5_compressed_read_be.at:2026): ok     (0m0.000s 0m0.004s)
+404. Read cell array with 64-bit unsigned integer arrays (mat5_compressed_read_be.at:2026): ok     (0m0.000s 0m0.000s)
 405. Read cell array with 32-bit integer arrays (mat5_compressed_read_be.at:2091): ok     (0m0.004s 0m0.000s)
 406. Read cell array with 32-bit unsigned integer arrays (mat5_compressed_read_be.at:2156): ok     (0m0.000s 0m0.000s)
 407. Read cell array with 16-bit integer arrays (mat5_compressed_read_be.at:2221): ok     (0m0.004s 0m0.000s)
-408. Read cell array with 16-bit unsigned integer arrays (mat5_compressed_read_be.at:2286): ok     (0m0.004s 0m0.000s)
+408. Read cell array with 16-bit unsigned integer arrays (mat5_compressed_read_be.at:2286): ok     (0m0.000s 0m0.004s)
 409. Read cell array with 8-bit integer arrays (mat5_compressed_read_be.at:2351): ok     (0m0.000s 0m0.004s)
-410. Read cell array with 8-bit unsigned integer arrays (mat5_compressed_read_be.at:2416): ok     (0m0.004s 0m0.000s)
+410. Read cell array with 8-bit unsigned integer arrays (mat5_compressed_read_be.at:2416): ok     (0m0.000s 0m0.004s)
 411. Read cell array with logical arrays (mat5_compressed_read_be.at:2481): ok     (0m0.004s 0m0.000s)
 412. Read cell array with double-precision sparse arrays (mat5_compressed_read_be.at:2537): ok     (0m0.000s 0m0.004s)
-413. Read cell array with complex double-precision sparse arrays (mat5_compressed_read_be.at:2591): ok     (0m0.004s 0m0.000s)
+413. Read cell array with complex double-precision sparse arrays (mat5_compressed_read_be.at:2591): ok     (0m0.000s 0m0.004s)
 414. Read cell array with character arrays (mat5_compressed_read_be.at:2645): ok     (0m0.004s 0m0.000s)
-415. Read cell array with empty structure arrays (mat5_compressed_read_be.at:2687): ok     (0m0.004s 0m0.000s)
+415. Read cell array with empty structure arrays (mat5_compressed_read_be.at:2687): ok     (0m0.000s 0m0.004s)
 416. Read cell array with structure arrays (numeric fields) (mat5_compressed_read_be.at:2748): ok     (0m0.004s 0m0.000s)
-417. Read cell array with structure arrays (sparse fields) (mat5_compressed_read_be.at:3602): ok     (0m0.000s 0m0.004s)
-418. Read cell array structure arrays (character fields) (mat5_compressed_read_be.at:3712): ok     (0m0.004s 0m0.000s)
-419. Read slab of double-precision array (mat5_compressed_readslab_be.at:1): ok     (0m0.004s 0m0.000s)
+417. Read cell array with structure arrays (sparse fields) (mat5_compressed_read_be.at:3602): ok     (0m0.004s 0m0.000s)
+418. Read cell array structure arrays (character fields) (mat5_compressed_read_be.at:3712): ok     (0m0.000s 0m0.004s)
+419. Read slab of double-precision array (mat5_compressed_readslab_be.at:1): ok     (0m0.000s 0m0.004s)
 420. Read slab of single-precision array (mat5_compressed_readslab_be.at:34): ok     (0m0.004s 0m0.000s)
 421. Read slab of 64-bit integer array (mat5_compressed_readslab_be.at:67): ok     (0m0.004s 0m0.000s)
 422. Read slab of 64-bit unsigned integer array (mat5_compressed_readslab_be.at:100): ok     (0m0.004s 0m0.000s)
-423. Read slab of 32-bit integer array (mat5_compressed_readslab_be.at:133): ok     (0m0.000s 0m0.004s)
+423. Read slab of 32-bit integer array (mat5_compressed_readslab_be.at:133): ok     (0m0.004s 0m0.000s)
 424. Read slab of 32-bit unsigned integer array (mat5_compressed_readslab_be.at:166): ok     (0m0.004s 0m0.000s)
-425. Read slab of 16-bit integer array (mat5_compressed_readslab_be.at:199): ok     (0m0.000s 0m0.004s)
+425. Read slab of 16-bit integer array (mat5_compressed_readslab_be.at:199): ok     (0m0.004s 0m0.000s)
 426. Read slab of 16-bit unsigned integer array (mat5_compressed_readslab_be.at:232): ok     (0m0.004s 0m0.000s)
 427. Read slab of 8-bit integer array (mat5_compressed_readslab_be.at:265): ok     (0m0.004s 0m0.000s)
 428. Read slab of 8-bit unsigned integer array (mat5_compressed_readslab_be.at:298): ok     (0m0.004s 0m0.000s)
 429. Read slab of double-precision complex array (mat5_compressed_readslab_be.at:331): ok     (0m0.008s 0m0.000s)
-430. Read slab of single-precision complex array (mat5_compressed_readslab_be.at:364): ok     (0m0.000s 0m0.008s)
+430. Read slab of single-precision complex array (mat5_compressed_readslab_be.at:364): ok     (0m0.008s 0m0.000s)
 431. Read slab of 64-bit integer complex array (mat5_compressed_readslab_be.at:397): ok     (0m0.008s 0m0.000s)
 432. Read slab of 64-bit unsigned integer complex array (mat5_compressed_readslab_be.at:430): ok     (0m0.008s 0m0.000s)
-433. Read slab of 32-bit integer complex array (mat5_compressed_readslab_be.at:463): ok     (0m0.008s 0m0.000s)
+433. Read slab of 32-bit integer complex array (mat5_compressed_readslab_be.at:463): ok     (0m0.000s 0m0.008s)
 434. Read slab of 32-bit unsigned integer complex array (mat5_compressed_readslab_be.at:496): ok     (0m0.004s 0m0.004s)
-435. Read slab of 16-bit integer complex array (mat5_compressed_readslab_be.at:529): ok     (0m0.004s 0m0.000s)
-436. Read slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_be.at:562): ok     (0m0.004s 0m0.000s)
+435. Read slab of 16-bit integer complex array (mat5_compressed_readslab_be.at:529): ok     (0m0.000s 0m0.004s)
+436. Read slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_be.at:562): ok     (0m0.000s 0m0.004s)
 437. Read slab of 8-bit integer complex array (mat5_compressed_readslab_be.at:595): ok     (0m0.004s 0m0.000s)
-438. Read slab of 8-bit unsigned integer complex array (mat5_compressed_readslab_be.at:628): ok     (0m0.000s 0m0.004s)
+438. Read slab of 8-bit unsigned integer complex array (mat5_compressed_readslab_be.at:628): ok     (0m0.004s 0m0.000s)
 439. Read linear slab of double-precision array (mat5_compressed_readslab_be.at:661): ok     (0m0.004s 0m0.000s)
 440. Read linear slab of single-precision array (mat5_compressed_readslab_be.at:694): ok     (0m0.004s 0m0.000s)
 441. Read linear slab of 64-bit integer array (mat5_compressed_readslab_be.at:727): ok     (0m0.004s 0m0.000s)
 442. Read linear slab of 64-bit unsigned integer array (mat5_compressed_readslab_be.at:760): ok     (0m0.004s 0m0.000s)
-443. Read linear slab of 32-bit integer array (mat5_compressed_readslab_be.at:793): ok     (0m0.004s 0m0.000s)
-444. Read linear slab of 32-bit unsigned integer array (mat5_compressed_readslab_be.at:826): ok     (0m0.000s 0m0.004s)
+443. Read linear slab of 32-bit integer array (mat5_compressed_readslab_be.at:793): ok     (0m0.000s 0m0.004s)
+444. Read linear slab of 32-bit unsigned integer array (mat5_compressed_readslab_be.at:826): ok     (0m0.004s 0m0.000s)
 445. Read linear slab of 16-bit integer array (mat5_compressed_readslab_be.at:859): ok     (0m0.004s 0m0.000s)
-446. Read linear slab of 16-bit unsigned integer array (mat5_compressed_readslab_be.at:892): ok     (0m0.004s 0m0.000s)
+446. Read linear slab of 16-bit unsigned integer array (mat5_compressed_readslab_be.at:892): ok     (0m0.000s 0m0.004s)
 447. Read linear slab of 8-bit integer array (mat5_compressed_readslab_be.at:925): ok     (0m0.000s 0m0.004s)
 448. Read linear slab of 8-bit unsigned integer array (mat5_compressed_readslab_be.at:958): ok     (0m0.004s 0m0.000s)
 449. Read linear slab of double-precision complex array (mat5_compressed_readslab_be.at:991): ok     (0m0.004s 0m0.000s)
 450. Read linear slab of single-precision complex array (mat5_compressed_readslab_be.at:1024): ok     (0m0.000s 0m0.008s)
-451. Read linear slab of 64-bit integer complex array (mat5_compressed_readslab_be.at:1057): ok     (0m0.000s 0m0.008s)
+451. Read linear slab of 64-bit integer complex array (mat5_compressed_readslab_be.at:1057): ok     (0m0.008s 0m0.000s)
 452. Read linear slab of 64-bit unsigned integer complex array (mat5_compressed_readslab_be.at:1090): ok     (0m0.008s 0m0.000s)
 453. Read linear slab of 32-bit integer complex array (mat5_compressed_readslab_be.at:1123): ok     (0m0.004s 0m0.004s)
 454. Read linear slab of 32-bit unsigned integer complex array (mat5_compressed_readslab_be.at:1156): ok     (0m0.008s 0m0.000s)
-455. Read linear slab of 16-bit integer complex array (mat5_compressed_readslab_be.at:1189): ok     (0m0.000s 0m0.004s)
-456. Read linear slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_be.at:1222): ok     (0m0.000s 0m0.004s)
-457. Read linear slab of 8-bit integer complex array (mat5_compressed_readslab_be.at:1255): ok     (0m0.004s 0m0.000s)
-458. Read linear slab of 8-bit unsigned integer complex array (mat5_compressed_readslab_be.at:1288): ok     (0m0.000s 0m0.004s)
+455. Read linear slab of 16-bit integer complex array (mat5_compressed_readslab_be.at:1189): ok     (0m0.004s 0m0.000s)
+456. Read linear slab of 16-bit unsigned integer complex array (mat5_compressed_readslab_be.at:1222): ok     (0m0.004s 0m0.000s)
+457. Read linear slab of 8-bit integer complex array (mat5_compressed_readslab_be.at:1255): ok     (0m0.000s 0m0.004s)
+458. Read linear slab of 8-bit unsigned integer complex array (mat5_compressed_readslab_be.at:1288): ok     (0m0.004s 0m0.000s)
 459. Read 2D double-precision array (mat73_read_le.at:27): skipped (mat73_read_le.at:28)
 460. Read 2D single-precision array (mat73_read_le.at:45): skipped (mat73_read_le.at:46)
 461. Read 2D 64-bit integer array (mat73_read_le.at:63): skipped (mat73_read_le.at:64)
@@ -789,6 +789,16 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 715. Write structure array with 2D 16-bit unsigned integer fields (mat5_uncompressed_write.at:1867): skipped (mat5_uncompressed_write.at:1921)
 716. Write structure array with 2D 8-bit signed integer fields (mat5_uncompressed_write.at:1949): skipped (mat5_uncompressed_write.at:2003)
 717. Write structure array with 2D 8-bit unsigned integer fields (mat5_uncompressed_write.at:2031): skipped (mat5_uncompressed_write.at:2085)
+718. Write structure array with 2D double-precision complex fields (mat5_uncompressed_write.at:2113): skipped (mat5_uncompressed_write.at:2167)
+719. Write structure array with 2D single-precision complex fields (mat5_uncompressed_write.at:2195): skipped (mat5_uncompressed_write.at:2249)
+720. Write structure array with 2D 64-bit signed integer complex fields (mat5_uncompressed_write.at:2277): skipped (mat5_uncompressed_write.at:2332)
+721. Write structure array with 2D 64-bit unsigned integer complex fields (mat5_uncompressed_write.at:2360): skipped (mat5_uncompressed_write.at:2415)
+722. Write structure array with 2D 32-bit signed integer complex fields (mat5_uncompressed_write.at:2443): skipped (mat5_uncompressed_write.at:2497)
+723. Write structure array with 2D 32-bit unsigned integer complex fields (mat5_uncompressed_write.at:2525): skipped (mat5_uncompressed_write.at:2579)
+724. Write structure array with 2D 16-bit signed integer complex fields (mat5_uncompressed_write.at:2607): skipped (mat5_uncompressed_write.at:2661)
+725. Write structure array with 2D 16-bit unsigned integer complex fields (mat5_uncompressed_write.at:2689): skipped (mat5_uncompressed_write.at:2743)
+726. Write structure array with 2D 8-bit signed integer complex fields (mat5_uncompressed_write.at:2771): skipped (mat5_uncompressed_write.at:2825)
+727. Write structure array with 2D 8-bit unsigned integer complex fields (mat5_uncompressed_write.at:2853): skipped (mat5_uncompressed_write.at:2907)
 728. Write structure array with 2D logical fields (mat5_uncompressed_write.at:2935): skipped (mat5_uncompressed_write.at:2992)
 729. Write empty cell array (mat5_uncompressed_write.at:3020): skipped (mat5_uncompressed_write.at:3056)
 730. Write cell array with 2D double-precision fields (mat5_uncompressed_write.at:3079): skipped (mat5_uncompressed_write.at:3129)
@@ -838,6 +848,16 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 784. Write structure array with 2D 16-bit unsigned integer fields (mat5_compressed_write.at:1900): skipped (mat5_compressed_write.at:1955)
 785. Write structure array with 2D 8-bit signed integer fields (mat5_compressed_write.at:1983): skipped (mat5_compressed_write.at:2038)
 786. Write structure array with 2D 8-bit unsigned integer fields (mat5_compressed_write.at:2066): skipped (mat5_compressed_write.at:2121)
+787. Write structure array with 2D double-precision complex fields (mat5_compressed_write.at:2149): skipped (mat5_compressed_write.at:2204)
+788. Write structure array with 2D single-precision complex fields (mat5_compressed_write.at:2232): skipped (mat5_compressed_write.at:2287)
+789. Write structure array with 2D 64-bit signed integer complex fields (mat5_compressed_write.at:2315): skipped (mat5_compressed_write.at:2371)
+790. Write structure array with 2D 64-bit unsigned integer complex fields (mat5_compressed_write.at:2399): skipped (mat5_compressed_write.at:2455)
+791. Write structure array with 2D 32-bit signed integer complex fields (mat5_compressed_write.at:2483): skipped (mat5_compressed_write.at:2538)
+792. Write structure array with 2D 32-bit unsigned integer complex fields (mat5_compressed_write.at:2566): skipped (mat5_compressed_write.at:2621)
+793. Write structure array with 2D 16-bit signed integer complex fields (mat5_compressed_write.at:2649): skipped (mat5_compressed_write.at:2704)
+794. Write structure array with 2D 16-bit unsigned integer complex fields (mat5_compressed_write.at:2732): skipped (mat5_compressed_write.at:2787)
+795. Write structure array with 2D 8-bit signed integer complex fields (mat5_compressed_write.at:2815): skipped (mat5_compressed_write.at:2870)
+796. Write structure array with 2D 8-bit unsigned integer complex fields (mat5_compressed_write.at:2898): skipped (mat5_compressed_write.at:2953)
 797. Write structure array with 2D logical fields (mat5_compressed_write.at:2981): skipped (mat5_compressed_write.at:3039)
 798. Write empty cell array (mat5_compressed_write.at:3067): skipped (mat5_compressed_write.at:3104)
 799. Write cell array with 2D double-precision fields (mat5_compressed_write.at:3127): skipped (mat5_compressed_write.at:3178)
@@ -1068,16 +1088,16 @@ testsuite: starting at: Thu Jan 14 14:52:26 CET 2016
 1035. Index structure via dimension slices (struct_api.at:491): ok     (0m0.000s 0m0.000s)
 1036. Set cell array elements (cell_api.at:27): ok     (0m0.000s 0m0.000s)
 1038. Index cell array via dimension slices (cell_api.at:265): ok     (0m0.000s 0m0.000s)
-testsuite: ending at: Thu Jan 14 14:52:49 CET 2016
+testsuite: ending at: Thu Jan 14 15:24:32 CET 2016
 testsuite: test suite duration: 0h 0m 23s
 
 ## ------------- ##
 ## Test results. ##
 ## ------------- ##
 
-ERROR: 543 tests were run,
-42 failed unexpectedly.
-495 tests were skipped.
+ERROR: 523 tests were run,
+22 failed unexpectedly.
+515 tests were skipped.
 
 ## ------------------------ ##
 ## Summary of the failures. ##
@@ -1088,16 +1108,6 @@ MATIO 1.5.2 test suite: matio testsuite test groups:
  NUM: FILE-NAME:LINE     TEST-GROUP-NAME
       KEYWORDS
 
- 718: mat5_uncompressed_write.at:2113 Write structure array with 2D double-precision complex fields
- 719: mat5_uncompressed_write.at:2195 Write structure array with 2D single-precision complex fields
- 720: mat5_uncompressed_write.at:2277 Write structure array with 2D 64-bit signed integer complex fields
- 721: mat5_uncompressed_write.at:2360 Write structure array with 2D 64-bit unsigned integer complex fields
- 722: mat5_uncompressed_write.at:2443 Write structure array with 2D 32-bit signed integer complex fields
- 723: mat5_uncompressed_write.at:2525 Write structure array with 2D 32-bit unsigned integer complex fields
- 724: mat5_uncompressed_write.at:2607 Write structure array with 2D 16-bit signed integer complex fields
- 725: mat5_uncompressed_write.at:2689 Write structure array with 2D 16-bit unsigned integer complex fields
- 726: mat5_uncompressed_write.at:2771 Write structure array with 2D 8-bit signed integer complex fields
- 727: mat5_uncompressed_write.at:2853 Write structure array with 2D 8-bit unsigned integer complex fields
  740: mat5_uncompressed_write.at:3841 Write cell array with 2D double-precision complex fields
  741: mat5_uncompressed_write.at:3919 Write cell array with 2D single-precision complex fields
  742: mat5_uncompressed_write.at:3997 Write cell array with 2D 64-bit signed integer complex fields
@@ -1108,16 +1118,6 @@ MATIO 1.5.2 test suite: matio testsuite test groups:
  747: mat5_uncompressed_write.at:4389 Write cell array with 2D 16-bit unsigned integer complex fields
  748: mat5_uncompressed_write.at:4467 Write cell array with 2D 8-bit signed integer complex fields
  749: mat5_uncompressed_write.at:4545 Write cell array with 2D 8-bit unsigned integer complex fields
- 787: mat5_compressed_write.at:2149 Write structure array with 2D double-precision complex fields
- 788: mat5_compressed_write.at:2232 Write structure array with 2D single-precision complex fields
- 789: mat5_compressed_write.at:2315 Write structure array with 2D 64-bit signed integer complex fields
- 790: mat5_compressed_write.at:2399 Write structure array with 2D 64-bit unsigned integer complex fields
- 791: mat5_compressed_write.at:2483 Write structure array with 2D 32-bit signed integer complex fields
- 792: mat5_compressed_write.at:2566 Write structure array with 2D 32-bit unsigned integer complex fields
- 793: mat5_compressed_write.at:2649 Write structure array with 2D 16-bit signed integer complex fields
- 794: mat5_compressed_write.at:2732 Write structure array with 2D 16-bit unsigned integer complex fields
- 795: mat5_compressed_write.at:2815 Write structure array with 2D 8-bit signed integer complex fields
- 796: mat5_compressed_write.at:2898 Write structure array with 2D 8-bit unsigned integer complex fields
  809: mat5_compressed_write.at:3899 Write cell array with 2D double-precision complex fields
  810: mat5_compressed_write.at:3978 Write cell array with 2D single-precision complex fields
  811: mat5_compressed_write.at:4057 Write cell array with 2D 64-bit signed integer complex fields
@@ -1478,6 +1478,16 @@ MATIO 1.5.2 test suite: matio testsuite test groups:
  715: mat5_uncompressed_write.at:1867 Write structure array with 2D 16-bit unsigned integer fields
  716: mat5_uncompressed_write.at:1949 Write structure array with 2D 8-bit signed integer fields
  717: mat5_uncompressed_write.at:2031 Write structure array with 2D 8-bit unsigned integer fields
+ 718: mat5_uncompressed_write.at:2113 Write structure array with 2D double-precision complex fields
+ 719: mat5_uncompressed_write.at:2195 Write structure array with 2D single-precision complex fields
+ 720: mat5_uncompressed_write.at:2277 Write structure array with 2D 64-bit signed integer complex fields
+ 721: mat5_uncompressed_write.at:2360 Write structure array with 2D 64-bit unsigned integer complex fields
+ 722: mat5_uncompressed_write.at:2443 Write structure array with 2D 32-bit signed integer complex fields
+ 723: mat5_uncompressed_write.at:2525 Write structure array with 2D 32-bit unsigned integer complex fields
+ 724: mat5_uncompressed_write.at:2607 Write structure array with 2D 16-bit signed integer complex fields
+ 725: mat5_uncompressed_write.at:2689 Write structure array with 2D 16-bit unsigned integer complex fields
+ 726: mat5_uncompressed_write.at:2771 Write structure array with 2D 8-bit signed integer complex fields
+ 727: mat5_uncompressed_write.at:2853 Write structure array with 2D 8-bit unsigned integer complex fields
  728: mat5_uncompressed_write.at:2935 Write structure array with 2D logical fields
  729: mat5_uncompressed_write.at:3020 Write empty cell array
  730: mat5_uncompressed_write.at:3079 Write cell array with 2D double-precision fields
@@ -1527,6 +1537,16 @@ MATIO 1.5.2 test suite: matio testsuite test groups:
  784: mat5_compressed_write.at:1900 Write structure array with 2D 16-bit unsigned integer fields
  785: mat5_compressed_write.at:1983 Write structure array with 2D 8-bit signed integer fields
  786: mat5_compressed_write.at:2066 Write structure array with 2D 8-bit unsigned integer fields
+ 787: mat5_compressed_write.at:2149 Write structure array with 2D double-precision complex fields
+ 788: mat5_compressed_write.at:2232 Write structure array with 2D single-precision complex fields
+ 789: mat5_compressed_write.at:2315 Write structure array with 2D 64-bit signed integer complex fields
+ 790: mat5_compressed_write.at:2399 Write structure array with 2D 64-bit unsigned integer complex fields
+ 791: mat5_compressed_write.at:2483 Write structure array with 2D 32-bit signed integer complex fields
+ 792: mat5_compressed_write.at:2566 Write structure array with 2D 32-bit unsigned integer complex fields
+ 793: mat5_compressed_write.at:2649 Write structure array with 2D 16-bit signed integer complex fields
+ 794: mat5_compressed_write.at:2732 Write structure array with 2D 16-bit unsigned integer complex fields
+ 795: mat5_compressed_write.at:2815 Write structure array with 2D 8-bit signed integer complex fields
+ 796: mat5_compressed_write.at:2898 Write structure array with 2D 8-bit unsigned integer complex fields
  797: mat5_compressed_write.at:2981 Write structure array with 2D logical fields
  798: mat5_compressed_write.at:3067 Write empty cell array
  799: mat5_compressed_write.at:3127 Write cell array with 2D double-precision fields
@@ -1720,634 +1740,14 @@ MATIO 1.5.2 test suite: matio testsuite test groups:
 ## ---------------------- ##
 
 #                             -*- compilation -*-
-718. mat5_uncompressed_write.at:2113: testing Write structure array with 2D double-precision complex fields ...
-./mat5_uncompressed_write.at:2114: $builddir/test_mat -v 5 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2165: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.244425811 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/718/stdout	2016-01-14 14:52:41.252425812 +0100
-@@ -10,9 +10,9 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+6.95277e-310 + 6.95277e-310i 7.87394e-317 + 7.87406e-317i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 
-+6.95277e-310 + 6.95277e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+7.87274e-317 + 7.87286e-317i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+6.95277e-310 + 6.95277e-310i 7.87406e-317 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 
-+6.95277e-310 + 7.87274e-317i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+7.87286e-317 + 7.87394e-317i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+6.95277e-310 + 6.95277e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+7.87274e-317 + 7.87286e-317i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
-+7.87394e-317 + 7.87406e-317i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 3.56022e-307 + 4.00524e-307i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+6.95277e-310 + 7.87274e-317i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+7.87286e-317 + 7.87394e-317i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
-+7.87406e-317 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 4.00524e-307 + 4.45026e-307i 
- }
- }
-718. mat5_uncompressed_write.at:2113: 718. Write structure array with 2D double-precision complex fields (mat5_uncompressed_write.at:2113): FAILED (mat5_uncompressed_write.at:2165)
-
-#                             -*- compilation -*-
-719. mat5_uncompressed_write.at:2195: testing Write structure array with 2D single-precision complex fields ...
-./mat5_uncompressed_write.at:2196: $builddir/test_mat -v 5 -c single write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2247: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.276425812 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/719/stdout	2016-01-14 14:52:41.284425812 +0100
-@@ -10,9 +10,9 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-6.17589e-25 + 4.59135e-41i -6.17603e-25 + 4.59135e-41i 1.33477e-37 + 0i 0 + 0i 
-+-6.17594e-25 + 4.59135e-41i 1.3345e-37 + 0i 1.3348e-37 + 0i 4.68361e-39 + 4.77545e-39i 
-+-6.17598e-25 + 4.59135e-41i 1.33453e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-6.17594e-25 + 4.59135e-41i 1.3345e-37 + 0i 1.3348e-37 + 0i 4.68361e-39 + 4.77545e-39i 
-+-6.17598e-25 + 4.59135e-41i 1.33453e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+-6.17603e-25 + 4.59135e-41i 1.33477e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-6.17598e-25 + 4.59135e-41i 1.33453e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+-6.17603e-25 + 4.59135e-41i 1.33477e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+1.3345e-37 + 0i 1.3348e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-6.17603e-25 + 4.59135e-41i 1.33477e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+1.3345e-37 + 0i 1.3348e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
-+1.33453e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 5.41831e-39 + 5.51014e-39i 
- }
- }
-719. mat5_uncompressed_write.at:2195: 719. Write structure array with 2D single-precision complex fields (mat5_uncompressed_write.at:2195): FAILED (mat5_uncompressed_write.at:2247)
-
-#                             -*- compilation -*-
-720. mat5_uncompressed_write.at:2277: testing Write structure array with 2D 64-bit signed integer complex fields ...
-./mat5_uncompressed_write.at:2279: $builddir/test_mat -v 5 -c int64 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2330: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.312425813 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/720/stdout	2016-01-14 14:52:41.320425813 +0100
-@@ -10,9 +10,9 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140726457348048 + 140726457348240i 10874384 + 10874624i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140726457348432 + 140726457348624i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+10871952 + 10872192i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140726457348240 + 140726457348432i 10874624 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140726457348624 + 10871952i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+10872192 + 10874384i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140726457348432 + 140726457348624i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+10871952 + 10872192i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+10874384 + 10874624i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140726457348624 + 10871952i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+10872192 + 10874384i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+10874624 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
- }
- }
-720. mat5_uncompressed_write.at:2277: 720. Write structure array with 2D 64-bit signed integer complex fields (mat5_uncompressed_write.at:2277): FAILED (mat5_uncompressed_write.at:2330)
-
-#                             -*- compilation -*-
-721. mat5_uncompressed_write.at:2360: testing Write structure array with 2D 64-bit unsigned integer complex fields ...
-./mat5_uncompressed_write.at:2362: $builddir/test_mat -v 5 -c uint64 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2413: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.344425813 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/721/stdout	2016-01-14 14:52:41.356425813 +0100
-@@ -10,9 +10,9 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140729014999776 + 140729014999968i 28605968 + 28606208i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140729015000160 + 140729015000352i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+28603536 + 28603776i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140729014999968 + 140729015000160i 28606208 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140729015000352 + 28603536i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+28603776 + 28605968i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140729015000160 + 140729015000352i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+28603536 + 28603776i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+28605968 + 28606208i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140729015000352 + 28603536i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+28603776 + 28605968i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+28606208 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
- }
- }
-721. mat5_uncompressed_write.at:2360: 721. Write structure array with 2D 64-bit unsigned integer complex fields (mat5_uncompressed_write.at:2360): FAILED (mat5_uncompressed_write.at:2413)
-
-#                             -*- compilation -*-
-722. mat5_uncompressed_write.at:2443: testing Write structure array with 2D 32-bit signed integer complex fields ...
-./mat5_uncompressed_write.at:2444: $builddir/test_mat -v 5 -c int32 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2495: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.380425814 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/722/stdout	2016-01-14 14:52:41.388425814 +0100
-@@ -10,9 +10,9 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-1195508816 + 32765i -1195508528 + 32765i 7241232 + 0i 0 + 0i 
-+-1195508720 + 32765i 7238800 + 0i 7241472 + 0i 3342337 + 3407874i 
-+-1195508624 + 32765i 7239040 + 0i 0 + 0i 3473411 + 3538948i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-1195508720 + 32765i 7238800 + 0i 7241472 + 0i 3342337 + 3407874i 
-+-1195508624 + 32765i 7239040 + 0i 0 + 0i 3473411 + 3538948i 
-+-1195508528 + 32765i 7241232 + 0i 0 + 0i 3604485 + 3670022i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-1195508624 + 32765i 7239040 + 0i 0 + 0i 3473411 + 3538948i 
-+-1195508528 + 32765i 7241232 + 0i 0 + 0i 3604485 + 3670022i 
-+7238800 + 0i 7241472 + 0i 3342337 + 3407874i 3735559 + 3801096i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-1195508528 + 32765i 7241232 + 0i 0 + 0i 3604485 + 3670022i 
-+7238800 + 0i 7241472 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+7239040 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
- }
- }
-722. mat5_uncompressed_write.at:2443: 722. Write structure array with 2D 32-bit signed integer complex fields (mat5_uncompressed_write.at:2443): FAILED (mat5_uncompressed_write.at:2495)
-
-#                             -*- compilation -*-
-723. mat5_uncompressed_write.at:2525: testing Write structure array with 2D 32-bit unsigned integer complex fields ...
-./mat5_uncompressed_write.at:2526: $builddir/test_mat -v 5 -c uint32 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2577: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.416425815 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/723/stdout	2016-01-14 14:52:41.424425815 +0100
-@@ -10,9 +10,9 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+2645912592 + 32766i 2645912880 + 32766i 10833424 + 0i 0 + 0i 
-+2645912688 + 32766i 10830992 + 0i 10833664 + 0i 3342337 + 3407874i 
-+2645912784 + 32766i 10831232 + 0i 0 + 0i 3473411 + 3538948i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+2645912688 + 32766i 10830992 + 0i 10833664 + 0i 3342337 + 3407874i 
-+2645912784 + 32766i 10831232 + 0i 0 + 0i 3473411 + 3538948i 
-+2645912880 + 32766i 10833424 + 0i 0 + 0i 3604485 + 3670022i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+2645912784 + 32766i 10831232 + 0i 0 + 0i 3473411 + 3538948i 
-+2645912880 + 32766i 10833424 + 0i 0 + 0i 3604485 + 3670022i 
-+10830992 + 0i 10833664 + 0i 3342337 + 3407874i 3735559 + 3801096i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+2645912880 + 32766i 10833424 + 0i 0 + 0i 3604485 + 3670022i 
-+10830992 + 0i 10833664 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+10831232 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
- }
- }
-723. mat5_uncompressed_write.at:2525: 723. Write structure array with 2D 32-bit unsigned integer complex fields (mat5_uncompressed_write.at:2525): FAILED (mat5_uncompressed_write.at:2577)
-
-#                             -*- compilation -*-
-724. mat5_uncompressed_write.at:2607: testing Write structure array with 2D 16-bit signed integer complex fields ...
-./mat5_uncompressed_write.at:2608: $builddir/test_mat -v 5 -c int16 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2659: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.448425815 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/724/stdout	2016-01-14 14:52:41.456425815 +0100
-@@ -10,9 +10,9 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+31600 + 14080i 32765 + 0i 31744 + 14080i 0 + 0i 
-+32765 + 0i 31696 + 14080i 32765 + 0i 9600 + 295i 
-+31648 + 14080i 32765 + 0i 9360 + 295i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+31648 + 14080i 32765 + 0i 9360 + 295i 0 + 0i 
-+32765 + 0i 31744 + 14080i 0 + 0i 11792 + 295i 
-+31696 + 14080i 32765 + 0i 9600 + 295i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+31696 + 14080i 32765 + 0i 9600 + 295i 0 + 0i 
-+32765 + 0i 9360 + 295i 0 + 0i 12032 + 295i 
-+31744 + 14080i 0 + 0i 11792 + 295i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+31744 + 14080i 0 + 0i 11792 + 295i 0 + 0i 
-+32765 + 0i 9600 + 295i 0 + 0i 0 + 0i 
-+9360 + 295i 0 + 0i 12032 + 295i 0 + 0i 
- }
- }
-724. mat5_uncompressed_write.at:2607: 724. Write structure array with 2D 16-bit signed integer complex fields (mat5_uncompressed_write.at:2607): FAILED (mat5_uncompressed_write.at:2659)
-
-#                             -*- compilation -*-
-725. mat5_uncompressed_write.at:2689: testing Write structure array with 2D 16-bit unsigned integer complex fields ...
-./mat5_uncompressed_write.at:2690: $builddir/test_mat -v 5 -c uint16 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2741: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.484425816 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/725/stdout	2016-01-14 14:52:41.492425816 +0100
-@@ -10,9 +10,9 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+25024 + 43886i 32765 + 0i 25168 + 43886i 0 + 0i 
-+32765 + 0i 25120 + 43886i 32765 + 0i 54656 + 115i 
-+25072 + 43886i 32765 + 0i 54416 + 115i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+25072 + 43886i 32765 + 0i 54416 + 115i 0 + 0i 
-+32765 + 0i 25168 + 43886i 0 + 0i 56848 + 115i 
-+25120 + 43886i 32765 + 0i 54656 + 115i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+25120 + 43886i 32765 + 0i 54656 + 115i 0 + 0i 
-+32765 + 0i 54416 + 115i 0 + 0i 57088 + 115i 
-+25168 + 43886i 0 + 0i 56848 + 115i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+25168 + 43886i 0 + 0i 56848 + 115i 0 + 0i 
-+32765 + 0i 54656 + 115i 0 + 0i 0 + 0i 
-+54416 + 115i 0 + 0i 57088 + 115i 0 + 0i 
- }
- }
-725. mat5_uncompressed_write.at:2689: 725. Write structure array with 2D 16-bit unsigned integer complex fields (mat5_uncompressed_write.at:2689): FAILED (mat5_uncompressed_write.at:2741)
-
-#                             -*- compilation -*-
-726. mat5_uncompressed_write.at:2771: testing Write structure array with 2D 8-bit signed integer complex fields ...
-./mat5_uncompressed_write.at:2772: $builddir/test_mat -v 5 -c int8 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2823: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.516425816 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/726/stdout	2016-01-14 14:52:41.524425817 +0100
-@@ -10,9 +10,9 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+96 + -99i 0 + 0i -3 + 127i 104 + -98i 
-+104 + -98i 120 + -99i 0 + 0i -3 + 127i 
-+-3 + 127i 104 + -98i -112 + -99i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+120 + -99i 0 + 0i -3 + 127i 104 + -98i 
-+104 + -98i -112 + -99i 0 + 0i -3 + 127i 
-+-3 + 127i 104 + -98i -88 + -99i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-112 + -99i 0 + 0i -3 + 127i -49 + 0i 
-+104 + -98i -88 + -99i 0 + 0i 0 + 0i 
-+-3 + 127i 104 + -98i -112 + 52i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-88 + -99i 0 + 0i 0 + 0i -49 + 0i 
-+104 + -98i -112 + 52i 0 + 0i 0 + 0i 
-+-3 + 127i -49 + 0i -128 + 53i 0 + 0i 
- }
- }
-726. mat5_uncompressed_write.at:2771: 726. Write structure array with 2D 8-bit signed integer complex fields (mat5_uncompressed_write.at:2771): FAILED (mat5_uncompressed_write.at:2823)
-
-#                             -*- compilation -*-
-727. mat5_uncompressed_write.at:2853: testing Write structure array with 2D 8-bit unsigned integer complex fields ...
-./mat5_uncompressed_write.at:2854: $builddir/test_mat -v 5 -c uint8 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_uncompressed_write.at:2905: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:41.548425817 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/727/stdout	2016-01-14 14:52:41.560425817 +0100
-@@ -10,9 +10,9 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+16 + 45i 0 + 0i 255 + 127i 113 + 110i 
-+113 + 110i 40 + 45i 0 + 0i 255 + 127i 
-+255 + 127i 113 + 110i 64 + 45i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+40 + 45i 0 + 0i 255 + 127i 113 + 110i 
-+113 + 110i 64 + 45i 0 + 0i 255 + 127i 
-+255 + 127i 113 + 110i 88 + 45i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+64 + 45i 0 + 0i 255 + 127i 14 + 2i 
-+113 + 110i 88 + 45i 0 + 0i 0 + 0i 
-+255 + 127i 113 + 110i 144 + 244i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+88 + 45i 0 + 0i 0 + 0i 14 + 2i 
-+113 + 110i 144 + 244i 0 + 0i 0 + 0i 
-+255 + 127i 14 + 2i 128 + 245i 0 + 0i 
- }
- }
-727. mat5_uncompressed_write.at:2853: 727. Write structure array with 2D 8-bit unsigned integer complex fields (mat5_uncompressed_write.at:2853): FAILED (mat5_uncompressed_write.at:2905)
-
-#                             -*- compilation -*-
 740. mat5_uncompressed_write.at:3841: testing Write cell array with 2D double-precision complex fields ...
 ./mat5_uncompressed_write.at:3842: $builddir/test_mat -v 5 write_cell_complex_2d_numeric
 stderr:
 stdout:
 ./mat5_uncompressed_write.at:3889: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.024425826 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/740/stdout	2016-01-14 14:52:42.032425826 +0100
+--- expout	2016-01-14 15:24:24.776463672 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/740/stdout	2016-01-14 15:24:24.784463672 +0100
 @@ -9,35 +9,35 @@
  Class Type: Double Precision Array (complex)
   Data Type: IEEE 754 double-precision
@@ -2355,9 +1755,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+6.95331e-310 + 6.95331e-310i 1.28299e-316 + 1.283e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 
-+6.95331e-310 + 6.95331e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+1.28288e-316 + 1.28289e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
++6.95296e-310 + 6.95296e-310i 1.04177e-316 + 1.04178e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 
++6.95296e-310 + 6.95296e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
++1.04165e-316 + 1.04166e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2367,9 +1767,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+6.95331e-310 + 6.95331e-310i 1.283e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 
-+6.95331e-310 + 1.28288e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+1.28289e-316 + 1.28299e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
++6.95296e-310 + 6.95296e-310i 1.04178e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 
++6.95296e-310 + 1.04165e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
++1.04166e-316 + 1.04177e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2379,9 +1779,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+6.95331e-310 + 6.95331e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+1.28288e-316 + 1.28289e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
-+1.28299e-316 + 1.283e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 3.56022e-307 + 4.00524e-307i 
++6.95296e-310 + 6.95296e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
++1.04165e-316 + 1.04166e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
++1.04177e-316 + 1.04178e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 3.56022e-307 + 4.00524e-307i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2391,9 +1791,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+6.95331e-310 + 1.28288e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+1.28289e-316 + 1.28299e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
-+1.283e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 4.00524e-307 + 4.45026e-307i 
++6.95296e-310 + 1.04165e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
++1.04166e-316 + 1.04177e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
++1.04178e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 4.00524e-307 + 4.45026e-307i 
  }
  }
 740. mat5_uncompressed_write.at:3841: 740. Write cell array with 2D double-precision complex fields (mat5_uncompressed_write.at:3841): FAILED (mat5_uncompressed_write.at:3889)
@@ -2405,8 +1805,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:3967: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.060425826 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/741/stdout	2016-01-14 14:52:42.068425826 +0100
+--- expout	2016-01-14 15:24:24.808463673 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/741/stdout	2016-01-14 15:24:24.816463673 +0100
 @@ -9,35 +9,35 @@
  Class Type: Single Precision Array (complex)
   Data Type: IEEE 754 single-precision
@@ -2414,9 +1814,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+1.38039e-15 + 4.59135e-41i 1.38042e-15 + 4.59135e-41i 6.39602e-38 + 0i 0 + 0i 
-+1.3804e-15 + 4.59135e-41i 6.39469e-38 + 0i 6.39614e-38 + 0i 4.68361e-39 + 4.77545e-39i 
-+1.38041e-15 + 4.59135e-41i 6.39481e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
++6.00078e+25 + 4.59135e-41i 6.00092e+25 + 4.59135e-41i 1.2792e-37 + 0i 0 + 0i 
++6.00083e+25 + 4.59135e-41i 1.27894e-37 + 0i 1.27923e-37 + 0i 4.68361e-39 + 4.77545e-39i 
++6.00087e+25 + 4.59135e-41i 1.27896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2426,9 +1826,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+1.3804e-15 + 4.59135e-41i 6.39469e-38 + 0i 6.39614e-38 + 0i 4.68361e-39 + 4.77545e-39i 
-+1.38041e-15 + 4.59135e-41i 6.39481e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+1.38042e-15 + 4.59135e-41i 6.39602e-38 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
++6.00083e+25 + 4.59135e-41i 1.27894e-37 + 0i 1.27923e-37 + 0i 4.68361e-39 + 4.77545e-39i 
++6.00087e+25 + 4.59135e-41i 1.27896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
++6.00092e+25 + 4.59135e-41i 1.2792e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2438,9 +1838,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+1.38041e-15 + 4.59135e-41i 6.39481e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+1.38042e-15 + 4.59135e-41i 6.39602e-38 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+6.39469e-38 + 0i 6.39614e-38 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
++6.00087e+25 + 4.59135e-41i 1.27896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
++6.00092e+25 + 4.59135e-41i 1.2792e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
++1.27894e-37 + 0i 1.27923e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2450,9 +1850,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+1.38042e-15 + 4.59135e-41i 6.39602e-38 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+6.39469e-38 + 0i 6.39614e-38 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
-+6.39481e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 5.41831e-39 + 5.51014e-39i 
++6.00092e+25 + 4.59135e-41i 1.2792e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
++1.27894e-37 + 0i 1.27923e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
++1.27896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 5.41831e-39 + 5.51014e-39i 
  }
  }
 741. mat5_uncompressed_write.at:3919: 741. Write cell array with 2D single-precision complex fields (mat5_uncompressed_write.at:3919): FAILED (mat5_uncompressed_write.at:3967)
@@ -2464,8 +1864,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4046: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.096425827 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/742/stdout	2016-01-14 14:52:42.104425827 +0100
+--- expout	2016-01-14 15:24:24.844463673 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/742/stdout	2016-01-14 15:24:24.852463674 +0100
 @@ -9,35 +9,35 @@
  Class Type: 64-bit, signed integer array (complex)
   Data Type: 64-bit, signed integer
@@ -2473,9 +1873,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140725867437088 + 140725867437280i 11451840 + 11452048i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140725867437472 + 140725867437664i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+11449472 + 11449680i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++140724509284656 + 140724509284848i 29756864 + 29757072i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
++140724509285040 + 140724509285232i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++29754496 + 29754704i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2485,9 +1885,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140725867437280 + 140725867437472i 11452048 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140725867437664 + 11449472i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+11449680 + 11451840i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++140724509284848 + 140724509285040i 29757072 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
++140724509285232 + 29754496i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++29754704 + 29756864i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2497,9 +1897,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140725867437472 + 140725867437664i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+11449472 + 11449680i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+11451840 + 11452048i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
++140724509285040 + 140724509285232i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++29754496 + 29754704i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++29756864 + 29757072i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2509,9 +1909,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140725867437664 + 11449472i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+11449680 + 11451840i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+11452048 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
++140724509285232 + 29754496i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++29754704 + 29756864i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++29757072 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
  }
  }
 742. mat5_uncompressed_write.at:3997: 742. Write cell array with 2D 64-bit signed integer complex fields (mat5_uncompressed_write.at:3997): FAILED (mat5_uncompressed_write.at:4046)
@@ -2523,8 +1923,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4125: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.128425827 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/743/stdout	2016-01-14 14:52:42.136425828 +0100
+--- expout	2016-01-14 15:24:24.880463674 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/743/stdout	2016-01-14 15:24:24.888463674 +0100
 @@ -9,35 +9,35 @@
  Class Type: 64-bit, unsigned integer array (complex)
   Data Type: 64-bit, unsigned integer
@@ -2532,9 +1932,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140730492636320 + 140730492636512i 7433664 + 7433872i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140730492636704 + 140730492636896i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+7431296 + 7431504i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++140736901712640 + 140736901712832i 28110272 + 28110480i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
++140736901713024 + 140736901713216i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++28107904 + 28108112i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2544,9 +1944,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140730492636512 + 140730492636704i 7433872 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140730492636896 + 7431296i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+7431504 + 7433664i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++140736901712832 + 140736901713024i 28110480 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
++140736901713216 + 28107904i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++28108112 + 28110272i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2556,9 +1956,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140730492636704 + 140730492636896i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+7431296 + 7431504i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+7433664 + 7433872i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
++140736901713024 + 140736901713216i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++28107904 + 28108112i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++28110272 + 28110480i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2568,9 +1968,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140730492636896 + 7431296i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+7431504 + 7433664i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+7433872 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
++140736901713216 + 28107904i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++28108112 + 28110272i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++28110480 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
  }
  }
 743. mat5_uncompressed_write.at:4076: 743. Write cell array with 2D 64-bit unsigned integer complex fields (mat5_uncompressed_write.at:4076): FAILED (mat5_uncompressed_write.at:4125)
@@ -2582,8 +1982,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4203: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.164425828 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/744/stdout	2016-01-14 14:52:42.172425828 +0100
+--- expout	2016-01-14 15:24:24.912463675 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/744/stdout	2016-01-14 15:24:24.920463675 +0100
 @@ -9,35 +9,35 @@
  Class Type: 32-bit, signed integer array (complex)
   Data Type: 32-bit, signed integer
@@ -2591,9 +1991,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+902692544 + 32767i 902692832 + 32767i 35503552 + 0i 0 + 0i 
-+902692640 + 32767i 35501184 + 0i 35503760 + 0i 3342337 + 3407874i 
-+902692736 + 32767i 35501392 + 0i 0 + 0i 3473411 + 3538948i 
++1364844672 + 32766i 1364844960 + 32766i 33295808 + 0i 0 + 0i 
++1364844768 + 32766i 33293440 + 0i 33296016 + 0i 3342337 + 3407874i 
++1364844864 + 32766i 33293648 + 0i 0 + 0i 3473411 + 3538948i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2603,9 +2003,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+902692640 + 32767i 35501184 + 0i 35503760 + 0i 3342337 + 3407874i 
-+902692736 + 32767i 35501392 + 0i 0 + 0i 3473411 + 3538948i 
-+902692832 + 32767i 35503552 + 0i 0 + 0i 3604485 + 3670022i 
++1364844768 + 32766i 33293440 + 0i 33296016 + 0i 3342337 + 3407874i 
++1364844864 + 32766i 33293648 + 0i 0 + 0i 3473411 + 3538948i 
++1364844960 + 32766i 33295808 + 0i 0 + 0i 3604485 + 3670022i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2615,9 +2015,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+902692736 + 32767i 35501392 + 0i 0 + 0i 3473411 + 3538948i 
-+902692832 + 32767i 35503552 + 0i 0 + 0i 3604485 + 3670022i 
-+35501184 + 0i 35503760 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++1364844864 + 32766i 33293648 + 0i 0 + 0i 3473411 + 3538948i 
++1364844960 + 32766i 33295808 + 0i 0 + 0i 3604485 + 3670022i 
++33293440 + 0i 33296016 + 0i 3342337 + 3407874i 3735559 + 3801096i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2627,9 +2027,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+902692832 + 32767i 35503552 + 0i 0 + 0i 3604485 + 3670022i 
-+35501184 + 0i 35503760 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+35501392 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
++1364844960 + 32766i 33295808 + 0i 0 + 0i 3604485 + 3670022i 
++33293440 + 0i 33296016 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++33293648 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
  }
  }
 744. mat5_uncompressed_write.at:4155: 744. Write cell array with 2D 32-bit signed integer complex fields (mat5_uncompressed_write.at:4155): FAILED (mat5_uncompressed_write.at:4203)
@@ -2641,8 +2041,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4281: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.196425829 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/745/stdout	2016-01-14 14:52:42.204425829 +0100
+--- expout	2016-01-14 15:24:24.948463675 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/745/stdout	2016-01-14 15:24:24.956463676 +0100
 @@ -9,35 +9,35 @@
  Class Type: 32-bit, unsigned integer array (complex)
   Data Type: 32-bit, unsigned integer
@@ -2650,9 +2050,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+3214789456 + 32767i 3214789744 + 32767i 26144192 + 0i 0 + 0i 
-+3214789552 + 32767i 26141824 + 0i 26144400 + 0i 3342337 + 3407874i 
-+3214789648 + 32767i 26142032 + 0i 0 + 0i 3473411 + 3538948i 
++3236586144 + 32765i 3236586432 + 32765i 20733376 + 0i 0 + 0i 
++3236586240 + 32765i 20731008 + 0i 20733584 + 0i 3342337 + 3407874i 
++3236586336 + 32765i 20731216 + 0i 0 + 0i 3473411 + 3538948i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2662,9 +2062,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+3214789552 + 32767i 26141824 + 0i 26144400 + 0i 3342337 + 3407874i 
-+3214789648 + 32767i 26142032 + 0i 0 + 0i 3473411 + 3538948i 
-+3214789744 + 32767i 26144192 + 0i 0 + 0i 3604485 + 3670022i 
++3236586240 + 32765i 20731008 + 0i 20733584 + 0i 3342337 + 3407874i 
++3236586336 + 32765i 20731216 + 0i 0 + 0i 3473411 + 3538948i 
++3236586432 + 32765i 20733376 + 0i 0 + 0i 3604485 + 3670022i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2674,9 +2074,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+3214789648 + 32767i 26142032 + 0i 0 + 0i 3473411 + 3538948i 
-+3214789744 + 32767i 26144192 + 0i 0 + 0i 3604485 + 3670022i 
-+26141824 + 0i 26144400 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++3236586336 + 32765i 20731216 + 0i 0 + 0i 3473411 + 3538948i 
++3236586432 + 32765i 20733376 + 0i 0 + 0i 3604485 + 3670022i 
++20731008 + 0i 20733584 + 0i 3342337 + 3407874i 3735559 + 3801096i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2686,9 +2086,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+3214789744 + 32767i 26144192 + 0i 0 + 0i 3604485 + 3670022i 
-+26141824 + 0i 26144400 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+26142032 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
++3236586432 + 32765i 20733376 + 0i 0 + 0i 3604485 + 3670022i 
++20731008 + 0i 20733584 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++20731216 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
  }
  }
 745. mat5_uncompressed_write.at:4233: 745. Write cell array with 2D 32-bit unsigned integer complex fields (mat5_uncompressed_write.at:4233): FAILED (mat5_uncompressed_write.at:4281)
@@ -2700,8 +2100,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4359: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.232425829 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/746/stdout	2016-01-14 14:52:42.240425829 +0100
+--- expout	2016-01-14 15:24:24.984463676 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/746/stdout	2016-01-14 15:24:24.992463676 +0100
 @@ -9,35 +9,35 @@
  Class Type: 16-bit, signed integer array (complex)
   Data Type: 16-bit, signed integer
@@ -2709,9 +2109,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-18016 + 5514i 32766 + 0i -17872 + 5514i 0 + 0i 
-+32766 + 0i -17920 + 5514i 32766 + 0i -19120 + 512i 
-+-17968 + 5514i 32766 + 0i -19328 + 512i 0 + 0i 
++32 + -4261i 32767 + 0i 176 + -4261i 0 + 0i 
++32767 + 0i 128 + -4261i 32767 + 0i -2736 + 146i 
++80 + -4261i 32767 + 0i -2944 + 146i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2721,9 +2121,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-17968 + 5514i 32766 + 0i -19328 + 512i 0 + 0i 
-+32766 + 0i -17872 + 5514i 0 + 0i -16960 + 512i 
-+-17920 + 5514i 32766 + 0i -19120 + 512i 0 + 0i 
++80 + -4261i 32767 + 0i -2944 + 146i 0 + 0i 
++32767 + 0i 176 + -4261i 0 + 0i -576 + 146i 
++128 + -4261i 32767 + 0i -2736 + 146i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2733,9 +2133,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-17920 + 5514i 32766 + 0i -19120 + 512i 0 + 0i 
-+32766 + 0i -19328 + 512i 0 + 0i -16752 + 512i 
-+-17872 + 5514i 0 + 0i -16960 + 512i 0 + 0i 
++128 + -4261i 32767 + 0i -2736 + 146i 0 + 0i 
++32767 + 0i -2944 + 146i 0 + 0i -368 + 146i 
++176 + -4261i 0 + 0i -576 + 146i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2745,9 +2145,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-17872 + 5514i 0 + 0i -16960 + 512i 0 + 0i 
-+32766 + 0i -19120 + 512i 0 + 0i 0 + 0i 
-+-19328 + 512i 0 + 0i -16752 + 512i 0 + 0i 
++176 + -4261i 0 + 0i -576 + 146i 0 + 0i 
++32767 + 0i -2736 + 146i 0 + 0i 0 + 0i 
++-2944 + 146i 0 + 0i -368 + 146i 0 + 0i 
  }
  }
 746. mat5_uncompressed_write.at:4311: 746. Write cell array with 2D 16-bit signed integer complex fields (mat5_uncompressed_write.at:4311): FAILED (mat5_uncompressed_write.at:4359)
@@ -2759,8 +2159,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4437: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.268425830 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/747/stdout	2016-01-14 14:52:42.276425830 +0100
+--- expout	2016-01-14 15:24:25.016463677 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/747/stdout	2016-01-14 15:24:25.024463677 +0100
 @@ -9,35 +9,35 @@
  Class Type: 16-bit, unsigned integer array (complex)
   Data Type: 16-bit, unsigned integer
@@ -2768,9 +2168,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+15840 + 17499i 32766 + 0i 15984 + 17499i 0 + 0i 
-+32766 + 0i 15936 + 17499i 32766 + 0i 25936 + 293i 
-+15888 + 17499i 32766 + 0i 25728 + 293i 0 + 0i 
++7872 + 3035i 32766 + 0i 8016 + 3035i 0 + 0i 
++32766 + 0i 7968 + 3035i 32766 + 0i 46416 + 602i 
++7920 + 3035i 32766 + 0i 46208 + 602i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2780,9 +2180,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+15888 + 17499i 32766 + 0i 25728 + 293i 0 + 0i 
-+32766 + 0i 15984 + 17499i 0 + 0i 28096 + 293i 
-+15936 + 17499i 32766 + 0i 25936 + 293i 0 + 0i 
++7920 + 3035i 32766 + 0i 46208 + 602i 0 + 0i 
++32766 + 0i 8016 + 3035i 0 + 0i 48576 + 602i 
++7968 + 3035i 32766 + 0i 46416 + 602i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2792,9 +2192,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+15936 + 17499i 32766 + 0i 25936 + 293i 0 + 0i 
-+32766 + 0i 25728 + 293i 0 + 0i 28304 + 293i 
-+15984 + 17499i 0 + 0i 28096 + 293i 0 + 0i 
++7968 + 3035i 32766 + 0i 46416 + 602i 0 + 0i 
++32766 + 0i 46208 + 602i 0 + 0i 48784 + 602i 
++8016 + 3035i 0 + 0i 48576 + 602i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2804,9 +2204,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+15984 + 17499i 0 + 0i 28096 + 293i 0 + 0i 
-+32766 + 0i 25936 + 293i 0 + 0i 0 + 0i 
-+25728 + 293i 0 + 0i 28304 + 293i 0 + 0i 
++8016 + 3035i 0 + 0i 48576 + 602i 0 + 0i 
++32766 + 0i 46416 + 602i 0 + 0i 0 + 0i 
++46208 + 602i 0 + 0i 48784 + 602i 0 + 0i 
  }
  }
 747. mat5_uncompressed_write.at:4389: 747. Write cell array with 2D 16-bit unsigned integer complex fields (mat5_uncompressed_write.at:4389): FAILED (mat5_uncompressed_write.at:4437)
@@ -2818,8 +2218,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4515: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.300425830 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/748/stdout	2016-01-14 14:52:42.312425831 +0100
+--- expout	2016-01-14 15:24:25.052463678 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/748/stdout	2016-01-14 15:24:25.060463678 +0100
 @@ -9,35 +9,35 @@
  Class Type: 8-bit, signed integer array (complex)
   Data Type: 8-bit, signed integer
@@ -2827,9 +2227,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+32 + 61i 0 + 0i -3 + 127i 72 + -53i 
-+72 + -53i 56 + 61i 0 + 0i -3 + 127i 
-+-3 + 127i 72 + -53i 80 + 61i 0 + 0i 
++-112 + -40i 0 + 0i -3 + 127i -84 + 125i 
++-84 + 125i -88 + -40i 0 + 0i -3 + 127i 
++-3 + 127i -84 + 125i -64 + -40i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2839,9 +2239,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+56 + 61i 0 + 0i -3 + 127i 72 + -53i 
-+72 + -53i 80 + 61i 0 + 0i -3 + 127i 
-+-3 + 127i 72 + -53i 104 + 61i 0 + 0i 
++-88 + -40i 0 + 0i -3 + 127i -84 + 125i 
++-84 + 125i -64 + -40i 0 + 0i -3 + 127i 
++-3 + 127i -84 + 125i -40 + -40i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2851,9 +2251,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+80 + 61i 0 + 0i -3 + 127i -117 + 1i 
-+72 + -53i 104 + 61i 0 + 0i 0 + 0i 
-+-3 + 127i 72 + -53i -128 + -60i 0 + 0i 
++-64 + -40i 0 + 0i -3 + 127i 57 + 2i 
++-84 + 125i -40 + -40i 0 + 0i 0 + 0i 
++-3 + 127i -84 + 125i -128 + 20i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2863,9 +2263,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+104 + 61i 0 + 0i 0 + 0i -117 + 1i 
-+72 + -53i -128 + -60i 0 + 0i 0 + 0i 
-+-3 + 127i -117 + 1i 80 + -59i 0 + 0i 
++-40 + -40i 0 + 0i 0 + 0i 57 + 2i 
++-84 + 125i -128 + 20i 0 + 0i 0 + 0i 
++-3 + 127i 57 + 2i 80 + 21i 0 + 0i 
  }
  }
 748. mat5_uncompressed_write.at:4467: 748. Write cell array with 2D 8-bit signed integer complex fields (mat5_uncompressed_write.at:4467): FAILED (mat5_uncompressed_write.at:4515)
@@ -2877,8 +2277,8 @@ stderr:
 stdout:
 ./mat5_uncompressed_write.at:4593: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:42.336425831 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/749/stdout	2016-01-14 14:52:42.344425831 +0100
+--- expout	2016-01-14 15:24:25.084463678 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/749/stdout	2016-01-14 15:24:25.092463678 +0100
 @@ -9,35 +9,35 @@
  Class Type: 8-bit, unsigned integer array (complex)
   Data Type: 8-bit, unsigned integer
@@ -2886,9 +2286,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+96 + 216i 0 + 0i 253 + 127i 214 + 73i 
-+214 + 73i 120 + 216i 0 + 0i 253 + 127i 
-+253 + 127i 214 + 73i 144 + 216i 0 + 0i 
++240 + 183i 0 + 0i 253 + 127i 173 + 47i 
++173 + 47i 8 + 184i 0 + 0i 253 + 127i 
++253 + 127i 173 + 47i 32 + 184i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2898,9 +2298,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+120 + 216i 0 + 0i 253 + 127i 214 + 73i 
-+214 + 73i 144 + 216i 0 + 0i 253 + 127i 
-+253 + 127i 214 + 73i 168 + 216i 0 + 0i 
++8 + 184i 0 + 0i 253 + 127i 173 + 47i 
++173 + 47i 32 + 184i 0 + 0i 253 + 127i 
++253 + 127i 173 + 47i 56 + 184i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2910,9 +2310,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+144 + 216i 0 + 0i 253 + 127i 42 + 1i 
-+214 + 73i 168 + 216i 0 + 0i 0 + 0i 
-+253 + 127i 214 + 73i 128 + 244i 0 + 0i 
++32 + 184i 0 + 0i 253 + 127i 140 + 0i 
++173 + 47i 56 + 184i 0 + 0i 0 + 0i 
++253 + 127i 173 + 47i 128 + 116i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -2922,632 +2322,12 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+168 + 216i 0 + 0i 0 + 0i 42 + 1i 
-+214 + 73i 128 + 244i 0 + 0i 0 + 0i 
-+253 + 127i 42 + 1i 80 + 245i 0 + 0i 
++56 + 184i 0 + 0i 0 + 0i 140 + 0i 
++173 + 47i 128 + 116i 0 + 0i 0 + 0i 
++253 + 127i 140 + 0i 80 + 117i 0 + 0i 
  }
  }
 749. mat5_uncompressed_write.at:4545: 749. Write cell array with 2D 8-bit unsigned integer complex fields (mat5_uncompressed_write.at:4545): FAILED (mat5_uncompressed_write.at:4593)
-
-#                             -*- compilation -*-
-787. mat5_compressed_write.at:2149: testing Write structure array with 2D double-precision complex fields ...
-./mat5_compressed_write.at:2151: $builddir/test_mat -v 5 -z write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2202: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:43.848425858 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/787/stdout	2016-01-14 14:52:43.856425859 +0100
-@@ -10,9 +10,9 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+6.95299e-310 + 6.95299e-310i 1.92714e-316 + 1.92715e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 
-+6.95299e-310 + 6.95299e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+1.92702e-316 + 1.92703e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+6.95299e-310 + 6.95299e-310i 1.92715e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 
-+6.95299e-310 + 1.92702e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+1.92703e-316 + 1.92714e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+6.95299e-310 + 6.95299e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+1.92702e-316 + 1.92703e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
-+1.92714e-316 + 1.92715e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 3.56022e-307 + 4.00524e-307i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: Double Precision Array (complex)
-  Data Type: IEEE 754 double-precision
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+6.95299e-310 + 1.92702e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+1.92703e-316 + 1.92714e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
-+1.92715e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 4.00524e-307 + 4.45026e-307i 
- }
- }
-787. mat5_compressed_write.at:2149: 787. Write structure array with 2D double-precision complex fields (mat5_compressed_write.at:2149): FAILED (mat5_compressed_write.at:2202)
-
-#                             -*- compilation -*-
-788. mat5_compressed_write.at:2232: testing Write structure array with 2D single-precision complex fields ...
-./mat5_compressed_write.at:2234: $builddir/test_mat -v 5 -z -c single write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2285: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:43.884425859 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/788/stdout	2016-01-14 14:52:43.892425859 +0100
-@@ -10,9 +10,9 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-3.87917e+10 + 4.59149e-41i -3.87929e+10 + 4.59149e-41i 1.66674e-38 + 0i 0 + 0i 
-+-3.87921e+10 + 4.59149e-41i 1.6664e-38 + 0i 1.66678e-38 + 0i 4.68361e-39 + 4.77545e-39i 
-+-3.87925e+10 + 4.59149e-41i 1.66644e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-3.87921e+10 + 4.59149e-41i 1.6664e-38 + 0i 1.66678e-38 + 0i 4.68361e-39 + 4.77545e-39i 
-+-3.87925e+10 + 4.59149e-41i 1.66644e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+-3.87929e+10 + 4.59149e-41i 1.66674e-38 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-3.87925e+10 + 4.59149e-41i 1.66644e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+-3.87929e+10 + 4.59149e-41i 1.66674e-38 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+1.6664e-38 + 0i 1.66678e-38 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: Single Precision Array (complex)
-  Data Type: IEEE 754 single-precision
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-3.87929e+10 + 4.59149e-41i 1.66674e-38 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+1.6664e-38 + 0i 1.66678e-38 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
-+1.66644e-38 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 5.41831e-39 + 5.51014e-39i 
- }
- }
-788. mat5_compressed_write.at:2232: 788. Write structure array with 2D single-precision complex fields (mat5_compressed_write.at:2232): FAILED (mat5_compressed_write.at:2285)
-
-#                             -*- compilation -*-
-789. mat5_compressed_write.at:2315: testing Write structure array with 2D 64-bit signed integer complex fields ...
-./mat5_compressed_write.at:2318: $builddir/test_mat -v 5 -z -c int64 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2369: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:43.920425860 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/789/stdout	2016-01-14 14:52:43.928425860 +0100
-@@ -10,9 +10,9 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140735341192720 + 140735341192912i 24841744 + 24841984i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140735341193104 + 140735341193296i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+24839312 + 24839552i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140735341192912 + 140735341193104i 24841984 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140735341193296 + 24839312i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+24839552 + 24841744i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140735341193104 + 140735341193296i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+24839312 + 24839552i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+24841744 + 24841984i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 64-bit, signed integer array (complex)
-  Data Type: 64-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140735341193296 + 24839312i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+24839552 + 24841744i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+24841984 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
- }
- }
-789. mat5_compressed_write.at:2315: 789. Write structure array with 2D 64-bit signed integer complex fields (mat5_compressed_write.at:2315): FAILED (mat5_compressed_write.at:2369)
-
-#                             -*- compilation -*-
-790. mat5_compressed_write.at:2399: testing Write structure array with 2D 64-bit unsigned integer complex fields ...
-./mat5_compressed_write.at:2402: $builddir/test_mat -v 5 -z -c uint64 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2453: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:43.956425860 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/790/stdout	2016-01-14 14:52:43.964425860 +0100
-@@ -10,9 +10,9 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140727042691664 + 140727042691856i 39018000 + 39018240i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140727042692048 + 140727042692240i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+39015568 + 39015808i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140727042691856 + 140727042692048i 39018240 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140727042692240 + 39015568i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+39015808 + 39018000i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140727042692048 + 140727042692240i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+39015568 + 39015808i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+39018000 + 39018240i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 64-bit, unsigned integer array (complex)
-  Data Type: 64-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140727042692240 + 39015568i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+39015808 + 39018000i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+39018240 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
- }
- }
-790. mat5_compressed_write.at:2399: 790. Write structure array with 2D 64-bit unsigned integer complex fields (mat5_compressed_write.at:2399): FAILED (mat5_compressed_write.at:2453)
-
-#                             -*- compilation -*-
-791. mat5_compressed_write.at:2483: testing Write structure array with 2D 32-bit signed integer complex fields ...
-./mat5_compressed_write.at:2485: $builddir/test_mat -v 5 -z -c int32 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2536: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:43.992425861 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/791/stdout	2016-01-14 14:52:44.000425861 +0100
-@@ -10,9 +10,9 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-172184240 + 32765i -172183952 + 32765i 37707280 + 0i 0 + 0i 
-+-172184144 + 32765i 37704848 + 0i 37707520 + 0i 3342337 + 3407874i 
-+-172184048 + 32765i 37705088 + 0i 0 + 0i 3473411 + 3538948i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-172184144 + 32765i 37704848 + 0i 37707520 + 0i 3342337 + 3407874i 
-+-172184048 + 32765i 37705088 + 0i 0 + 0i 3473411 + 3538948i 
-+-172183952 + 32765i 37707280 + 0i 0 + 0i 3604485 + 3670022i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-172184048 + 32765i 37705088 + 0i 0 + 0i 3473411 + 3538948i 
-+-172183952 + 32765i 37707280 + 0i 0 + 0i 3604485 + 3670022i 
-+37704848 + 0i 37707520 + 0i 3342337 + 3407874i 3735559 + 3801096i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 32-bit, signed integer array (complex)
-  Data Type: 32-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-172183952 + 32765i 37707280 + 0i 0 + 0i 3604485 + 3670022i 
-+37704848 + 0i 37707520 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+37705088 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
- }
- }
-791. mat5_compressed_write.at:2483: 791. Write structure array with 2D 32-bit signed integer complex fields (mat5_compressed_write.at:2483): FAILED (mat5_compressed_write.at:2536)
-
-#                             -*- compilation -*-
-792. mat5_compressed_write.at:2566: testing Write structure array with 2D 32-bit unsigned integer complex fields ...
-./mat5_compressed_write.at:2568: $builddir/test_mat -v 5 -z -c uint32 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2619: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:44.024425862 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/792/stdout	2016-01-14 14:52:44.036425862 +0100
-@@ -10,9 +10,9 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+723440992 + 32765i 723441280 + 32765i 26816016 + 0i 0 + 0i 
-+723441088 + 32765i 26813584 + 0i 26816256 + 0i 3342337 + 3407874i 
-+723441184 + 32765i 26813824 + 0i 0 + 0i 3473411 + 3538948i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+723441088 + 32765i 26813584 + 0i 26816256 + 0i 3342337 + 3407874i 
-+723441184 + 32765i 26813824 + 0i 0 + 0i 3473411 + 3538948i 
-+723441280 + 32765i 26816016 + 0i 0 + 0i 3604485 + 3670022i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+723441184 + 32765i 26813824 + 0i 0 + 0i 3473411 + 3538948i 
-+723441280 + 32765i 26816016 + 0i 0 + 0i 3604485 + 3670022i 
-+26813584 + 0i 26816256 + 0i 3342337 + 3407874i 3735559 + 3801096i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 32-bit, unsigned integer array (complex)
-  Data Type: 32-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+723441280 + 32765i 26816016 + 0i 0 + 0i 3604485 + 3670022i 
-+26813584 + 0i 26816256 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+26813824 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
- }
- }
-792. mat5_compressed_write.at:2566: 792. Write structure array with 2D 32-bit unsigned integer complex fields (mat5_compressed_write.at:2566): FAILED (mat5_compressed_write.at:2619)
-
-#                             -*- compilation -*-
-793. mat5_compressed_write.at:2649: testing Write structure array with 2D 16-bit signed integer complex fields ...
-./mat5_compressed_write.at:2651: $builddir/test_mat -v 5 -z -c int16 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2702: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:44.060425862 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/793/stdout	2016-01-14 14:52:44.068425862 +0100
-@@ -10,9 +10,9 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+512 + -6178i 32766 + 0i 656 + -6178i 0 + 0i 
-+32766 + 0i 608 + -6178i 32766 + 0i 9600 + 307i 
-+560 + -6178i 32766 + 0i 9360 + 307i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+560 + -6178i 32766 + 0i 9360 + 307i 0 + 0i 
-+32766 + 0i 656 + -6178i 0 + 0i 11792 + 307i 
-+608 + -6178i 32766 + 0i 9600 + 307i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+608 + -6178i 32766 + 0i 9600 + 307i 0 + 0i 
-+32766 + 0i 9360 + 307i 0 + 0i 12032 + 307i 
-+656 + -6178i 0 + 0i 11792 + 307i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 16-bit, signed integer array (complex)
-  Data Type: 16-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+656 + -6178i 0 + 0i 11792 + 307i 0 + 0i 
-+32766 + 0i 9600 + 307i 0 + 0i 0 + 0i 
-+9360 + 307i 0 + 0i 12032 + 307i 0 + 0i 
- }
- }
-793. mat5_compressed_write.at:2649: 793. Write structure array with 2D 16-bit signed integer complex fields (mat5_compressed_write.at:2649): FAILED (mat5_compressed_write.at:2702)
-
-#                             -*- compilation -*-
-794. mat5_compressed_write.at:2732: testing Write structure array with 2D 16-bit unsigned integer complex fields ...
-./mat5_compressed_write.at:2734: $builddir/test_mat -v 5 -z -c uint16 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2785: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:44.096425863 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/794/stdout	2016-01-14 14:52:44.104425863 +0100
-@@ -10,9 +10,9 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+63712 + 51775i 32765 + 0i 63856 + 51775i 0 + 0i 
-+32765 + 0i 63808 + 51775i 32765 + 0i 46464 + 508i 
-+63760 + 51775i 32765 + 0i 46224 + 508i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+63760 + 51775i 32765 + 0i 46224 + 508i 0 + 0i 
-+32765 + 0i 63856 + 51775i 0 + 0i 48656 + 508i 
-+63808 + 51775i 32765 + 0i 46464 + 508i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+63808 + 51775i 32765 + 0i 46464 + 508i 0 + 0i 
-+32765 + 0i 46224 + 508i 0 + 0i 48896 + 508i 
-+63856 + 51775i 0 + 0i 48656 + 508i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 16-bit, unsigned integer array (complex)
-  Data Type: 16-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+63856 + 51775i 0 + 0i 48656 + 508i 0 + 0i 
-+32765 + 0i 46464 + 508i 0 + 0i 0 + 0i 
-+46224 + 508i 0 + 0i 48896 + 508i 0 + 0i 
- }
- }
-794. mat5_compressed_write.at:2732: 794. Write structure array with 2D 16-bit unsigned integer complex fields (mat5_compressed_write.at:2732): FAILED (mat5_compressed_write.at:2785)
-
-#                             -*- compilation -*-
-795. mat5_compressed_write.at:2815: testing Write structure array with 2D 8-bit signed integer complex fields ...
-./mat5_compressed_write.at:2817: $builddir/test_mat -v 5 -z -c int8 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2868: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:44.132425863 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/795/stdout	2016-01-14 14:52:44.140425864 +0100
-@@ -10,9 +10,9 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-48 + 110i 0 + 0i -2 + 127i 75 + 12i 
-+75 + 12i -24 + 110i 0 + 0i -2 + 127i 
-+-2 + 127i 75 + 12i 0 + 111i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-24 + 110i 0 + 0i -2 + 127i 75 + 12i 
-+75 + 12i 0 + 111i 0 + 0i -2 + 127i 
-+-2 + 127i 75 + 12i 24 + 111i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+0 + 111i 0 + 0i -2 + 127i -49 + 1i 
-+75 + 12i 24 + 111i 0 + 0i 0 + 0i 
-+-2 + 127i 75 + 12i -112 + -28i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 8-bit, signed integer array (complex)
-  Data Type: 8-bit, signed integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+24 + 111i 0 + 0i 0 + 0i -49 + 1i 
-+75 + 12i -112 + -28i 0 + 0i 0 + 0i 
-+-2 + 127i -49 + 1i -128 + -27i 0 + 0i 
- }
- }
-795. mat5_compressed_write.at:2815: 795. Write structure array with 2D 8-bit signed integer complex fields (mat5_compressed_write.at:2815): FAILED (mat5_compressed_write.at:2868)
-
-#                             -*- compilation -*-
-796. mat5_compressed_write.at:2898: testing Write structure array with 2D 8-bit unsigned integer complex fields ...
-./mat5_compressed_write.at:2900: $builddir/test_mat -v 5 -z -c uint8 write_struct_complex_2d_numeric
-stderr:
-stdout:
-./mat5_compressed_write.at:2951: $builddir/test_mat readvar test_write_struct_complex_2d_numeric.mat a
-stderr:
---- expout	2016-01-14 14:52:44.168425864 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/796/stdout	2016-01-14 14:52:44.176425864 +0100
-@@ -10,9 +10,9 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--1 + 51i 4 + 54i 7 + 57i 10 + 60i 
--2 + 52i 5 + 55i 8 + 58i 11 + 61i 
--3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+96 + 76i 0 + 0i 254 + 127i 247 + 197i 
-+247 + 197i 120 + 76i 0 + 0i 254 + 127i 
-+254 + 127i 247 + 197i 144 + 76i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -20,9 +20,9 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--13 + 63i 16 + 66i 19 + 69i 22 + 72i 
--14 + 64i 17 + 67i 20 + 70i 23 + 73i 
--15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+120 + 76i 0 + 0i 254 + 127i 247 + 197i 
-+247 + 197i 144 + 76i 0 + 0i 254 + 127i 
-+254 + 127i 247 + 197i 168 + 76i 0 + 0i 
- }
-       Name: field1
-       Rank: 2
-@@ -30,9 +30,9 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--25 + 75i 28 + 78i 31 + 81i 34 + 84i 
--26 + 76i 29 + 79i 32 + 82i 35 + 85i 
--27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+144 + 76i 0 + 0i 254 + 127i 27 + 1i 
-+247 + 197i 168 + 76i 0 + 0i 0 + 0i 
-+254 + 127i 247 + 197i 144 + 116i 0 + 0i 
- }
-       Name: field2
-       Rank: 2
-@@ -40,8 +40,8 @@
- Class Type: 8-bit, unsigned integer array (complex)
-  Data Type: 8-bit, unsigned integer
- {
--37 + 87i 40 + 90i 43 + 93i 46 + 96i 
--38 + 88i 41 + 91i 44 + 94i 47 + 97i 
--39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+168 + 76i 0 + 0i 0 + 0i 27 + 1i 
-+247 + 197i 144 + 116i 0 + 0i 0 + 0i 
-+254 + 127i 27 + 1i 128 + 117i 0 + 0i 
- }
- }
-796. mat5_compressed_write.at:2898: 796. Write structure array with 2D 8-bit unsigned integer complex fields (mat5_compressed_write.at:2898): FAILED (mat5_compressed_write.at:2951)
 
 #                             -*- compilation -*-
 809. mat5_compressed_write.at:3899: testing Write cell array with 2D double-precision complex fields ...
@@ -3556,8 +2336,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:3948: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.664425873 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/809/stdout	2016-01-14 14:52:44.672425873 +0100
+--- expout	2016-01-14 15:24:27.352463725 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/809/stdout	2016-01-14 15:24:27.360463725 +0100
 @@ -9,35 +9,35 @@
  Class Type: Double Precision Array (complex)
   Data Type: IEEE 754 double-precision
@@ -3565,9 +2345,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+6.95304e-310 + 6.95304e-310i 1.05735e-316 + 1.05736e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 
-+6.95304e-310 + 6.95304e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+1.05723e-316 + 1.05724e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
++6.95306e-310 + 6.95306e-310i 1.38559e-316 + 1.3856e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 
++6.95306e-310 + 6.95306e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
++1.38548e-316 + 1.38549e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3577,9 +2357,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+6.95304e-310 + 6.95304e-310i 1.05736e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 
-+6.95304e-310 + 1.05723e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+1.05724e-316 + 1.05735e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
++6.95306e-310 + 6.95306e-310i 1.3856e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 
++6.95306e-310 + 1.38548e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
++1.38549e-316 + 1.38559e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3589,9 +2369,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+6.95304e-310 + 6.95304e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
-+1.05723e-316 + 1.05724e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
-+1.05735e-316 + 1.05736e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 3.56022e-307 + 4.00524e-307i 
++6.95306e-310 + 6.95306e-310i 0 + 0i 1.55756e-307 + 1.66882e-307i 2.67013e-307 + 2.89264e-307i 
++1.38548e-316 + 1.38549e-316i 1.11254e-307 + 1.22379e-307i 1.78008e-307 + 2.00259e-307i 3.11515e-307 + 3.33766e-307i 
++1.38559e-316 + 1.3856e-316i 1.33505e-307 + 1.4463e-307i 2.2251e-307 + 2.44762e-307i 3.56022e-307 + 4.00524e-307i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3601,9 +2381,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+6.95304e-310 + 1.05723e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
-+1.05724e-316 + 1.05735e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
-+1.05736e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 4.00524e-307 + 4.45026e-307i 
++6.95306e-310 + 1.38548e-316i 0 + 1.11254e-307i 1.66882e-307 + 1.78008e-307i 2.89264e-307 + 3.11515e-307i 
++1.38549e-316 + 1.38559e-316i 1.22379e-307 + 1.33505e-307i 2.00259e-307 + 2.2251e-307i 3.33766e-307 + 3.56022e-307i 
++1.3856e-316 + 0i 1.4463e-307 + 1.55756e-307i 2.44762e-307 + 2.67013e-307i 4.00524e-307 + 4.45026e-307i 
  }
  }
 809. mat5_compressed_write.at:3899: 809. Write cell array with 2D double-precision complex fields (mat5_compressed_write.at:3899): FAILED (mat5_compressed_write.at:3948)
@@ -3615,8 +2395,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4027: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.700425874 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/810/stdout	2016-01-14 14:52:44.708425874 +0100
+--- expout	2016-01-14 15:24:27.388463726 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/810/stdout	2016-01-14 15:24:27.396463726 +0100
 @@ -9,35 +9,35 @@
  Class Type: Single Precision Array (complex)
   Data Type: IEEE 754 single-precision
@@ -3624,9 +2404,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+5.49755e-08 + 4.59163e-41i 5.49766e-08 + 4.59163e-41i 1.2241e-37 + 0i 0 + 0i 
-+5.49759e-08 + 4.59163e-41i 1.22384e-37 + 0i 1.22413e-37 + 0i 4.68361e-39 + 4.77545e-39i 
-+5.49762e-08 + 4.59163e-41i 1.22386e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
++-5.11133e+22 + 4.59121e-41i -5.11146e+22 + 4.59121e-41i 1.6392e-37 + 0i 0 + 0i 
++-5.11137e+22 + 4.59121e-41i 1.63893e-37 + 0i 1.63922e-37 + 0i 4.68361e-39 + 4.77545e-39i 
++-5.11141e+22 + 4.59121e-41i 1.63896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3636,9 +2416,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+5.49759e-08 + 4.59163e-41i 1.22384e-37 + 0i 1.22413e-37 + 0i 4.68361e-39 + 4.77545e-39i 
-+5.49762e-08 + 4.59163e-41i 1.22386e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+5.49766e-08 + 4.59163e-41i 1.2241e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
++-5.11137e+22 + 4.59121e-41i 1.63893e-37 + 0i 1.63922e-37 + 0i 4.68361e-39 + 4.77545e-39i 
++-5.11141e+22 + 4.59121e-41i 1.63896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
++-5.11146e+22 + 4.59121e-41i 1.6392e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3648,9 +2428,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+5.49762e-08 + 4.59163e-41i 1.22386e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
-+5.49766e-08 + 4.59163e-41i 1.2241e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+1.22384e-37 + 0i 1.22413e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
++-5.11141e+22 + 4.59121e-41i 1.63896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 
++-5.11146e+22 + 4.59121e-41i 1.6392e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
++1.63893e-37 + 0i 1.63922e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3660,9 +2440,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+5.49766e-08 + 4.59163e-41i 1.2241e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
-+1.22384e-37 + 0i 1.22413e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
-+1.22386e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 5.41831e-39 + 5.51014e-39i 
++-5.11146e+22 + 4.59121e-41i 1.6392e-37 + 0i 0 + 0i 5.05096e-39 + 5.1428e-39i 
++1.63893e-37 + 0i 1.63922e-37 + 0i 4.68361e-39 + 4.77545e-39i 5.23463e-39 + 5.32647e-39i 
++1.63896e-37 + 0i 0 + 0i 4.86729e-39 + 4.95912e-39i 5.41831e-39 + 5.51014e-39i 
  }
  }
 810. mat5_compressed_write.at:3978: 810. Write cell array with 2D single-precision complex fields (mat5_compressed_write.at:3978): FAILED (mat5_compressed_write.at:4027)
@@ -3674,8 +2454,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4107: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.736425874 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/811/stdout	2016-01-14 14:52:44.744425874 +0100
+--- expout	2016-01-14 15:24:27.424463727 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/811/stdout	2016-01-14 15:24:27.432463727 +0100
 @@ -9,35 +9,35 @@
  Class Type: 64-bit, signed integer array (complex)
   Data Type: 64-bit, signed integer
@@ -3683,9 +2463,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140722132257488 + 140722132257680i 31636928 + 31637136i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140722132257872 + 140722132258064i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+31634560 + 31634768i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++140727676274368 + 140727676274560i 11791808 + 11792016i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
++140727676274752 + 140727676274944i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++11789440 + 11789648i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3695,9 +2475,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140722132257680 + 140722132257872i 31637136 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140722132258064 + 31634560i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+31634768 + 31636928i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++140727676274560 + 140727676274752i 11792016 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
++140727676274944 + 11789440i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++11789648 + 11791808i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3707,9 +2487,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140722132257872 + 140722132258064i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+31634560 + 31634768i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+31636928 + 31637136i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
++140727676274752 + 140727676274944i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++11789440 + 11789648i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++11791808 + 11792016i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3719,9 +2499,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140722132258064 + 31634560i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+31634768 + 31636928i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+31637136 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
++140727676274944 + 11789440i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++11789648 + 11791808i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++11792016 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
  }
  }
 811. mat5_compressed_write.at:4057: 811. Write cell array with 2D 64-bit signed integer complex fields (mat5_compressed_write.at:4057): FAILED (mat5_compressed_write.at:4107)
@@ -3733,8 +2513,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4187: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.772425875 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/812/stdout	2016-01-14 14:52:44.784425875 +0100
+--- expout	2016-01-14 15:24:27.460463727 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/812/stdout	2016-01-14 15:24:27.468463727 +0100
 @@ -9,35 +9,35 @@
  Class Type: 64-bit, unsigned integer array (complex)
   Data Type: 64-bit, unsigned integer
@@ -3742,9 +2522,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+140723630860480 + 140723630860672i 39644608 + 39644816i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
-+140723630860864 + 140723630861056i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+39642240 + 39642448i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++140732135328800 + 140732135328992i 10075584 + 10075792i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 
++140732135329184 + 140732135329376i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++10073216 + 10073424i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3754,9 +2534,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+140723630860672 + 140723630860864i 39644816 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
-+140723630861056 + 39642240i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+39642448 + 39644608i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++140732135328992 + 140732135329184i 10075792 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 
++140732135329376 + 10073216i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++10073424 + 10075584i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3766,9 +2546,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+140723630860864 + 140723630861056i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
-+39642240 + 39642448i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
-+39644608 + 39644816i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
++140732135329184 + 140732135329376i 0 + 0i 16888541556178953 + 17451500099665931i 20266292817100821 + 20829251360587799i 
++10073216 + 10073424i 14636707382231041 + 15199665925718019i 18014458643152909 + 18577417186639887i 21392209904074777 + 21955168447561755i 
++10075584 + 10075792i 15762624469204997 + 16325583012691975i 19140375730126865 + 19703334273613843i 22518126991048733 + 23081085534535711i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3778,9 +2558,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+140723630861056 + 39642240i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
-+39642448 + 39644608i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
-+39644816 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
++140732135329376 + 10073216i 0 + 14636707382231041i 17451500099665931 + 18014458643152909i 20829251360587799 + 21392209904074777i 
++10073424 + 10075584i 15199665925718019 + 15762624469204997i 18577417186639887 + 19140375730126865i 21955168447561755 + 22518126991048733i 
++10075792 + 0i 16325583012691975 + 16888541556178953i 19703334273613843 + 20266292817100821i 23081085534535711 + 23644044078022689i 
  }
  }
 812. mat5_compressed_write.at:4137: 812. Write cell array with 2D 64-bit unsigned integer complex fields (mat5_compressed_write.at:4137): FAILED (mat5_compressed_write.at:4187)
@@ -3792,8 +2572,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4266: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.812425876 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/813/stdout	2016-01-14 14:52:44.820425876 +0100
+--- expout	2016-01-14 15:24:27.496463728 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/813/stdout	2016-01-14 15:24:27.504463728 +0100
 @@ -9,35 +9,35 @@
  Class Type: 32-bit, signed integer array (complex)
   Data Type: 32-bit, signed integer
@@ -3801,9 +2581,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-300875904 + 32765i -300875616 + 32765i 7904704 + 0i 0 + 0i 
-+-300875808 + 32765i 7902336 + 0i 7904912 + 0i 3342337 + 3407874i 
-+-300875712 + 32765i 7902544 + 0i 0 + 0i 3473411 + 3538948i 
++-271335744 + 32766i -271335456 + 32766i 39722432 + 0i 0 + 0i 
++-271335648 + 32766i 39720064 + 0i 39722640 + 0i 3342337 + 3407874i 
++-271335552 + 32766i 39720272 + 0i 0 + 0i 3473411 + 3538948i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3813,9 +2593,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-300875808 + 32765i 7902336 + 0i 7904912 + 0i 3342337 + 3407874i 
-+-300875712 + 32765i 7902544 + 0i 0 + 0i 3473411 + 3538948i 
-+-300875616 + 32765i 7904704 + 0i 0 + 0i 3604485 + 3670022i 
++-271335648 + 32766i 39720064 + 0i 39722640 + 0i 3342337 + 3407874i 
++-271335552 + 32766i 39720272 + 0i 0 + 0i 3473411 + 3538948i 
++-271335456 + 32766i 39722432 + 0i 0 + 0i 3604485 + 3670022i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3825,9 +2605,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-300875712 + 32765i 7902544 + 0i 0 + 0i 3473411 + 3538948i 
-+-300875616 + 32765i 7904704 + 0i 0 + 0i 3604485 + 3670022i 
-+7902336 + 0i 7904912 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++-271335552 + 32766i 39720272 + 0i 0 + 0i 3473411 + 3538948i 
++-271335456 + 32766i 39722432 + 0i 0 + 0i 3604485 + 3670022i 
++39720064 + 0i 39722640 + 0i 3342337 + 3407874i 3735559 + 3801096i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3837,9 +2617,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-300875616 + 32765i 7904704 + 0i 0 + 0i 3604485 + 3670022i 
-+7902336 + 0i 7904912 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+7902544 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
++-271335456 + 32766i 39722432 + 0i 0 + 0i 3604485 + 3670022i 
++39720064 + 0i 39722640 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++39720272 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
  }
  }
 813. mat5_compressed_write.at:4217: 813. Write cell array with 2D 32-bit signed integer complex fields (mat5_compressed_write.at:4217): FAILED (mat5_compressed_write.at:4266)
@@ -3851,8 +2631,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4345: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.848425876 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/814/stdout	2016-01-14 14:52:44.856425877 +0100
+--- expout	2016-01-14 15:24:27.528463729 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/814/stdout	2016-01-14 15:24:27.540463729 +0100
 @@ -9,35 +9,35 @@
  Class Type: 32-bit, unsigned integer array (complex)
   Data Type: 32-bit, unsigned integer
@@ -3860,9 +2640,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+280662544 + 32765i 280662832 + 32765i 20557248 + 0i 0 + 0i 
-+280662640 + 32765i 20554880 + 0i 20557456 + 0i 3342337 + 3407874i 
-+280662736 + 32765i 20555088 + 0i 0 + 0i 3473411 + 3538948i 
++438025568 + 32767i 438025856 + 32767i 17145280 + 0i 0 + 0i 
++438025664 + 32767i 17142912 + 0i 17145488 + 0i 3342337 + 3407874i 
++438025760 + 32767i 17143120 + 0i 0 + 0i 3473411 + 3538948i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3872,9 +2652,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+280662640 + 32765i 20554880 + 0i 20557456 + 0i 3342337 + 3407874i 
-+280662736 + 32765i 20555088 + 0i 0 + 0i 3473411 + 3538948i 
-+280662832 + 32765i 20557248 + 0i 0 + 0i 3604485 + 3670022i 
++438025664 + 32767i 17142912 + 0i 17145488 + 0i 3342337 + 3407874i 
++438025760 + 32767i 17143120 + 0i 0 + 0i 3473411 + 3538948i 
++438025856 + 32767i 17145280 + 0i 0 + 0i 3604485 + 3670022i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3884,9 +2664,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+280662736 + 32765i 20555088 + 0i 0 + 0i 3473411 + 3538948i 
-+280662832 + 32765i 20557248 + 0i 0 + 0i 3604485 + 3670022i 
-+20554880 + 0i 20557456 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++438025760 + 32767i 17143120 + 0i 0 + 0i 3473411 + 3538948i 
++438025856 + 32767i 17145280 + 0i 0 + 0i 3604485 + 3670022i 
++17142912 + 0i 17145488 + 0i 3342337 + 3407874i 3735559 + 3801096i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3896,9 +2676,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+280662832 + 32765i 20557248 + 0i 0 + 0i 3604485 + 3670022i 
-+20554880 + 0i 20557456 + 0i 3342337 + 3407874i 3735559 + 3801096i 
-+20555088 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
++438025856 + 32767i 17145280 + 0i 0 + 0i 3604485 + 3670022i 
++17142912 + 0i 17145488 + 0i 3342337 + 3407874i 3735559 + 3801096i 
++17143120 + 0i 0 + 0i 3473411 + 3538948i 3866633 + 3932170i 
  }
  }
 814. mat5_compressed_write.at:4296: 814. Write cell array with 2D 32-bit unsigned integer complex fields (mat5_compressed_write.at:4296): FAILED (mat5_compressed_write.at:4345)
@@ -3910,8 +2690,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4424: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.884425877 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/815/stdout	2016-01-14 14:52:44.892425877 +0100
+--- expout	2016-01-14 15:24:27.568463730 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/815/stdout	2016-01-14 15:24:27.576463730 +0100
 @@ -9,35 +9,35 @@
  Class Type: 16-bit, signed integer array (complex)
   Data Type: 16-bit, signed integer
@@ -3919,9 +2699,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-29664 + 26214i 32766 + 0i -29520 + 26214i 0 + 0i 
-+32766 + 0i -29568 + 26214i 32766 + 0i -31408 + 294i 
-+-29616 + 26214i 32766 + 0i -31616 + 294i 0 + 0i 
++-8560 + -11125i 32766 + 0i -8416 + -11125i 0 + 0i 
++32766 + 0i -8464 + -11125i 32766 + 0i 30032 + 336i 
++-8512 + -11125i 32766 + 0i 29824 + 336i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3931,9 +2711,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-29616 + 26214i 32766 + 0i -31616 + 294i 0 + 0i 
-+32766 + 0i -29520 + 26214i 0 + 0i -29248 + 294i 
-+-29568 + 26214i 32766 + 0i -31408 + 294i 0 + 0i 
++-8512 + -11125i 32766 + 0i 29824 + 336i 0 + 0i 
++32766 + 0i -8416 + -11125i 0 + 0i 32192 + 336i 
++-8464 + -11125i 32766 + 0i 30032 + 336i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3943,9 +2723,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+-29568 + 26214i 32766 + 0i -31408 + 294i 0 + 0i 
-+32766 + 0i -31616 + 294i 0 + 0i -29040 + 294i 
-+-29520 + 26214i 0 + 0i -29248 + 294i 0 + 0i 
++-8464 + -11125i 32766 + 0i 30032 + 336i 0 + 0i 
++32766 + 0i 29824 + 336i 0 + 0i 32400 + 336i 
++-8416 + -11125i 0 + 0i 32192 + 336i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3955,9 +2735,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+-29520 + 26214i 0 + 0i -29248 + 294i 0 + 0i 
-+32766 + 0i -31408 + 294i 0 + 0i 0 + 0i 
-+-31616 + 294i 0 + 0i -29040 + 294i 0 + 0i 
++-8416 + -11125i 0 + 0i 32192 + 336i 0 + 0i 
++32766 + 0i 30032 + 336i 0 + 0i 0 + 0i 
++29824 + 336i 0 + 0i 32400 + 336i 0 + 0i 
  }
  }
 815. mat5_compressed_write.at:4375: 815. Write cell array with 2D 16-bit signed integer complex fields (mat5_compressed_write.at:4375): FAILED (mat5_compressed_write.at:4424)
@@ -3969,8 +2749,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4503: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.920425878 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/816/stdout	2016-01-14 14:52:44.928425878 +0100
+--- expout	2016-01-14 15:24:27.604463730 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/816/stdout	2016-01-14 15:24:27.612463730 +0100
 @@ -9,35 +9,35 @@
  Class Type: 16-bit, unsigned integer array (complex)
   Data Type: 16-bit, unsigned integer
@@ -3978,9 +2758,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+62320 + 35181i 32765 + 0i 62464 + 35181i 0 + 0i 
-+32765 + 0i 62416 + 35181i 32765 + 0i 9552 + 332i 
-+62368 + 35181i 32765 + 0i 9344 + 332i 0 + 0i 
++2736 + 48806i 32764 + 0i 2880 + 48806i 0 + 0i 
++32764 + 0i 2832 + 48806i 32764 + 0i 13648 + 581i 
++2784 + 48806i 32764 + 0i 13440 + 581i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -3990,9 +2770,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+62368 + 35181i 32765 + 0i 9344 + 332i 0 + 0i 
-+32765 + 0i 62464 + 35181i 0 + 0i 11712 + 332i 
-+62416 + 35181i 32765 + 0i 9552 + 332i 0 + 0i 
++2784 + 48806i 32764 + 0i 13440 + 581i 0 + 0i 
++32764 + 0i 2880 + 48806i 0 + 0i 15808 + 581i 
++2832 + 48806i 32764 + 0i 13648 + 581i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4002,9 +2782,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+62416 + 35181i 32765 + 0i 9552 + 332i 0 + 0i 
-+32765 + 0i 9344 + 332i 0 + 0i 11920 + 332i 
-+62464 + 35181i 0 + 0i 11712 + 332i 0 + 0i 
++2832 + 48806i 32764 + 0i 13648 + 581i 0 + 0i 
++32764 + 0i 13440 + 581i 0 + 0i 16016 + 581i 
++2880 + 48806i 0 + 0i 15808 + 581i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4014,9 +2794,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+62464 + 35181i 0 + 0i 11712 + 332i 0 + 0i 
-+32765 + 0i 9552 + 332i 0 + 0i 0 + 0i 
-+9344 + 332i 0 + 0i 11920 + 332i 0 + 0i 
++2880 + 48806i 0 + 0i 15808 + 581i 0 + 0i 
++32764 + 0i 13648 + 581i 0 + 0i 0 + 0i 
++13440 + 581i 0 + 0i 16016 + 581i 0 + 0i 
  }
  }
 816. mat5_compressed_write.at:4454: 816. Write cell array with 2D 16-bit unsigned integer complex fields (mat5_compressed_write.at:4454): FAILED (mat5_compressed_write.at:4503)
@@ -4028,8 +2808,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4582: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.956425878 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/817/stdout	2016-01-14 14:52:44.964425878 +0100
+--- expout	2016-01-14 15:24:27.640463731 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/817/stdout	2016-01-14 15:24:27.648463731 +0100
 @@ -9,35 +9,35 @@
  Class Type: 8-bit, signed integer array (complex)
   Data Type: 8-bit, signed integer
@@ -4037,9 +2817,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+-32 + 8i 0 + 0i -2 + 127i 31 + -98i 
-+31 + -98i -8 + 8i 0 + 0i -2 + 127i 
-+-2 + 127i 31 + -98i 16 + 9i 0 + 0i 
++-112 + -119i 0 + 0i -3 + 127i -64 + 110i 
++-64 + 110i -88 + -119i 0 + 0i -3 + 127i 
++-3 + 127i -64 + 110i -64 + -119i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4049,9 +2829,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+-8 + 8i 0 + 0i -2 + 127i 31 + -98i 
-+31 + -98i 16 + 9i 0 + 0i -2 + 127i 
-+-2 + 127i 31 + -98i 40 + 9i 0 + 0i 
++-88 + -119i 0 + 0i -3 + 127i -64 + 110i 
++-64 + 110i -64 + -119i 0 + 0i -3 + 127i 
++-3 + 127i -64 + 110i -40 + -119i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4061,9 +2841,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+16 + 9i 0 + 0i -2 + 127i -72 + 1i 
-+31 + -98i 40 + 9i 0 + 0i 0 + 0i 
-+-2 + 127i 31 + -98i -128 + 68i 0 + 0i 
++-64 + -119i 0 + 0i -3 + 127i 127 + 0i 
++-64 + 110i -40 + -119i 0 + 0i 0 + 0i 
++-3 + 127i -64 + 110i -128 + 4i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4073,9 +2853,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+40 + 9i 0 + 0i 0 + 0i -72 + 1i 
-+31 + -98i -128 + 68i 0 + 0i 0 + 0i 
-+-2 + 127i -72 + 1i 80 + 69i 0 + 0i 
++-40 + -119i 0 + 0i 0 + 0i 127 + 0i 
++-64 + 110i -128 + 4i 0 + 0i 0 + 0i 
++-3 + 127i 127 + 0i 80 + 5i 0 + 0i 
  }
  }
 817. mat5_compressed_write.at:4533: 817. Write cell array with 2D 8-bit signed integer complex fields (mat5_compressed_write.at:4533): FAILED (mat5_compressed_write.at:4582)
@@ -4087,8 +2867,8 @@ stderr:
 stdout:
 ./mat5_compressed_write.at:4661: $builddir/test_mat readvar test_write_cell_complex_2d_numeric.mat a
 stderr:
---- expout	2016-01-14 14:52:44.988425879 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/818/stdout	2016-01-14 14:52:44.996425879 +0100
+--- expout	2016-01-14 15:24:27.676463732 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/818/stdout	2016-01-14 15:24:27.684463732 +0100
 @@ -9,35 +9,35 @@
  Class Type: 8-bit, unsigned integer array (complex)
   Data Type: 8-bit, unsigned integer
@@ -4096,9 +2876,9 @@ stderr:
 -1 + 51i 4 + 54i 7 + 57i 10 + 60i 
 -2 + 52i 5 + 55i 8 + 58i 11 + 61i 
 -3 + 53i 6 + 56i 9 + 59i 12 + 62i 
-+0 + 66i 0 + 0i 254 + 127i 147 + 204i 
-+147 + 204i 24 + 66i 0 + 0i 254 + 127i 
-+254 + 127i 147 + 204i 48 + 66i 0 + 0i 
++128 + 90i 0 + 0i 255 + 127i 235 + 32i 
++235 + 32i 152 + 90i 0 + 0i 255 + 127i 
++255 + 127i 235 + 32i 176 + 90i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4108,9 +2888,9 @@ stderr:
 -13 + 63i 16 + 66i 19 + 69i 22 + 72i 
 -14 + 64i 17 + 67i 20 + 70i 23 + 73i 
 -15 + 65i 18 + 68i 21 + 71i 24 + 74i 
-+24 + 66i 0 + 0i 254 + 127i 147 + 204i 
-+147 + 204i 48 + 66i 0 + 0i 254 + 127i 
-+254 + 127i 147 + 204i 72 + 66i 0 + 0i 
++152 + 90i 0 + 0i 255 + 127i 235 + 32i 
++235 + 32i 176 + 90i 0 + 0i 255 + 127i 
++255 + 127i 235 + 32i 200 + 90i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4120,9 +2900,9 @@ stderr:
 -25 + 75i 28 + 78i 31 + 81i 34 + 84i 
 -26 + 76i 29 + 79i 32 + 82i 35 + 85i 
 -27 + 77i 30 + 80i 33 + 83i 36 + 86i 
-+48 + 66i 0 + 0i 254 + 127i 4 + 2i 
-+147 + 204i 72 + 66i 0 + 0i 0 + 0i 
-+254 + 127i 147 + 204i 128 + 100i 0 + 0i 
++176 + 90i 0 + 0i 255 + 127i 200 + 0i 
++235 + 32i 200 + 90i 0 + 0i 0 + 0i 
++255 + 127i 235 + 32i 128 + 196i 0 + 0i 
  }
        Rank: 2
  Dimensions: 3 x 4
@@ -4132,9 +2912,9 @@ stderr:
 -37 + 87i 40 + 90i 43 + 93i 46 + 96i 
 -38 + 88i 41 + 91i 44 + 94i 47 + 97i 
 -39 + 89i 42 + 92i 45 + 95i 48 + 98i 
-+72 + 66i 0 + 0i 0 + 0i 4 + 2i 
-+147 + 204i 128 + 100i 0 + 0i 0 + 0i 
-+254 + 127i 4 + 2i 80 + 101i 0 + 0i 
++200 + 90i 0 + 0i 0 + 0i 200 + 0i 
++235 + 32i 128 + 196i 0 + 0i 0 + 0i 
++255 + 127i 200 + 0i 80 + 197i 0 + 0i 
  }
  }
 818. mat5_compressed_write.at:4612: 818. Write cell array with 2D 8-bit unsigned integer complex fields (mat5_compressed_write.at:4612): FAILED (mat5_compressed_write.at:4661)
@@ -4143,9 +2923,9 @@ stderr:
 1034. struct_api.at:223: testing Linearly index a structure ...
 ./struct_api.at:488: $builddir/test_mat struct_api_getlinear
 stderr:
-/home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1034/test-source: line 304: 16892 Segmentation fault      (core dumped) $builddir/test_mat struct_api_getlinear
---- expout	2016-01-14 14:52:49.268425956 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1034/stdout	2016-01-14 14:52:49.272425956 +0100
+/home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1034/test-source: line 304:  9705 Segmentation fault      (core dumped) $builddir/test_mat struct_api_getlinear
+--- expout	2016-01-14 15:24:31.948463820 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1034/stdout	2016-01-14 15:24:31.948463820 +0100
 @@ -1,261 +0,0 @@
 -      Name: a
 -      Rank: 2
@@ -4415,9 +3195,9 @@ stderr:
 1037. cell_api.at:132: testing Linearly index cell array ...
 ./cell_api.at:262: $builddir/test_mat  cell_api_getlinear
 stderr:
-/home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1037/test-source: line 169: 16975 Segmentation fault      (core dumped) $builddir/test_mat cell_api_getlinear
---- expout	2016-01-14 14:52:49.440425959 +0100
-+++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1037/stdout	2016-01-14 14:52:49.440425959 +0100
+/home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1037/test-source: line 169:  9788 Segmentation fault      (core dumped) $builddir/test_mat cell_api_getlinear
+--- expout	2016-01-14 15:24:32.120463823 +0100
++++ /home/marten/Projects/matio-matio/test/testsuite.dir/at-groups/1037/stdout	2016-01-14 15:24:32.120463823 +0100
 @@ -1,126 +0,0 @@
 -      Rank: 2
 -Dimensions: 1 x 1

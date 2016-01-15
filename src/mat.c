@@ -685,19 +685,10 @@ Mat_VarCreate(const char *name,enum matio_classes class_type,
                 memcpy(sparse_data->jc,sparse_data_in->jc,
                        sparse_data->njc*sizeof(*sparse_data->jc));
             if ( matvar->isComplex ) {
-                sparse_data->data = malloc(sizeof(mat_complex_split_t));
+                sparse_data->data = malloc(sparse_data->ndata*data_size*2);
                 if ( NULL != sparse_data->data ) {
-                    mat_complex_split_t *complex_data,*complex_data_in;
-                    complex_data     = sparse_data->data;
-                    complex_data_in  = sparse_data_in->data;
-                    complex_data->Re = malloc(sparse_data->ndata*data_size);
-                    complex_data->Im = malloc(sparse_data->ndata*data_size);
-                    if ( NULL != complex_data->Re )
-                        memcpy(complex_data->Re,complex_data_in->Re,
-                               sparse_data->ndata*data_size);
-                    if ( NULL != complex_data->Im )
-                        memcpy(complex_data->Im,complex_data_in->Im,
-                               sparse_data->ndata*data_size);
+					memcpy(sparse_data->data,sparse_data_in->data,
+						   sparse_data->ndata*data_size*2);
                 }
             } else {
                 sparse_data->data = malloc(sparse_data->ndata*data_size);
