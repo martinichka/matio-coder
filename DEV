@@ -1,0 +1,5 @@
+Install tools
+#sudo apt-get install build-essential libtool
+
+Configure with debug
+#./configure CPPFLAGS=-DDEBUG CFLAGS="-g -O0"
