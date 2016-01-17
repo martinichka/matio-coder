@@ -55,23 +55,17 @@ Read4(mat_t *mat,matvar_t *matvar)
         case MAT_C_DOUBLE:
             matvar->data_size = sizeof(double);
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data;
-
                 matvar->nbytes   = N*sizeof(double);
-                complex_data     = malloc(sizeof(*complex_data));
-                complex_data->Re = malloc(matvar->nbytes);
-                complex_data->Im = malloc(matvar->nbytes);
-                matvar->data     = complex_data;
-                if ( complex_data != NULL &&
-                    complex_data->Re != NULL && complex_data->Im != NULL ) {
-                    ReadDoubleData(mat, complex_data->Re, matvar->data_type, N);
-                    ReadDoubleData(mat, complex_data->Im, matvar->data_type, N);
+                matvar->data = malloc(matvar->nbytes*2);
+                if ( matvar->data != NULL ) {
+                    ReadDoubleData(mat, matvar->data, matvar->data_type, N, MAT_COMPLEX_MIXED_PART_REAL);
+                    ReadDoubleData(mat, matvar->data, matvar->data_type, N, MAT_COMPLEX_MIXED_PART_IMAG);
                 }
             } else {
                 matvar->nbytes = N*sizeof(double);
                 matvar->data   = malloc(matvar->nbytes);
                 if ( matvar->data != NULL )
-                    ReadDoubleData(mat, matvar->data, matvar->data_type, N);
+                    ReadDoubleData(mat, matvar->data, matvar->data_type, N, MAT_COMPLEX_MIXED_PART_NONE);
             }
             /* Update data type to match format of matvar->data */
             matvar->data_type = MAT_T_DOUBLE;

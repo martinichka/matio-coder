@@ -3538,7 +3538,7 @@ Mat_VarReadNumeric5(mat_t *mat,matvar_t *matvar,void *data,size_t N, enum mat_co
     if ( matvar->compression == MAT_COMPRESSION_NONE) {
         switch ( matvar->class_type ) {
             case MAT_C_DOUBLE:
-                nBytes = ReadDoubleData(mat,data,packed_type,N);
+                nBytes = ReadDoubleData(mat,data,packed_type,N, complex_part);
                 break;
             case MAT_C_SINGLE:
                 nBytes = ReadSingleData(mat,data,packed_type,N, complex_part);
@@ -4348,7 +4348,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     switch ( matvar->data_type ) {
                         case MAT_T_DOUBLE:
                             nBytes = ReadDoubleData(mat,complex_data->Re,
-                                packed_type,data->ndata);
+                                packed_type,data->ndata, MAT_COMPLEX_MIXED_PART_NONE);
                             break;
                         case MAT_T_SINGLE:
                             nBytes = ReadSingleData(mat,complex_data->Re,
@@ -4421,7 +4421,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     switch ( matvar->data_type ) {
                         case MAT_T_DOUBLE:
                             nBytes = ReadDoubleData(mat,complex_data->Im,
-                                packed_type,data->ndata);
+                                packed_type,data->ndata, MAT_COMPLEX_MIXED_PART_NONE);
                             break;
                         case MAT_T_SINGLE:
                             nBytes = ReadSingleData(mat,complex_data->Im,
@@ -4626,7 +4626,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     switch ( matvar->data_type ) {
                         case MAT_T_DOUBLE:
                             nBytes = ReadDoubleData(mat,data->data,
-                                packed_type,data->ndata);
+                                packed_type,data->ndata, MAT_COMPLEX_MIXED_PART_NONE);
                             break;
                         case MAT_T_SINGLE:
                             nBytes = ReadSingleData(mat,data->data,

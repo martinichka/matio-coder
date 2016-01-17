@@ -62,9 +62,25 @@
  * @retval Number of bytes read from the file
  */
 int
-ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
+ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len, enum mat_complex_mixed_part complex_part)
 {
     int bytesread = 0, data_size = 0, i;
+	int start;
+	int jump;
+	switch (complex_part) {
+		case MAT_COMPLEX_MIXED_PART_NONE:
+			start = 0;
+			jump = 1;
+			break;
+		case MAT_COMPLEX_MIXED_PART_REAL:
+			start = 0;
+			jump = 2;
+			break;
+		case MAT_COMPLEX_MIXED_PART_IMAG:
+			start = 1;
+			jump = 2;
+			break;
+	}
 
     if ( (mat   == NULL) || (data   == NULL) || (mat->fp == NULL) )
         return 0;
@@ -72,14 +88,19 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
     switch ( data_type ) {
         case MAT_T_DOUBLE:
         {
+        	double d;
+
             data_size = sizeof(double);
             if ( mat->byteswap ) {
-                bytesread += fread(data,data_size,len,mat->fp);
                 for ( i = 0; i < len; i++ ) {
-                    (void)Mat_doubleSwap(data+i);
+                    bytesread += fread(&d,data_size,1,mat->fp);
+                    data[start + i * jump] = Mat_doubleSwap(&d);
                 }
             } else {
-                bytesread += fread(data,data_size,len,mat->fp);
+                for ( i = 0; i < len; i++ ) {
+                    bytesread += fread(&d,data_size,1,mat->fp);
+                    data[start + i * jump] = d;
+                }
             }
             break;
         }
@@ -91,12 +112,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&f,data_size,1,mat->fp);
-                    data[i] = Mat_floatSwap(&f);
+                    data[start + i * jump] = Mat_floatSwap(&f);
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&f,data_size,1,mat->fp);
-                    data[i] = f;
+                    data[start + i * jump] = f;
                 }
             }
             break;
@@ -109,12 +130,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&i32,data_size,1,mat->fp);
-                    data[i] = Mat_int32Swap(&i32);
+                    data[start + i * jump] = Mat_int32Swap(&i32);
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&i32,data_size,1,mat->fp);
-                    data[i] = i32;
+                    data[start + i * jump] = i32;
                 }
             }
             break;
@@ -127,12 +148,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&ui32,data_size,1,mat->fp);
-                    data[i] = Mat_uint32Swap(&ui32);
+                    data[start + i * jump] = Mat_uint32Swap(&ui32);
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&ui32,data_size,1,mat->fp);
-                    data[i] = ui32;
+                    data[start + i * jump] = ui32;
                 }
             }
             break;
@@ -145,12 +166,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&i16,data_size,1,mat->fp);
-                    data[i] = Mat_int16Swap(&i16);
+                    data[start + i * jump] = Mat_int16Swap(&i16);
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&i16,data_size,1,mat->fp);
-                    data[i] = i16;
+                    data[start + i * jump] = i16;
                 }
             }
             break;
@@ -163,12 +184,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&ui16,data_size,1,mat->fp);
-                    data[i] = Mat_uint16Swap(&ui16);
+                    data[start + i * jump] = Mat_uint16Swap(&ui16);
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&ui16,data_size,1,mat->fp);
-                    data[i] = ui16;
+                    data[start + i * jump] = ui16;
                 }
             }
             break;
@@ -181,12 +202,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&i8,data_size,1,mat->fp);
-                    data[i] = i8;
+                    data[start + i * jump] = i8;
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&i8,data_size,1,mat->fp);
-                    data[i] = i8;
+                    data[start + i * jump] = i8;
                 }
             }
             break;
@@ -199,12 +220,12 @@ ReadDoubleData(mat_t *mat,double *data,enum matio_types data_type,int len)
             if ( mat->byteswap ) {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&ui8,data_size,1,mat->fp);
-                    data[i] = ui8;
+                    data[start + i * jump] = ui8;
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
                     bytesread += fread(&ui8,data_size,1,mat->fp);
-                    data[i] = ui8;
+                    data[start + i * jump] = ui8;
                 }
             }
             break;
@@ -3838,7 +3859,7 @@ ReadDataSlabN(mat_t *mat,void *data,enum matio_classes class_type,
                         fseek(mat->fp,start[0]*data_size,SEEK_CUR);
                         I += start[0];
                     }
-                    ReadDoubleData(mat,ptr+i,data_type,edge[0]);
+                    ReadDoubleData(mat,ptr+i,data_type,edge[0], MAT_COMPLEX_MIXED_PART_NONE);
                     I += dims[0]-start[0];
                     fseek(mat->fp,data_size*(dims[0]-edge[0]-start[0]),
                           SEEK_CUR);
@@ -3870,7 +3891,7 @@ ReadDataSlabN(mat_t *mat,void *data,enum matio_classes class_type,
                         I += start[0];
                     }
                     for ( j = 0; j < edge[0]; j++ ) {
-                        ReadDoubleData(mat,ptr+i+j,data_type,1);
+                        ReadDoubleData(mat,ptr+i+j,data_type,1, MAT_COMPLEX_MIXED_PART_NONE);
                         fseek(mat->fp,data_size*(stride[0]-1),SEEK_CUR);
                         I += stride[0];
                     }
@@ -5683,10 +5704,10 @@ ReadDataSlab1(mat_t *mat,void *data,enum matio_classes class_type,
     switch(class_type) {
         case MAT_C_DOUBLE:
             if ( !stride ) {
-                bytesread+=ReadDoubleData(mat,data,data_type,edge);
+                bytesread+=ReadDoubleData(mat,data,data_type,edge, MAT_COMPLEX_MIXED_PART_NONE);
             } else {
                 for ( i = 0; i < edge; i++ ) {
-                    bytesread+=ReadDoubleData(mat,(double*)data+i,data_type,1);
+                    bytesread+=ReadDoubleData(mat,(double*)data+i,data_type,1, MAT_COMPLEX_MIXED_PART_NONE);
                     fseek(mat->fp,stride,SEEK_CUR);
                 }
             }
@@ -5834,7 +5855,7 @@ ReadDataSlab2(mat_t *mat,void *data,enum matio_classes class_type,
                 pos = ftell(mat->fp);
                 fseek(mat->fp,start[0]*data_size,SEEK_CUR);
                 for ( j = 0; j < edge[0]; j++ ) {
-                    ReadDoubleData(mat,ptr++,data_type,1);
+                    ReadDoubleData(mat,ptr++,data_type,1, MAT_COMPLEX_MIXED_PART_NONE);
                     fseek(mat->fp,row_stride,SEEK_CUR);
                 }
                 pos = pos+col_stride-ftell(mat->fp);

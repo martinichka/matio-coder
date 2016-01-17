@@ -114,7 +114,7 @@ EXTERN mat_uint16_t  Mat_uint16Swap(mat_uint16_t *a);
 
 /* read_data.c */
 EXTERN int ReadDoubleData(mat_t *mat,double  *data,enum matio_types data_type,
-               int len);
+               int len, enum mat_complex_mixed_part complex_part);
 EXTERN int ReadSingleData(mat_t *mat,float   *data,enum matio_types data_type,
                int len, enum mat_complex_mixed_part complex_part);
 #ifdef HAVE_MAT_INT64_T
