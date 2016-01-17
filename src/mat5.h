@@ -34,16 +34,6 @@
 #   define EXTERN extern
 #endif
 
-/*
- * Indicate which part of the complex data need to be used. If data is not complex
- * it should always be NONE.
- */
-enum mat_complex_mixed_part {
-	MAT_COMPLEX_MIXED_PART_NONE,
-	MAT_COMPLEX_MIXED_PART_REAL,
-	MAT_COMPLEX_MIXED_PART_IMAG
-};
-
 static size_t GetStructFieldBufSize(matvar_t *matvar);
 static size_t GetCellArrayFieldBufSize(matvar_t *matvar);
 static size_t GetMatrixMaxBufSize(matvar_t *matvar);

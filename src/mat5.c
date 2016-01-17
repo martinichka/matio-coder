@@ -3489,7 +3489,7 @@ Mat_WriteCompressedEmptyVariable5(mat_t *mat,const char *name,int rank,
  * @endif
  */
 void
-Mat_VarReadNumeric5(mat_t *mat,matvar_t *matvar,void *data,size_t N)
+Mat_VarReadNumeric5(mat_t *mat,matvar_t *matvar,void *data,size_t N, enum mat_complex_mixed_part complex_part)
 {
     int nBytes = 0, data_in_tag = 0;
     enum matio_types packed_type = MAT_T_UNKNOWN;
@@ -3541,7 +3541,7 @@ Mat_VarReadNumeric5(mat_t *mat,matvar_t *matvar,void *data,size_t N)
                 nBytes = ReadDoubleData(mat,data,packed_type,N);
                 break;
             case MAT_C_SINGLE:
-                nBytes = ReadSingleData(mat,data,packed_type,N);
+                nBytes = ReadSingleData(mat,data,packed_type,N, complex_part);
                 break;
             case MAT_C_INT64:
 #ifdef HAVE_MAT_INT64_T
@@ -3686,28 +3686,14 @@ Read5(mat_t *mat, matvar_t *matvar)
             matvar->data_size = sizeof(double);
             matvar->data_type = MAT_T_DOUBLE;
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data;
-
                 matvar->nbytes = len*matvar->data_size;
-                complex_data = malloc(sizeof(*complex_data));
-                if ( NULL == complex_data ) {
-                    Mat_Critical("Failed to allocate %d bytes",sizeof(*complex_data));
-                    break;
-                }
-                complex_data->Re = malloc(matvar->nbytes);
-                complex_data->Im = malloc(matvar->nbytes);
-                if ( NULL == complex_data->Re || NULL == complex_data->Im ) {
-                    if ( NULL != complex_data->Re )
-                        free(complex_data->Re);
-                    if ( NULL != complex_data->Im )
-                        free(complex_data->Im);
-                    free(complex_data);
+                matvar->data = malloc(matvar->nbytes*2);
+                if ( NULL == matvar->data ) {
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
-                matvar->data = complex_data;
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_REAL);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 matvar->nbytes = len*matvar->data_size;
                 matvar->data   = malloc(matvar->nbytes);
@@ -3715,7 +3701,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_SINGLE:
@@ -3723,28 +3709,14 @@ Read5(mat_t *mat, matvar_t *matvar)
             matvar->data_size = sizeof(float);
             matvar->data_type = MAT_T_SINGLE;
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data;
-
                 matvar->nbytes = len*matvar->data_size;
-                complex_data = malloc(sizeof(*complex_data));
-                if ( NULL == complex_data ) {
-                    Mat_Critical("Failed to allocate %d bytes",sizeof(*complex_data));
-                    break;
-                }
-                complex_data->Re = malloc(matvar->nbytes);
-                complex_data->Im = malloc(matvar->nbytes);
-                if ( NULL == complex_data->Re || NULL == complex_data->Im ) {
-                    if ( NULL != complex_data->Re )
-                        free(complex_data->Re);
-                    if ( NULL != complex_data->Im )
-                        free(complex_data->Im);
-                    free(complex_data);
+                matvar->data = malloc(matvar->nbytes*2);
+                if ( NULL == matvar->data ) {
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
-                matvar->data = complex_data;
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_REAL);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 matvar->nbytes = len*matvar->data_size;
                 matvar->data   = malloc(matvar->nbytes);
@@ -3752,7 +3724,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_INT64:
@@ -3780,8 +3752,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -3790,7 +3762,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
 #endif
             break;
@@ -3819,8 +3791,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -3829,7 +3801,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
 #endif
             break;
@@ -3857,8 +3829,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -3867,7 +3839,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_UINT32:
@@ -3894,8 +3866,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -3904,7 +3876,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_INT16:
@@ -3931,8 +3903,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -3941,7 +3913,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_UINT16:
@@ -3968,8 +3940,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -3978,7 +3950,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_INT8:
@@ -4005,8 +3977,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -4015,7 +3987,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_UINT8:
@@ -4042,8 +4014,8 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",2*matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len);
-                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Re,len, MAT_COMPLEX_MIXED_PART_NONE);
+                Mat_VarReadNumeric5(mat,matvar,complex_data->Im,len, MAT_COMPLEX_MIXED_PART_NONE);
                 matvar->data = complex_data;
             } else {
                 matvar->nbytes = len*matvar->data_size;
@@ -4052,7 +4024,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                     Mat_Critical("Failed to allocate %d bytes",matvar->nbytes);
                     break;
                 }
-                Mat_VarReadNumeric5(mat,matvar,matvar->data,len);
+                Mat_VarReadNumeric5(mat,matvar,matvar->data,len, MAT_COMPLEX_MIXED_PART_NONE);
             }
             break;
         case MAT_C_CHAR:
@@ -4380,7 +4352,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                             break;
                         case MAT_T_SINGLE:
                             nBytes = ReadSingleData(mat,complex_data->Re,
-                                packed_type,data->ndata);
+                                packed_type,data->ndata, MAT_COMPLEX_MIXED_PART_NONE);
                             break;
                         case MAT_T_INT64:
 #ifdef HAVE_MAT_INT64_T
@@ -4453,7 +4425,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                             break;
                         case MAT_T_SINGLE:
                             nBytes = ReadSingleData(mat,complex_data->Im,
-                                packed_type,data->ndata);
+                                packed_type,data->ndata, MAT_COMPLEX_MIXED_PART_NONE);
                             break;
                         case MAT_T_INT64:
 #ifdef HAVE_MAT_INT64_T
@@ -4658,7 +4630,7 @@ Read5(mat_t *mat, matvar_t *matvar)
                             break;
                         case MAT_T_SINGLE:
                             nBytes = ReadSingleData(mat,data->data,
-                                packed_type,data->ndata);
+                                packed_type,data->ndata, MAT_COMPLEX_MIXED_PART_NONE);
                             break;
                         case MAT_T_INT64:
 #ifdef HAVE_MAT_INT64_T

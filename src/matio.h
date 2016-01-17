@@ -169,6 +169,16 @@ typedef struct mat_complex_split_t {
     void *Im; /**< Pointer to the imaginary part */
 } mat_complex_split_t;
 
+/*
+ * Indicate which part of the complex data need to be used. If data is not complex
+ * it should always be NONE.
+ */
+enum mat_complex_mixed_part {
+	MAT_COMPLEX_MIXED_PART_NONE,
+	MAT_COMPLEX_MIXED_PART_REAL,
+	MAT_COMPLEX_MIXED_PART_IMAG
+};
+
 struct _mat_t;
 /** @brief Matlab MAT File information
  * Contains information about a Matlab MAT file

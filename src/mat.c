@@ -1315,15 +1315,15 @@ Mat_VarPrint( matvar_t *matvar, int printdata )
             {
                 size_t stride = Mat_SizeOf(matvar->data_type);
                 if ( matvar->isComplex ) {
-                    mat_complex_split_t *complex_data = matvar->data;
-                    char *rp = complex_data->Re;
-                    char *ip = complex_data->Im;
-                   for ( i = 0; i < matvar->dims[0] && i < 15; i++ ) {
+                    char *p = matvar->data;
+                    for ( i = 0; i < matvar->dims[0] && i < 15; i++ ) {
                         for ( j = 0; j < matvar->dims[1] && j < 15; j++ ) {
                             size_t idx = matvar->dims[0]*j+i;
-                            Mat_PrintNumber(matvar->data_type,rp+idx*stride);
+                            size_t r_idx = idx * 2;
+                            size_t i_idx = idx * 2 + 1;
+                            Mat_PrintNumber(matvar->data_type,p+r_idx*stride);
                             printf(" + ");
-                            Mat_PrintNumber(matvar->data_type,ip+idx*stride);
+                            Mat_PrintNumber(matvar->data_type,p+i_idx*stride);
                             printf("i ");
                         }
                         if ( j < matvar->dims[1] )
