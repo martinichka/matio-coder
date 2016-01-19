@@ -77,7 +77,7 @@ Read4(mat_t *mat,matvar_t *matvar)
             if ( NULL == matvar->data )
                 Mat_Critical("Memory allocation failure");
             else
-                ReadUInt8Data(mat,matvar->data,matvar->data_type,N);
+                ReadUInt8Data(mat,matvar->data,matvar->data_type,N, MAT_COMPLEX_MIXED_PART_NONE);
             matvar->data_type = MAT_T_UINT8;
             break;
         default:
@@ -144,13 +144,13 @@ ReadData4(mat_t *mat,matvar_t *matvar,void *data,
             long nbytes = edge[0]*edge[1]*Mat_SizeOf(matvar->data_type);
 
             ReadDataSlab2(mat,cdata->Re,class_type,matvar->data_type,
-                    matvar->dims,start,stride,edge);
+                    matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+nbytes,SEEK_SET);
             ReadDataSlab2(mat,cdata->Im,class_type,
-                matvar->data_type,matvar->dims,start,stride,edge);
+                matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
         } else {
             ReadDataSlab2(mat,data,class_type,matvar->data_type,
-                    matvar->dims,start,stride,edge);
+                    matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
         }
     } else {
         if ( matvar->isComplex ) {
@@ -162,13 +162,13 @@ ReadData4(mat_t *mat,matvar_t *matvar,void *data,
                 nbytes *= edge[i];
 
             ReadDataSlabN(mat,cdata->Re,class_type,matvar->data_type,
-                matvar->rank,matvar->dims,start,stride,edge);
+                matvar->rank,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+nbytes,SEEK_SET);
             ReadDataSlab2(mat,cdata->Im,class_type,
-                matvar->data_type,matvar->dims,start,stride,edge);
+                matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
         } else {
             ReadDataSlabN(mat,data,class_type,matvar->data_type,
-                matvar->rank,matvar->dims,start,stride,edge);
+                matvar->rank,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
         }
     }
     return err;
@@ -209,13 +209,13 @@ Mat_VarReadDataLinear4(mat_t *mat,matvar_t *matvar,void *data,int start,
             long nbytes = nmemb*matvar->data_size;
 
             ReadDataSlab1(mat,complex_data->Re,matvar->class_type,
-                          matvar->data_type,start,stride,edge);
+                          matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+nbytes,SEEK_SET);
             ReadDataSlab1(mat,complex_data->Im,matvar->class_type,
-                          matvar->data_type,start,stride,edge);
+                          matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
     } else {
         ReadDataSlab1(mat,data,matvar->class_type,matvar->data_type,start,
-                      stride,edge);
+                      stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
     }
 
     return err;
