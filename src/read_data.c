@@ -4153,7 +4153,6 @@ ReadDataSlabN(mat_t *mat,void *data,enum matio_classes class_type,
     } else if ( rank > 10 ) {
         return -1;
     }
-printf("ReadDataSlabN\n");
     data_size = Mat_SizeOf(data_type);
     switch ( class_type ) {
         case MAT_C_DOUBLE:
@@ -6020,7 +6019,6 @@ ReadDataSlab1(mat_t *mat,void *data,enum matio_classes class_type,
 
     data_size = Mat_SizeOf(data_type);
     fseek(mat->fp,start*data_size,SEEK_CUR);
-    printf("ReadDataSlab1\n");
 
     stride = data_size*(stride-1);
     switch(class_type) {
@@ -6160,7 +6158,6 @@ ReadDataSlab2(mat_t *mat,void *data,enum matio_classes class_type,
          (start == NULL) || (stride == NULL) || (edge    == NULL) ) {
         return 0;
     }
-    printf("ReadDataSlab2\n");
 
     data_size = Mat_SizeOf(data_type);
 
