@@ -43,8 +43,6 @@
 #define CLASS_FROM_ARRAY_FLAGS(a) (enum matio_classes)((a) & 0x000000ff)
 #define CLASS_TYPE_MASK           0x000000ff
 
-static mat_complex_split_t null_complex_data = {NULL,NULL};
-
 /*
  * -------------------------------------------------------------
  *   Private Functions
@@ -4713,10 +4711,8 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
             err = 1;
         else if ( matvar->compression == MAT_COMPRESSION_NONE ) {
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = data;
-
-                ReadDataSlab2(mat,complex_data->Re,matvar->class_type,
-                    matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                ReadDataSlab2(mat,data,matvar->class_type,
+                    matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
                 fseek(mat->fp,matvar->internal->datapos+real_bytes,SEEK_SET);
                 fread(tag,4,2,mat->fp);
                 if ( mat->byteswap ) {
@@ -4727,8 +4723,8 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
                 if ( tag[0] & 0xffff0000 ) { /* Data is packed in the tag */
                     fseek(mat->fp,-4,SEEK_CUR);
                 }
-                ReadDataSlab2(mat,complex_data->Im,matvar->class_type,
-                              matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                ReadDataSlab2(mat,data,matvar->class_type,
+                              matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 ReadDataSlab2(mat,data,matvar->class_type,
                     matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
@@ -4737,11 +4733,9 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
 #if defined(HAVE_ZLIB)
         else if ( matvar->compression == MAT_COMPRESSION_ZLIB ) {
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = data;
-
-                ReadCompressedDataSlab2(mat,&z,complex_data->Re,
+                ReadCompressedDataSlab2(mat,&z,data,
                     matvar->class_type,matvar->data_type,matvar->dims,
-                    start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                    start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
 
                 fseek(mat->fp,matvar->internal->datapos,SEEK_SET);
 
@@ -4758,9 +4752,9 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
                 if ( !(tag[0] & 0xffff0000) ) {/*Data is NOT packed in the tag*/
                     InflateSkip(mat,&z,4);
                 }
-                ReadCompressedDataSlab2(mat,&z,complex_data->Im,
+                ReadCompressedDataSlab2(mat,&z,data,
                     matvar->class_type,matvar->data_type,matvar->dims,
-                    start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                    start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
                 inflateEnd(&z);
             } else {
                 ReadCompressedDataSlab2(mat,&z,data,matvar->class_type,
@@ -4771,11 +4765,9 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
     } else {
         if ( matvar->compression == MAT_COMPRESSION_NONE ) {
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = data;
-
-                ReadDataSlabN(mat,complex_data->Re,matvar->class_type,
+                ReadDataSlabN(mat,data,matvar->class_type,
                     matvar->data_type,matvar->rank,matvar->dims,
-                    start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                    start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
 
                 fseek(mat->fp,matvar->internal->datapos+real_bytes,SEEK_SET);
                 fread(tag,4,2,mat->fp);
@@ -4787,9 +4779,9 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
                 if ( tag[0] & 0xffff0000 ) { /* Data is packed in the tag */
                     fseek(mat->fp,-4,SEEK_CUR);
                 }
-                ReadDataSlabN(mat,complex_data->Im,matvar->class_type,
+                ReadDataSlabN(mat,data,matvar->class_type,
                     matvar->data_type,matvar->rank,matvar->dims,
-                    start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                    start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
             } else {
                 ReadDataSlabN(mat,data,matvar->class_type,matvar->data_type,
                     matvar->rank,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
@@ -4798,11 +4790,9 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
 #if defined(HAVE_ZLIB)
         else if ( matvar->compression == MAT_COMPRESSION_ZLIB ) {
             if ( matvar->isComplex ) {
-                mat_complex_split_t *complex_data = data;
-
-                ReadCompressedDataSlabN(mat,&z,complex_data->Re,
+                ReadCompressedDataSlabN(mat,&z,data,
                     matvar->class_type,matvar->data_type,matvar->rank,
-                    matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                    matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
 
                 fseek(mat->fp,matvar->internal->datapos,SEEK_SET);
                 /* Reset zlib knowledge to before reading real tag */
@@ -4818,9 +4808,9 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
                 if ( !(tag[0] & 0xffff0000) ) {/*Data is NOT packed in the tag*/
                     InflateSkip(mat,&z,4);
                 }
-                ReadCompressedDataSlabN(mat,&z,complex_data->Im,
+                ReadCompressedDataSlabN(mat,&z,data,
                     matvar->class_type,matvar->data_type,matvar->rank,
-                    matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                    matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
                 inflateEnd(&z);
             } else {
                 ReadCompressedDataSlabN(mat,&z,data,matvar->class_type,
@@ -4956,10 +4946,8 @@ Mat_VarReadDataLinear5(mat_t *mat,matvar_t *matvar,void *data,int start,
         err = 1;
     } else if ( matvar->compression == MAT_COMPRESSION_NONE ) {
         if ( matvar->isComplex ) {
-            mat_complex_split_t *complex_data = data;
-
-            ReadDataSlab1(mat,complex_data->Re,matvar->class_type,
-                          matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+            ReadDataSlab1(mat,data,matvar->class_type,
+                          matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+real_bytes,SEEK_SET);
             fread(tag,4,2,mat->fp);
             if ( mat->byteswap ) {
@@ -4971,7 +4959,7 @@ Mat_VarReadDataLinear5(mat_t *mat,matvar_t *matvar,void *data,int start,
                 fseek(mat->fp,-4,SEEK_CUR);
             }
             ReadDataSlab1(mat,data,matvar->class_type,
-                          matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
+                          matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
         } else {
             ReadDataSlab1(mat,data,matvar->class_type,
                           matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_NONE);
@@ -5167,11 +5155,6 @@ Mat_VarWrite5(mat_t *mat,matvar_t *matvar,int compress)
             case MAT_C_UINT8:
             {
                 if ( matvar->isComplex ) {
-                    mat_complex_split_t *complex_data = matvar->data;
-
-                    if ( NULL == complex_data )
-                        complex_data = &null_complex_data;
-
                     nBytes = WriteData(mat,matvar->data, nmemb,
                         matvar->data_type, MAT_COMPLEX_MIXED_PART_REAL);
                     if ( nBytes % 8 )

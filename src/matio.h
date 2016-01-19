@@ -159,16 +159,6 @@ enum {
     MAT_BY_INDEX = 2  /**< Lookup by index */
 };
 
-/** @brief Complex data type using split storage
- *
- * Complex data type using split real/imaginary pointers
- * @ingroup MAT
- */
-typedef struct mat_complex_split_t {
-    void *Re; /**< Pointer to the real part */
-    void *Im; /**< Pointer to the imaginary part */
-} mat_complex_split_t;
-
 /*
  * Indicate which part of the complex data need to be used. If data is not complex
  * it should always be NONE.

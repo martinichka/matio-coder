@@ -361,11 +361,7 @@ read_selected_data(mat_t *mat,matvar_t *matvar,char *index_str)
                  matvar->data_size = Mat_SizeOfClass(matvar->class_type);
                  matvar->nbytes = nmemb*matvar->data_size;
                 if ( matvar->isComplex ) {
-                    mat_complex_split_t *z;
-                    matvar->data = malloc(sizeof(*z));
-                    z = matvar->data;
-                    z->Re = malloc(matvar->nbytes);
-                    z->Im = malloc(matvar->nbytes);
+                    matvar->data = malloc(matvar->nbytes * 2);
                 } else {
                     matvar->data = malloc(matvar->nbytes);
                 }
@@ -635,15 +631,15 @@ print_default_numeric_2d(matvar_t *matvar)
 
     stride = Mat_SizeOf(matvar->data_type);
     if ( matvar->isComplex ) {
-        mat_complex_split_t *complex_data = matvar->data;
-        char *rp = complex_data->Re;
-        char *ip = complex_data->Im;
+        char *p = matvar->data;
         for ( i = 0; i < matvar->dims[0]; i++ ) {
             for ( j = 0; j < matvar->dims[1]; j++ ) {
                 size_t idx = matvar->dims[0]*j+i;
-                print_default_number(matvar->data_type,rp+idx*stride);
+                size_t r_idx = idx * 2;
+                size_t i_idx = idx * 2 + 1;
+                print_default_number(matvar->data_type,p+r_idx*stride);
                 printf(" + ");
-                print_default_number(matvar->data_type,ip+idx*stride);
+                print_default_number(matvar->data_type,p+i_idx*stride);
                 printf("i ");
             }
             printf("\n");
@@ -668,9 +664,7 @@ print_default_numeric_3d(matvar_t *matvar)
     size_t i, j, k, l, stride;
     stride = Mat_SizeOf(matvar->data_type);
     if ( matvar->isComplex ) {
-        mat_complex_split_t *complex_data = matvar->data;
-        char *rp = complex_data->Re;
-        char *ip = complex_data->Im;
+        char *p = matvar->data;
         for ( k = 0; k < matvar->dims[2]; k++ ) {
             Mat_Message("%s(:,:,%lu) = ",matvar->name,k);
             indent++;
@@ -679,9 +673,11 @@ print_default_numeric_3d(matvar_t *matvar)
                     printf("    ");
                 for ( j = 0; j < matvar->dims[1]; j++ ) {
                     size_t idx = matvar->dims[0]*matvar->dims[1]*k+matvar->dims[0]*j+i;
-                    print_default_number(matvar->data_type,rp+idx*stride);
+                    size_t r_idx = idx * 2;
+                    size_t i_idx = idx * 2 + 1;
+                    print_default_number(matvar->data_type,p+r_idx*stride);
                     printf(" + ");
-                    print_default_number(matvar->data_type,ip+idx*stride);
+                    print_default_number(matvar->data_type,p+i_idx*stride);
                     printf("i ");
                 }
                 printf("\n");

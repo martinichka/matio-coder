@@ -140,13 +140,12 @@ ReadData4(mat_t *mat,matvar_t *matvar,void *data,
         else if ( stride[1]*(edge[1]-1)+start[1]+1 > matvar->dims[1] )
             err = 1;
         if ( matvar->isComplex ) {
-            mat_complex_split_t *cdata = data;
             long nbytes = edge[0]*edge[1]*Mat_SizeOf(matvar->data_type);
 
-            ReadDataSlab2(mat,cdata->Re,class_type,matvar->data_type,
+            ReadDataSlab2(mat,data,class_type,matvar->data_type,
                     matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+nbytes,SEEK_SET);
-            ReadDataSlab2(mat,cdata->Im,class_type,
+            ReadDataSlab2(mat,data,class_type,
                 matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
         } else {
             ReadDataSlab2(mat,data,class_type,matvar->data_type,
@@ -155,16 +154,15 @@ ReadData4(mat_t *mat,matvar_t *matvar,void *data,
     } else {
         if ( matvar->isComplex ) {
             int i;
-            mat_complex_split_t *cdata = data;
             long nbytes = Mat_SizeOf(matvar->data_type);
 
             for ( i = 0; i < matvar->rank; i++ )
                 nbytes *= edge[i];
 
-            ReadDataSlabN(mat,cdata->Re,class_type,matvar->data_type,
+            ReadDataSlabN(mat,data,class_type,matvar->data_type,
                 matvar->rank,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+nbytes,SEEK_SET);
-            ReadDataSlab2(mat,cdata->Im,class_type,
+            ReadDataSlab2(mat,data,class_type,
                 matvar->data_type,matvar->dims,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
         } else {
             ReadDataSlabN(mat,data,class_type,matvar->data_type,
@@ -205,13 +203,12 @@ Mat_VarReadDataLinear4(mat_t *mat,matvar_t *matvar,void *data,int start,
         return 1;
     }
     if ( matvar->isComplex ) {
-            mat_complex_split_t *complex_data = data;
             long nbytes = nmemb*matvar->data_size;
 
-            ReadDataSlab1(mat,complex_data->Re,matvar->class_type,
+            ReadDataSlab1(mat,data,matvar->class_type,
                           matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_REAL);
             fseek(mat->fp,matvar->internal->datapos+nbytes,SEEK_SET);
-            ReadDataSlab1(mat,complex_data->Im,matvar->class_type,
+            ReadDataSlab1(mat,data,matvar->class_type,
                           matvar->data_type,start,stride,edge, MAT_COMPLEX_MIXED_PART_IMAG);
     } else {
         ReadDataSlab1(mat,data,matvar->class_type,matvar->data_type,start,

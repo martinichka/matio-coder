@@ -881,16 +881,9 @@ Mat_VarDuplicate(const matvar_t *in, int opt)
         }
     } else if ( in->data != NULL ) {
         if ( out->isComplex ) {
-            out->data = malloc(sizeof(mat_complex_split_t));
+            out->data = malloc(out->nbytes * 2);
             if ( out->data != NULL ) {
-                mat_complex_split_t *out_data = out->data;
-                mat_complex_split_t *in_data  = in->data;
-                out_data->Re = malloc(out->nbytes);
-                if ( NULL != out_data->Re )
-                    memcpy(out_data->Re,in_data->Re,out->nbytes);
-                out_data->Im = malloc(out->nbytes);
-                if ( NULL != out_data->Im )
-                    memcpy(out_data->Im,in_data->Im,out->nbytes);
+				memcpy(out->data,in->data,out->nbytes * 2);
             }
         } else {
             out->data = malloc(in->nbytes);
