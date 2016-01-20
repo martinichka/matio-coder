@@ -321,7 +321,6 @@ read_selected_data(mat_t *mat,matvar_t *matvar,char *index_str)
     next_tok_pos = get_next_token(index_str);
     next_tok = *next_tok_pos;
 
-    printf("entry\n");
     while ( !done ) {
         /* Check If the user is selecting a subset of the dataset */
         if ( next_tok == '(' ) {
@@ -362,7 +361,6 @@ read_selected_data(mat_t *mat,matvar_t *matvar,char *index_str)
                  matvar->data_size = Mat_SizeOfClass(matvar->class_type);
                  matvar->nbytes = nmemb*matvar->data_size;
                 if ( matvar->isComplex ) {
-                printf("alloc complex\n");
                     matvar->data = malloc(matvar->nbytes * 2);
                 } else {
                     matvar->data = malloc(matvar->nbytes);
@@ -634,7 +632,6 @@ print_default_numeric_2d(matvar_t *matvar)
     stride = Mat_SizeOf(matvar->data_type);
     if ( matvar->isComplex ) {
         char *p = matvar->data;
-printf("print complex\n");
         for ( i = 0; i < matvar->dims[0]; i++ ) {
             for ( j = 0; j < matvar->dims[1]; j++ ) {
                 size_t idx = matvar->dims[0]*j+i;
@@ -668,7 +665,6 @@ print_default_numeric_3d(matvar_t *matvar)
     stride = Mat_SizeOf(matvar->data_type);
     if ( matvar->isComplex ) {
         char *p = matvar->data;
-printf("print complex\n");
         for ( k = 0; k < matvar->dims[2]; k++ ) {
             Mat_Message("%s(:,:,%lu) = ",matvar->name,k);
             indent++;
