@@ -879,9 +879,6 @@ main (int argc, char *argv[])
             matvar = Mat_VarReadInfo(mat,argv[i]);
             if ( matvar ) {
                 if ( printdata ) {
-//                	char ext[100] = "(3257:1111:end)";
-//                	next_tok_pos = ext;
-//                	next_tok = '(';
                     if ( next_tok == '\0' ) {
                         /* No indexing tokens found, so read all of the data */
                         Mat_VarReadDataAll(mat,matvar);

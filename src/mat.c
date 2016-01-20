@@ -925,8 +925,8 @@ Mat_VarFree(matvar_t *matvar)
                         Mat_VarFree(fields[i]);
 
                     free(matvar->data);
-                    break;
                 }
+                break;
             case MAT_C_CELL:
                 if ( !matvar->mem_conserve && NULL != matvar->data ) {
                     matvar_t **cells = matvar->data;
