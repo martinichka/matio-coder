@@ -4702,7 +4702,6 @@ ReadData5(mat_t *mat,matvar_t *matvar,void *data,
     }
     if ( real_bytes % 8 )
         real_bytes += (8-(real_bytes % 8));
-	printf('d\n');
 
     if ( matvar->rank == 2 ) {
         if ( stride[0]*(edge[0]-1)+start[0]+1 > matvar->dims[0] )
