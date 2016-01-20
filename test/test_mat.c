@@ -2153,8 +2153,7 @@ test_struct_api_getlinear(void)
     int    err = 0, i;
     double    r[12] = {0,1,2,3,4,5,6,7,8,9,10,11},
               c[12] = {12,13,14,15,16,17,18,19,20,21,22,23};
-//    mat_complex_split_t z[12];
-    double* z[12]; // TODO Fix this test
+    double    d[24] = {0,12,1,13,2,14,3,15,4,16,5,17,6,18,7,19,8,20,9,21,10,22,11,23};
     matvar_t *field, *matvar, *matvar2;
     const size_t num_fields = 3;
     const char *fieldnames[3] = {"r","c","z"};
@@ -2172,10 +2171,8 @@ test_struct_api_getlinear(void)
         field = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
                               dims,c+i,MAT_F_DONT_COPY_DATA);
         Mat_VarSetStructFieldByName(matvar, "c", i, field);
-//        z[i] = r+i;
-//        z[i].Im = c+i;
         field = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
-                              dims,z+i,MAT_F_DONT_COPY_DATA|MAT_F_COMPLEX);
+                              dims,d+i*2,MAT_F_DONT_COPY_DATA|MAT_F_COMPLEX);
         Mat_VarSetStructFieldByName(matvar, "z", i, field);
     }
 
@@ -2311,9 +2308,8 @@ static int
 test_cell_api_getlinear(void)
 {
     size_t dims[2], i;
-    double    r[4] = {0,1,2,3},c[4] = {4,5,6,7};
-//    mat_complex_split_t z[4];
-    double* z[4];
+    double r[4] = {0,1,2,3},c[4] = {4,5,6,7};
+    double d[8] = {0,4,1,5,2,6,3,7};
     matvar_t *cell, *matvar, **cells;
 
     dims[0] = 3; dims[1] = 4;
@@ -2326,10 +2322,8 @@ test_cell_api_getlinear(void)
         cell = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
                              dims,c+i,MAT_F_DONT_COPY_DATA);
         Mat_VarSetCell(matvar, 3*i+1, cell);
-//        z[i] = r+i;
-//        z[i].Im = c+i;
         cell = Mat_VarCreate(NULL,MAT_C_DOUBLE,MAT_T_DOUBLE,2,
-                             dims,z+i,MAT_F_COMPLEX|MAT_F_DONT_COPY_DATA);
+                             dims,d+i*2,MAT_F_COMPLEX|MAT_F_DONT_COPY_DATA);
         Mat_VarSetCell(matvar, 3*i+2, cell);
     }
     /* Get the first row */
