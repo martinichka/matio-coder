@@ -316,7 +316,7 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
 			if ( mat->byteswap ) {
 				for ( i = 0; i < len; i++ ) {
 					InflateData(mat,z,&f,data_size);
-					data[start + i * jump] = Mat_singleSwap(&f);
+					data[start + i * jump] = Mat_floatSwap(&f);
 				}
 			} else {
 				for ( i = 0; i < len; i++ ) {
