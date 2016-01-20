@@ -290,18 +290,41 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
 
 
     switch ( data_type ) {
-        case MAT_T_DOUBLE:
-        {
-            data_size = sizeof(double);
-            if ( mat->byteswap ) {
-                InflateData(mat,z,data,len*data_size);
-                for ( i = 0; i < len; i++ )
-                    (void)Mat_doubleSwap(data+i*jump);
-            } else {
-                InflateData(mat,z,data,len*data_size);
-            }
-            break;
-        }
+		case MAT_T_DOUBLE:
+		{
+			double d;
+
+			data_size = sizeof(double);
+			if ( mat->byteswap ) {
+				for ( i = 0; i < len; i++ ) {
+					InflateData(mat,z,&d,data_size);
+					data[start + i * jump] = Mat_doubleSwap(&d);
+				}
+			} else {
+				for ( i = 0; i < len; i++ ) {
+					InflateData(mat,z,&d,data_size);
+					data[start + i * jump] = d;
+				}
+			}
+			break;
+		}
+		case MAT_T_SINGLE:
+		{
+			float f;
+
+			data_size = sizeof(float);
+			if ( mat->byteswap ) {
+				for ( i = 0; i < len; i++ ) {
+					InflateData(mat,z,&f,data_size);
+					data[start + i * jump] = Mat_floatSwap(&f);
+				}
+			} else {
+				for ( i = 0; i < len; i++ ) {
+					InflateData(mat,z,data+start+i*jump,data_size);
+				}
+			}
+			break;
+		}
         case MAT_T_INT32:
         {
             data_size = sizeof(mat_int32_t);
@@ -780,7 +803,7 @@ ReadCompressedSingleData(mat_t *mat,z_stream *z,float *data,
                 }
             } else {
                 for ( i = 0; i < len; i++ ) {
-                    InflateData(mat,z,data+i*jump,data_size);
+                    InflateData(mat,z,data+start+i*jump,data_size);
                 }
             }
             break;
@@ -4022,13 +4045,13 @@ ReadCompressedCharData(mat_t *mat,z_stream *z,char *data,
         case MAT_T_UTF8:
             data_size = 1;
             for ( i = 0; i < len; i++ )
-                InflateData(mat,z,data+i*jump,data_size);
+                InflateData(mat,z,data+start+i*jump,data_size);
             break;
         case MAT_T_INT8:
         case MAT_T_UINT8:
             data_size = 1;
             for ( i = 0; i < len; i++ )
-                InflateData(mat,z,data+i*jump,data_size);
+                InflateData(mat,z,data+start+i*jump,data_size);
             break;
         case MAT_T_INT16:
         case MAT_T_UINT16:
@@ -4085,12 +4108,12 @@ ReadCharData(mat_t *mat,char *data,enum matio_types data_type,int len, enum mat_
     switch ( data_type ) {
         case MAT_T_UTF8:
             for ( i = 0; i < len; i++ )
-                bytesread += fread(data+i*jump,1,1,mat->fp);
+                bytesread += fread(data+start+i*jump,1,1,mat->fp);
             break;
         case MAT_T_INT8:
         case MAT_T_UINT8:
             for ( i = 0; i < len; i++ )
-                bytesread += fread(data+i*jump,1,1,mat->fp);
+                bytesread += fread(data+start+i*jump,1,1,mat->fp);
             break;
         case MAT_T_INT16:
         case MAT_T_UINT16:
