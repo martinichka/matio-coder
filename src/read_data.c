@@ -316,11 +316,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
 			if ( mat->byteswap ) {
 				for ( i = 0; i < len; i++ ) {
 					InflateData(mat,z,&f,data_size);
-					data[start + i * jump] = Mat_floatSwap(&f);
+					data[start + i * jump] = Mat_doubleSwap(&f);
 				}
 			} else {
 				for ( i = 0; i < len; i++ ) {
-					InflateData(mat,z,data+start+i*jump,data_size);
+					InflateData(mat,z,&f,data_size);
+					data[start + i * jump] = f;
 				}
 			}
 			break;
@@ -339,12 +340,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=256 ) {
                         InflateData(mat,z,buf.i32,256*data_size);
                         for ( j = 0; j < 256; j++ )
-                            data[i+j] = Mat_int32Swap(buf.i32+j);
+                            data[start+(i+j)*jump] = Mat_int32Swap(buf.i32+j);
                     }
                     len = len-(i-256);
                     InflateData(mat,z,buf.i32,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = Mat_int32Swap(buf.i32+j);
+                        data[start+(i+j)*jump] = Mat_int32Swap(buf.i32+j);
                 }
             } else {
                 if ( len <= 256 ){
@@ -357,12 +358,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=256 ) {
                         InflateData(mat,z,buf.i32,256*data_size);
                         for ( j = 0; j < 256; j++ )
-                            data[i+j] = buf.i32[j];
+                            data[start+(i+j)*jump] = buf.i32[j];
                     }
                     len = len-(i-256);
                     InflateData(mat,z,buf.i32,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = buf.i32[j];
+                        data[start+(i+j)*jump] = buf.i32[j];
                 }
             }
             break;
@@ -381,12 +382,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=256 ) {
                         InflateData(mat,z,buf.ui32,256*data_size);
                         for ( j = 0; j < 256; j++ )
-                            data[i+j] = Mat_uint32Swap(buf.ui32+j);
+                            data[start+(i+j)*jump] = Mat_uint32Swap(buf.ui32+j);
                     }
                     len = len-(i-256);
                     InflateData(mat,z,buf.ui32,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = Mat_uint32Swap(buf.ui32+j);
+                        data[start+(i+j)*jump] = Mat_uint32Swap(buf.ui32+j);
                 }
             } else {
                 if ( len <= 256 ) {
@@ -399,12 +400,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=256 ) {
                         InflateData(mat,z,buf.ui32,256*data_size);
                         for ( j = 0; j < 256; j++ )
-                            data[i+j] = buf.ui32[j];
+                            data[start+(i+j)*jump] = buf.ui32[j];
                     }
                     len = len-(i-256);
                     InflateData(mat,z,buf.ui32,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = buf.ui32[j];
+                        data[start+(i+j)*jump] = buf.ui32[j];
                 }
             }
             break;
@@ -423,12 +424,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=512 ) {
                         InflateData(mat,z,buf.i16,512*data_size);
                         for ( j = 0; j < 512; j++ )
-                            data[i+j] = Mat_int16Swap(buf.i16+j);
+                            data[start+(i+j)*jump] = Mat_int16Swap(buf.i16+j);
                     }
                     len = len-(i-512);
                     InflateData(mat,z,buf.i16,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = Mat_int16Swap(buf.i16+j);
+                        data[start+(i+j)*jump] = Mat_int16Swap(buf.i16+j);
                 }
             } else {
                 if ( len <= 512 ) {
@@ -441,12 +442,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=512 ) {
                         InflateData(mat,z,buf.i16,512*data_size);
                         for ( j = 0; j < 512; j++ )
-                            data[i+j] = buf.i16[j];
+                            data[start+(i+j)*jump] = buf.i16[j];
                     }
                     len = len-(i-512);
                     InflateData(mat,z,buf.i16,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = buf.i16[j];
+                        data[start+(i+j)*jump] = buf.i16[j];
                 }
             }
             break;
@@ -465,12 +466,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=512 ) {
                         InflateData(mat,z,buf.ui16,512*data_size);
                         for ( j = 0; j < 512; j++ )
-                            data[i+j] = Mat_uint16Swap(buf.ui16+j);
+                            data[start+(i+j)*jump] = Mat_uint16Swap(buf.ui16+j);
                     }
                     len = len-(i-512);
                     InflateData(mat,z,buf.ui16,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = Mat_uint16Swap(buf.ui16+j);
+                        data[start+(i+j)*jump] = Mat_uint16Swap(buf.ui16+j);
                 }
             } else {
                 if ( len <= 512 ) {
@@ -483,12 +484,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                     for ( i = 0; i < len; i+=512 ) {
                         InflateData(mat,z,buf.ui16,512*data_size);
                         for ( j = 0; j < 512; j++ )
-                            data[i+j] = buf.ui16[j];
+                            data[start+(i+j)*jump] = buf.ui16[j];
                     }
                     len = len-(i-512);
                     InflateData(mat,z,buf.ui16,len*data_size);
                     for ( j = 0; j < len; j++ )
-                        data[i+j] = buf.ui16[j];
+                        data[start+(i+j)*jump] = buf.ui16[j];
                 }
             }
             break;
@@ -506,12 +507,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                 for ( i = 0; i < len; i+=1024 ) {
                     InflateData(mat,z,buf.ui8,1024*data_size);
                     for ( j = 0; j < 1024; j++ )
-                        data[i+j] = buf.ui8[j];
+                        data[start+(i+j)*jump] = buf.ui8[j];
                 }
                 len = len-(i-1024);
                 InflateData(mat,z,buf.ui8,len*data_size);
                 for ( j = 0; j < len; j++ )
-                    data[i+j] = buf.ui8[j];
+                    data[start+(i+j)*jump] = buf.ui8[j];
             }
             break;
         }
@@ -528,12 +529,12 @@ ReadCompressedDoubleData(mat_t *mat,z_stream *z,double *data,
                 for ( i = 0; i < len; i+=1024 ) {
                     InflateData(mat,z,buf.i8,1024*data_size);
                     for ( j = 0; j < 1024; j++ )
-                        data[i+j] = buf.i8[j];
+                        data[start+(i+j)*jump] = buf.i8[j];
                 }
                 len = len-(i-1024);
                 InflateData(mat,z,buf.i8,len*data_size);
                 for ( j = 0; j < len; j++ )
-                    data[i+j] = buf.i8[j];
+                    data[start+(i+j)*jump] = buf.i8[j];
             }
             break;
         }
